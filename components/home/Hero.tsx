@@ -5,8 +5,8 @@ export default function Hero() {
                 {/* <img src="/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl" /> */}
                 <div className="artboard artboard-horizontal phone-3">736×414</div>
                 <div>
-                    <h1 className="text-5xl font-bold typed pr-2">Hello, I'm <span className="text-primary font-patrick_hand">Jacky FAN</span></h1>
-                    <p className="py-6">I write code and eat computer bugs.</p>
+                    <h1 className="text-5xl font-bold typed pr-2 leading-snug">Hello, I'm <span className="text-primary font-patrick_hand">Jacky FAN</span></h1>
+                    <p className="py-2">I write code and eat computer bugs.</p>
                 </div>
             </div>
             <a href="#!" className="flex flex-col justify-center items-center absolute bottom-12 transition-all floating">
