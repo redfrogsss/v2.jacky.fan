@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const config: Config = {
     content: [
@@ -14,6 +15,10 @@ const config: Config = {
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
         },
+        fontFamily: {
+            outfit: ["var(--font-outfit)", ...defaultTheme.fontFamily.sans],
+            patrick_hand: ["var(--font-patrick-hand)", ...defaultTheme.fontFamily.sans],
+          }
     },
     plugins: [require("daisyui")],
     // daisyUI config (optional - here are the default values)
