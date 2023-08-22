@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 const config: Config = {
     content: [
@@ -20,7 +21,14 @@ const config: Config = {
             patrick_hand: ["var(--font-patrick-hand)", ...defaultTheme.fontFamily.sans],
           }
     },
-    plugins: [require("daisyui")],
+    plugins: [
+        require("daisyui"),
+        plugin(function({ addBase }) {
+            addBase({
+               'html': { fontSize: "18px" },
+             })
+           }),
+    ],
     // daisyUI config (optional - here are the default values)
     daisyui: {
         themes: ["winter", "night"], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
