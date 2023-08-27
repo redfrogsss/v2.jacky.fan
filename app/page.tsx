@@ -1,12 +1,13 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/home/Hero'
-import Image from 'next/image'
+import WorkSection from '@/components/home/WorkSection'
 
 export default function Home() {
   return (
     <main className="">
       <Navbar />
       <Hero />
+      <WorkSection />
     </main>
   )
 }
