@@ -1,6 +1,7 @@
 'use client'
 
-import { EventHandler, MouseEventHandler, useState } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface PreviousWorkItemProps {
     item: number;
@@ -16,14 +17,31 @@ export default function PreviousWorkItem(props: PreviousWorkItemProps) {
     };
 
     return (
-        <a href="#!" onClick={(e) => { handleClick(e) }} className={`card ${isClicked ? "w-full" : "w-fit"} min-h-96 bg-base-200 shadow-xl relative transition-all mx-auto`}>
-            <figure className={`mx-auto ${isClicked ? "mt-[-2.5rem]" : "mt-0"} relative w-fit`}>
+        <motion.a
+            href="#!"
+            onClick={(e) => { handleClick(e) }}
+            className={`card bg-base-200 shadow-xl relative mx-auto`}
+            animate={{
+                width: isClicked ? "100%" : "fit-content",
+            }}
+        >
+            <motion.figure
+                className={`mx-auto relative w-fit`}
+                animate={{
+                    marginTop: isClicked ? "-2.5rem" : "0",
+                }}
+            >
                 <img src="https://plchldr.co/i/568x378" alt="Shoes" className="rounded-xl" />
                 <h2 className="absolute top-2 text-xl">Project {props.item}</h2>
                 <p className="absolute bottom-2 left-2">React</p>
                 <p className="absolute bottom-2 right-2">27 August 2023</p>
-            </figure>
-            <div className={`card-body items-center text-center py-6 ${isClicked ? "visible" : "hidden"}  transition-all`}>
+            </motion.figure>
+            <motion.div
+                className={`card-body items-center text-center py-6`}
+                animate={{
+                    display: isClicked ? "block" : "none",
+                }}
+            >
                 <p>A random project with some good propose.</p>
                 <div className="flex justify-between w-full">
                     <div className="flex items-center gap-2 max-w-1/2 flex-wrap">
@@ -36,7 +54,7 @@ export default function PreviousWorkItem(props: PreviousWorkItemProps) {
                         <button className="btn btn-neutral btn-sm">View</button>
                     </div>
                 </div>
-            </div>
-        </a>
+            </motion.div>
+        </motion.a>
     );
 }
