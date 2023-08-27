@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { kalam, neucha, outfit, patrick_hand } from './fonts'
+import { outfit, patrick_hand } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

@@ -1,6 +1,28 @@
+'use client'
+
+import { useEffect, useState } from "react";
+
 export default function Navbar() {
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+
+        setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+
+        setPrevScrollPos(currentScrollPos);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+
+    }, [prevScrollPos, visible, handleScroll]);
+
     return (
-        <div className="navbar bg-base-200 fixed z-50">
+        <div className={`navbar bg-base-200 fixed z-50 transition-all ${visible ? "visible" : "hidden"}`}>
             <div className="flex-1">
                 <a className="btn btn-ghost normal-case text-xl"><span className="text-primary font-patrick_hand">Jacky FAN's</span> Website</a>
             </div>
