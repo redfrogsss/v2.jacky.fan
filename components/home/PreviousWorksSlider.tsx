@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import PreviousWorkItem from './PreviousWorkItem';
 
 export default function PreviousWorkSlider() {
 
@@ -17,7 +18,7 @@ export default function PreviousWorkSlider() {
             } else {
                 return (
                     <SwiperSlide key={index} className='pt-10'>
-                        <div className="card w-full min-h-96 bg-base-200 shadow-xl relative">
+                        {/* <div className="card w-full min-h-96 bg-base-200 shadow-xl relative">
                             <figure className="mx-auto mt-[-2.5rem] relative w-fit">
                                 <img src="https://plchldr.co/i/568x378" alt="Shoes" className="rounded-xl" />
                                 <h2 className="absolute top-2 text-xl">Project {item}</h2>
@@ -38,7 +39,9 @@ export default function PreviousWorkSlider() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
+
+                        <PreviousWorkItem item={item} />
                     </SwiperSlide>
                 );
             }
