@@ -2,7 +2,7 @@ import FloatingArrow from "./FloatingArrow";
 
 export default function Hero() {
     return (
-        <section className="hero min-h-screen bg-base-200 relative">
+        <section className="hero h-screen min-h-[900px] bg-base-200 relative">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="artboard artboard-horizontal phone-3 bg-slate-400">736×414</div>
                 <div>
