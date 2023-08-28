@@ -44,7 +44,7 @@ export default function PreviousWorkItem(props: PreviousWorkItemProps) {
             >
                 <p>A random project with some good propose.</p>
                 <div className="flex justify-between w-full">
-                    <div className="flex items-center gap-2 max-w-1/2 flex-wrap">
+                    <div className="flex items-center gap-2 max-1/2 flex-wrap">
                         <div className="badge badge-outline">default</div>
                         <div className="badge badge-outline">default</div>
                         <div className="badge badge-outline">default</div>
