@@ -10,7 +10,7 @@ export default function Hero() {
                     <p className="py-2">I write code and eat computer bugs.</p>
                 </div>
             </div>
-            <FloatingArrow />
+            <FloatingArrow text="About Me" />
         </section>
     );
 }
