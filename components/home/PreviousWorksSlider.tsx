@@ -17,7 +17,7 @@ export default function PreviousWorkSlider() {
                 )
             } else {
                 return (
-                    <SwiperSlide key={index} className='pt-10'>
+                    <SwiperSlide key={index} className='py-10'>
                         <PreviousWorkItem item={item} />
                     </SwiperSlide>
                 );
