@@ -25,7 +25,6 @@ export default function PreviousWorkItem(props: PreviousWorkItemProps) {
         <ClickAwayListener onClickAway={handleClickAway}>
             <motion.a
                 href="#!"
-                onClick={(e) => { handleClick(e) }}
                 className={`card bg-base-200 shadow-xl relative mx-auto`}
                 animate={{
                     width: isClicked ? "100%" : "fit-content",
@@ -36,6 +35,7 @@ export default function PreviousWorkItem(props: PreviousWorkItemProps) {
                     animate={{
                         marginTop: isClicked ? "-2.5rem" : "0",
                     }}
+                    onClick={(e) => { handleClick(e) }}
                 >
                     <img src="https://plchldr.co/i/568x378" alt="Shoes" className="rounded-xl" />
                     <h2 className="absolute top-2 text-xl">Project {props.item}</h2>
