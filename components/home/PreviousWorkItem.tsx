@@ -29,6 +29,7 @@ export default function PreviousWorkItem(props: PreviousWorkItemProps) {
                 animate={{
                     width: isClicked ? "100%" : "fit-content",
                 }}
+                whileHover={{ scale: isClicked ? 1 : 1.05 }}
             >
                 <motion.figure
                     className={`mx-auto relative w-fit`}
