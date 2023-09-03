@@ -16,7 +16,7 @@ export default function ContactMeSection() {
 
                 <p className="text-xl mb-8"></p>
 
-                <div className="card w-2/3 bg-base-300 shadow-xl">
+                <div className="card w-2/3 bg-base-200 shadow-xl">
                     <div className="card-body">
                         <form action="#" className="">
 
@@ -26,7 +26,7 @@ export default function ContactMeSection() {
                                 </label>
                                 <input type="text" placeholder="Type your name here" className="input input-bordered w-full max-w-xs" required />
                                 <label className="label">
-                                    <span className="label-text-alt text-warning">This field is required.</span>
+                                    <span className="label-text-alt text-error">This field is required.</span>
                                 </label>
                             </div>
 
@@ -36,7 +36,7 @@ export default function ContactMeSection() {
                                 </label>
                                 <input type="email" placeholder="Type your email here" className="input input-bordered w-full max-w-xs" required />
                                 <label className="label">
-                                    <span className="label-text-alt text-warning">This field is required.</span>
+                                    <span className="label-text-alt text-error">This field is required.</span>
                                 </label>
                             </div>
 
@@ -46,7 +46,7 @@ export default function ContactMeSection() {
                                 </label>
                                 <textarea className="textarea textarea-bordered h-24" placeholder="Type your message here" required></textarea>
                                 <label className="label">
-                                    <span className="label-text-alt text-warning">This field is required.</span>
+                                    <span className="label-text-alt text-error">This field is required.</span>
                                 </label>
                             </div>
 

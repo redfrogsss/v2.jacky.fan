@@ -77,7 +77,7 @@ export default function AboutMeSection() {
 
                 <button className="btn btn-neutral">
                     Check out my projects
-                    <ArrowSmallDownIcon className="h-6 w-6 text-base-content" />
+                    <ArrowSmallDownIcon className="h-6 w-6 text-content" />
                 </button>
 
             </div>
