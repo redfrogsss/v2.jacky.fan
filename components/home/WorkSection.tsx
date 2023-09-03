@@ -14,7 +14,7 @@ export default function WorkSection() {
                     My <span className="text-primary">Previous Projects</span>
                     <CursorArrowRaysIcon className="h-10 w-10 text-base-content inline mb-1 ml-2" />
                 </h2>
-                <p className="text-2xl">I've worked on different projects for school and in my free time, and most of them have involved things related to the web.</p>
+                <p className="text-xl">I've worked on different projects for school and in my free time, and most of them have involved things related to the web.</p>
             </div>
             <PreviousWorkSlider />
         </section>

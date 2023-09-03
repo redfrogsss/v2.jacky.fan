@@ -15,11 +15,11 @@ export default function AboutMeSection() {
                     <span className="text-primary">About</span> Me
                 </h2>
 
-                <p className="text-2xl mb-8">Hello I am Jacky FAN, a <span className="text-primary">front end developer</span> in Hong Kong who focus on building high-quality websites.</p>
+                <p className="text-xl mb-8">Hello I am Jacky FAN, a <span className="text-primary">front end developer</span> in Hong Kong who focus on building high-quality websites.</p>
 
-                <p className="text-2xl mb-8">I recently graduated with a <span className="text-primary">Bachelor Degree in Computing</span> from The Hong Kong Polytechnic University.</p>
+                <p className="text-xl mb-8">I recently graduated with a <span className="text-primary">Bachelor Degree in Computing</span> from The Hong Kong Polytechnic University.</p>
 
-                <p className="text-2xl mb-8">I am passionate about Programming, Web Technology and Problem Solving.</p>
+                <p className="text-xl mb-8">I am passionate about Programming, Web Technology and Problem Solving.</p>
 
                 <button className="btn btn-neutral">
                     Check out my projects
