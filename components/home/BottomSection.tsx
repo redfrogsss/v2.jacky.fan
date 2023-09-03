@@ -4,7 +4,7 @@ export default function BottomSection() {
             <div className="container mx-auto py-10">
                 <p className="flex flex-row justify-center text-xl">
                     <hr className="inline-block my-auto w-1/4 mr-4" />
-                    That's all. Thanks for scrolling and visiting my website.
+                    That's all. Thanks for&nbsp;<span className="text-primary"> scrolling </span>&nbsp;and&nbsp;<span className="text-primary">visiting</span>&nbsp;my website.
                     <hr className="inline-block my-auto w-1/4 ml-4" />
                 </p>
             </div>
