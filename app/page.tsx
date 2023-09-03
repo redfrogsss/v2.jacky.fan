@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import AboutMeSection from '@/components/home/AboutMeSection'
+import BottomSection from '@/components/home/BottomSection'
 import ContactMeSection from '@/components/home/ContactMeSection'
 import Footer from '@/components/home/Footer'
 import Hero from '@/components/home/Hero'
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutMeSection />
       <WorkSection />
       <ContactMeSection />
+      <BottomSection />
       <Footer />
     </main>
   )
