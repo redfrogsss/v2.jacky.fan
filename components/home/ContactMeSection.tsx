@@ -1,3 +1,5 @@
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+
 export default function ContactMeSection() {
     return (
         <section className="min-h-[900px] bg-base-100 ">
@@ -22,7 +24,7 @@ export default function ContactMeSection() {
                                 <label className="label">
                                     <span className="label-text text-xl">What is your name?</span>
                                 </label>
-                                <input type="text" placeholder="Steve Jobs" className="input input-bordered w-full max-w-xs" required />
+                                <input type="text" placeholder="Type your name here" className="input input-bordered w-full max-w-xs" required />
                                 <label className="label">
                                     <span className="label-text-alt text-warning">This field is required.</span>
                                 </label>
@@ -32,7 +34,7 @@ export default function ContactMeSection() {
                                 <label className="label">
                                     <span className="label-text text-xl">What is your Email?</span>
                                 </label>
-                                <input type="email" placeholder="Type here" className="input input-bordered w-full max-w-xs" required />
+                                <input type="email" placeholder="Type your email here" className="input input-bordered w-full max-w-xs" required />
                                 <label className="label">
                                     <span className="label-text-alt text-warning">This field is required.</span>
                                 </label>
@@ -42,13 +44,16 @@ export default function ContactMeSection() {
                                 <label className="label">
                                     <span className="label-text text-xl">What is your message?</span>
                                 </label>
-                                <textarea className="textarea textarea-bordered h-24" placeholder="Bio" required></textarea>
+                                <textarea className="textarea textarea-bordered h-24" placeholder="Type your message here" required></textarea>
                                 <label className="label">
                                     <span className="label-text-alt text-warning">This field is required.</span>
                                 </label>
                             </div>
 
-                            <button type="submit" className="btn btn-neutral">Submit</button>
+                            <button type="submit" className="btn btn-neutral">
+                                Submit
+                                <PaperAirplaneIcon className="h-6 w-6 text-content" />
+                            </button>
 
                         </form>
                     </div>
