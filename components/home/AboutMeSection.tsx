@@ -4,7 +4,7 @@ export default function AboutMeSection() {
 
     // Add animation transition from arrow to title
     return (
-        <section className="max-w-screen h-screen min-h-[900px] bg-base-100 relative">
+        <section className="min-h-[900px] bg-base-100 relative">
             <div className="container mx-auto py-40">
 
                 <h2 className="font-bold text-5xl mb-16">
