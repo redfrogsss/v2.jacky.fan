@@ -8,7 +8,7 @@ export default function WorkSection() {
             <div className="container mx-auto my-20">
                 <h2 className="font-bold text-5xl mb-16">
                     Check Out My <span className="text-primary">Previous Projects</span>
-                    <CursorArrowRaysIcon className="h-10 w-10 text-info-content inline mb-1 ml-2" />
+                    <CursorArrowRaysIcon className="h-10 w-10 text-base-content inline mb-1 ml-2" />
                 </h2>
                 <p className="text-2xl">I've worked on different projects for school and in my free time, and most of them have involved things related to the web.</p>
             </div>
