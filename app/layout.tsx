@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} ${outfit.variable} ${patrick_hand.variable}`}>{children}</body>
+      <body className={`${outfit.className} ${outfit.variable} ${patrick_hand.variable} overflow-x-hidden`}>{children}</body>
     </html>
   )
 }

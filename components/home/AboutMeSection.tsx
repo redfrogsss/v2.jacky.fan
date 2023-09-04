@@ -1,4 +1,5 @@
 import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
+import Magnifier3D from "./Magnifier3D";
 
 export default function AboutMeSection() {
 
@@ -81,6 +82,7 @@ export default function AboutMeSection() {
                 </button>
 
             </div>
+            <Magnifier3D />
         </section >
     );
 }
