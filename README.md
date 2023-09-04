@@ -37,3 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 HeroIcons - https://heroicons.dev/
 Tech Stack Icons - https://www.figma.com/community/file/1095337897898466786
+https://sketchfab.com/3d-models/vortexseries-mechanical-keyboard-gt-8-nj80-02d16e9dae72419aa24ec6788318f92b
