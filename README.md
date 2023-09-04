@@ -39,3 +39,4 @@ HeroIcons - https://heroicons.dev/
 Tech Stack Icons - https://www.figma.com/community/file/1095337897898466786
 https://sketchfab.com/3d-models/vortexseries-mechanical-keyboard-gt-8-nj80-02d16e9dae72419aa24ec6788318f92b
 https://sketchfab.com/3d-models/magnifier-87fc0d63b7df4aa7b80d6fda5a18dc8a
+https://sketchfab.com/3d-models/letter-a3b88a6137864cafbf97423a30cb341c

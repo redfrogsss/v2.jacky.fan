@@ -1,8 +1,9 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import Letter3D from './Letter3D';
 
 export default function ContactMeSection() {
     return (
-        <section className="min-h-[900px] bg-base-100 ">
+        <section className="min-h-[900px] bg-base-100 relative">
             <div className="container mx-auto py-40">
                 <h2 className="font-bold text-5xl mb-16">
                     <span className="text-lg flex font-light">
@@ -60,6 +61,8 @@ export default function ContactMeSection() {
                 </div>
 
             </div>
+
+            <Letter3D />
         </section>
     );
 }
