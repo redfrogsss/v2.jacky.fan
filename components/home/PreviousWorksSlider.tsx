@@ -3,25 +3,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import PreviousWorkItem from './PreviousWorkItem';
+import useProjectInfo from '@/hooks/useProjectInfo';
 
 export default function PreviousWorkSlider() {
+    const { data, error, loading } = useProjectInfo();
 
     const displaySlides = () => {
-        // show 6 dummy slides
-        const dummy = [1, 2, 3, 4, 5, 6];
-        return dummy.map((item, index) => {
-            if (index === 10) {
-                return (
-                    <>
-                    </>
-                )
-            } else {
-                return (
-                    <SwiperSlide key={index} className='py-16'>
-                        <PreviousWorkItem item={item} />
-                    </SwiperSlide>
-                );
-            }
+        return data.reverse().map((item, index) => {
+            return (
+                <SwiperSlide key={index} className='py-16'>
+                    <PreviousWorkItem item={item} />
+                </SwiperSlide>
+            );
         });
     }
 

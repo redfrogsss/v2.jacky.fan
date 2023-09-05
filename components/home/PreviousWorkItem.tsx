@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ClickAwayListener from 'react-click-away-listener';
+import ProjectInfoProps from '@/interfaces/ProjectInfoProps';
 
-interface PreviousWorkItemProps {
-    item: number;
-}
+// interface PreviousWorkItemProps {
+//     item: number;
+// }
 
-export default function PreviousWorkItem(props: PreviousWorkItemProps) {
+export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
 
     const [isClicked, setIsClicked] = useState(false);
 
@@ -25,23 +26,24 @@ export default function PreviousWorkItem(props: PreviousWorkItemProps) {
         <ClickAwayListener onClickAway={handleClickAway}>
             <motion.a
                 href="#!"
-                className={`card bg-base-200 shadow-xl relative mx-auto`}
+                className={`card bg-base-300 shadow-xl relative mx-auto`}
                 animate={{
                     width: isClicked ? "100%" : "fit-content",
                 }}
                 whileHover={{ scale: isClicked ? 1 : 1.05 }}
             >
                 <motion.figure
-                    className={`mx-auto relative w-fit`}
+                    className={`mx-auto relative w-[568px] h-[500px] bg-base-200 rounded-xl`}
                     animate={{
                         marginTop: isClicked ? "-2.5rem" : "0",
                     }}
                     onClick={(e) => { handleClick(e) }}
                 >
-                    <img src="https://plchldr.co/i/568x378" alt="Shoes" className="rounded-xl" />
-                    <h2 className="absolute top-2 text-xl">Project {props.item}</h2>
-                    <p className="absolute bottom-2 left-2">React</p>
-                    <p className="absolute bottom-2 right-2">27 August 2023</p>
+                    {/* <img src="https://plchldr.co/i/568x378" alt="Shoes" className="rounded-xl" /> */}
+                    <img src={item.img} alt={item.name} className="rounded-xl" />
+                    <h2 className="absolute top-2 text-xl">{item.name}</h2>
+                    <p className="absolute bottom-2 left-2">{item.tech}</p>
+                    <p className="absolute bottom-2 right-2">{item.date}</p>
                 </motion.figure>
                 <motion.div
                     className={`card-body items-center text-center py-6`}
@@ -49,16 +51,18 @@ export default function PreviousWorkItem(props: PreviousWorkItemProps) {
                         display: isClicked ? "block" : "none",
                     }}
                 >
-                    <p className="mb-2">A random project with some good propose. </p>
+                    <p className="mb-2">{item.desc}</p>
                     <div className="flex justify-between w-full">
                         <div className="flex items-center gap-2 max-1/2 flex-wrap">
-                            <div className="badge badge-outline">default</div>
-                            <div className="badge badge-outline">default</div>
-                            <div className="badge badge-outline">default</div>
+                            {item.tags.map((tag, index) => {
+                                return (
+                                    <div key={index} className="badge badge-outline">{tag}</div>
+                                );
+                            })}
                         </div>
                         <div className="flex gap-2">
                             <button className="btn btn-info btn-sm">Info</button>
-                            <button className="btn btn-neutral btn-sm">View</button>
+                            <a href={item.viewLinks} className="btn btn-neutral btn-sm" target="_blank">View</a>
                         </div>
                     </div>
                 </motion.div>
