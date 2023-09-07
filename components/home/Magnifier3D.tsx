@@ -15,7 +15,7 @@ export default function Magnifier3D() {
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         if (!inView) { return; }
-        setModelRotation([calcRotation(90), calcRotation(latest * 360 / 4 + 10), calcRotation(latest * 360 / 4 - 30)]);
+        setModelRotation([calcRotation(latest * 360 / 2 + 210), calcRotation(latest * 360 / 4 - 230), calcRotation(latest * 360 / 4 - 50)]);
     })
 
     useEffect(() => {
@@ -45,14 +45,14 @@ export default function Magnifier3D() {
 
     return (
         <>
-            <div ref={ref} className="grid place-items-center h-full w-2/3 absolute -top-16 -right-72">
+            <div ref={ref} className="hidden xl:grid place-items-center h-full w-2/3 absolute -top-16 -bottom-4 -right-80">
                 {inView && (
                     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
                         <ambientLight intensity={0.7} />
                         {/* <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
                         <Suspense fallback={null}>
                             {/* <Model /> */}
-                            <primitive object={gltf.scene} scale={.0015} rotation={modelRotation} />
+                            <primitive object={gltf.scene} scale={.0013} rotation={modelRotation} />
 
                             <Environment preset="city" />
                         </Suspense>
