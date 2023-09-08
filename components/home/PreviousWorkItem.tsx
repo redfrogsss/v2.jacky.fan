@@ -5,10 +5,6 @@ import { motion } from "framer-motion";
 import ClickAwayListener from 'react-click-away-listener';
 import ProjectInfoProps from '@/interfaces/ProjectInfoProps';
 
-// interface PreviousWorkItemProps {
-//     item: number;
-// }
-
 export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
 
     const [isClicked, setIsClicked] = useState(false);
@@ -26,14 +22,14 @@ export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
         <ClickAwayListener onClickAway={handleClickAway}>
             <motion.a
                 href="#!"
-                className={`card bg-base-300 shadow-xl relative mx-auto`}
+                className={`card bg-base-200 shadow-xl relative mx-auto w-5/6`}
                 animate={{
-                    width: isClicked ? "100%" : "fit-content",
+                    // width: isClicked ? "100%" : "fit-content",
                 }}
                 whileHover={{ scale: isClicked ? 1 : 1.05 }}
             >
                 <motion.figure
-                    className={`mx-auto relative w-[568px] h-[500px] bg-base-200 rounded-xl`}
+                    className={`mx-auto relative w-full min-h-[500px] bg-base-300 rounded-xl`}
                     animate={{
                         marginTop: isClicked ? "-2.5rem" : "0",
                     }}
@@ -53,7 +49,7 @@ export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
                 >
                     <p className="mb-2">{item.desc}</p>
                     <div className="flex justify-between w-full">
-                        <div className="flex items-center gap-2 max-1/2 flex-wrap">
+                        <div className="hidden md:flex items-center gap-2 max-1/2 flex-wrap">
                             {item.tags.map((tag, index) => {
                                 return (
                                     <div key={index} className="badge badge-outline">{tag}</div>

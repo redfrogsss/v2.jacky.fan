@@ -22,11 +22,11 @@ export default function Navbar() {
     }, [prevScrollPos, visible, handleScroll]);
 
     return (
-        <div className={`navbar bg-base-200 fixed z-50 transition-all ${visible ? "visible" : "hidden"}`}>
+        <div className={`navbar bg-base-300 fixed z-50 transition-all ${visible ? "visible" : "hidden"} w-screen`}>
             <div className="flex-1">
                 <a className="btn btn-ghost normal-case text-xl"><span className="text-primary font-patrick_hand">Jacky FAN's</span> Website</a>
             </div>
-            <div className="flex-none">
+            <div className="flex-none hidden md:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><a href="#!">About</a></li>
                     <li><a href="#!">Work</a></li>

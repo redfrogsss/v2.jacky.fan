@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
-const defaultTheme = require('tailwindcss/defaultTheme');
-const plugin = require('tailwindcss/plugin');
+const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 const config: Config = {
     content: [
@@ -9,6 +9,15 @@ const config: Config = {
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
+        container: {
+            padding: {
+                DEFAULT: "1rem",
+                sm: "2rem",
+                lg: "4rem",
+                xl: "5rem",
+                "2xl": "6rem",
+            },
+        },
         extend: {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -18,16 +27,19 @@ const config: Config = {
         },
         fontFamily: {
             outfit: ["var(--font-outfit)", ...defaultTheme.fontFamily.sans],
-            patrick_hand: ["var(--font-patrick-hand)", ...defaultTheme.fontFamily.sans],
-          }
+            patrick_hand: [
+                "var(--font-patrick-hand)",
+                ...defaultTheme.fontFamily.sans,
+            ],
+        },
     },
     plugins: [
         require("daisyui"),
-        plugin(function({ addBase }) {
+        plugin(function ({ addBase }) {
             addBase({
-               'html': { fontSize: "18px" },
-             })
-           }),
+                html: { fontSize: "18px" },
+            });
+        }),
     ],
     // daisyUI config (optional - here are the default values)
     daisyui: {
