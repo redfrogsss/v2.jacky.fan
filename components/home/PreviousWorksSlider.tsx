@@ -14,7 +14,8 @@ export default function PreviousWorkSlider() {
     const { breakpoint } = useBreakPoint();
 
     const displaySlides = () => {
-        return data.reverse().map((item, index) => {
+        const projects = [...data].reverse();
+        return projects.map((item, index) => {
             return (
                 <SwiperSlide key={index} className='py-16'>
                     <PreviousWorkItem item={item} />

@@ -45,7 +45,7 @@ export default function Magnifier3D() {
 
     return (
         <>
-            <div ref={ref} className="hidden xl:grid place-items-center h-full w-2/3 absolute -top-16 -bottom-4 -right-80">
+            <div ref={ref} className="hidden xl:grid place-items-center h-full w-2/3 absolute -top-24 -bottom-4 -right-80">
                 {inView && (
                     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
                         <ambientLight intensity={0.7} />

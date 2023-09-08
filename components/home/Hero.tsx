@@ -4,7 +4,7 @@ import FloatingArrow from "./FloatingArrow";
 export default function Hero() {
 
     return (
-        <section className="`md:min-h-[900px] h-screen bg-base-300 relative">
+        <section id="hero" className="`md:min-h-[900px] h-screen bg-base-300 relative">
             <div className="cotainer mx-auto h-full z-10 absolute w-full">
                 <div className="flex flex-col h-full justify-center items-center">
                     <div className="">

@@ -4,8 +4,9 @@ export default function Footer() {
             <div>
                 <ul className="menu menu-horizontal">
                     <li><a href="#!" className="link link-primary">Email</a></li>
-                    <li><a href="#!" className="link link-primary">LinkedIn</a></li>
                     <li><a href="#!" className="link link-primary">GitHub</a></li>
+                    <li><a href="#!" className="link link-primary">LinkedIn</a></li>
+                    <li><a href="#!" className="link link-primary">Blog</a></li>
                 </ul>
             </div>
             <div>

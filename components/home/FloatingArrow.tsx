@@ -11,8 +11,8 @@ export default function FloatingArrow(props: FloatingArrowProps) {
 
     return (
         <motion.a
-            href="#!"
-            className="flex flex-col justify-center items-center absolute bottom-[10%] transition-all w-full"
+            href="#about"
+            className="flex flex-col justify-center items-center absolute bottom-[10%] transition-all w-full z-20"
             animate={{
                 y: [0, 15, 0],
             }}

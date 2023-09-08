@@ -4,7 +4,7 @@ import Letter3D from './Letter3D';
 export default function ContactMeSection() {
     return (
         <section className="min-h-[900px] bg-base-100 relative overflow-x-hidden">
-            <div className="container mx-auto py-12 md:py-40">
+            <div className="container mx-auto py-12 md:py-32">
                 <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
                     <span className="text-sm md:text-lg flex font-light">
                         <hr className="w-8 md:w-16 inline-block my-auto mr-2 border-base-content" />
