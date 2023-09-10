@@ -3,15 +3,16 @@
 import { Suspense, useRef, useState, useEffect } from "react"
 import { Canvas, useLoader } from "@react-three/fiber"
 import { Environment, OrbitControls } from "@react-three/drei"
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
+import { calcRotation } from "@/helpers/calcRotation";
 
 export default function Magnifier3D() {
     const [inView, setInView] = useState(false);
     const ref = useRef(null);
     const [modelRotation, setModelRotation] = useState([calcRotation(90), calcRotation(30), calcRotation(0)]);
     const { scrollYProgress } = useScroll();
-    const gltf = useLoader(GLTFLoader, "/magnifier/scene.gltf");
+    const gltf = useLoader(GLTFLoader, `/magnifier/scene.gltf`);
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         if (!inView) { return; }
@@ -38,10 +39,6 @@ export default function Magnifier3D() {
             }
         };
     }, []);
-
-    function calcRotation(degrees: number): number {
-        return (degrees * Math.PI) / 180;
-    }
 
     return (
         <>

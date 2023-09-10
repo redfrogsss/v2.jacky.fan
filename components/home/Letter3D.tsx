@@ -3,9 +3,10 @@
 
 import { Canvas, useLoader } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Suspense, useRef, useState, useEffect } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
+import { calcRotation } from "@/helpers/calcRotation";
 
 export default function Letter3D() {
 
@@ -13,7 +14,7 @@ export default function Letter3D() {
     const ref = useRef(null);
     const [modelRotation, setModelRotation] = useState([calcRotation(-30), calcRotation(120), calcRotation(0)]);
     const { scrollYProgress } = useScroll();
-    const gltf = useLoader(GLTFLoader, "/letter/scene.gltf");
+    const gltf = useLoader(GLTFLoader, `/letter/scene.gltf`);
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         if (!inView) { return; }
@@ -40,10 +41,6 @@ export default function Letter3D() {
             }
         };
     }, []);
-
-    function calcRotation(degrees: number): number {
-        return (degrees * Math.PI) / 180;
-    }
 
     return (
         <div ref={ref} className="hidden xl:grid place-items-center h-full w-2/3 absolute -top-0 -right-80">

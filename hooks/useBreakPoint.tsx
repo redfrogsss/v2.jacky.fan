@@ -7,7 +7,7 @@ export function useBreakPoint() {
     const [breakpoint, setBreakpoint] = useState<string>('sm');
     const { width, height } = useWindowSize();
 
-    const fullConfig = resolveConfig(tailwindConfig);
+    const fullConfig = resolveConfig(tailwindConfig) as any;
 
     const getBreakpointValue = (value: string): number =>
         +fullConfig.theme.screens[value].slice(

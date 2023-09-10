@@ -38,7 +38,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 desc: 'Web-based AI Conversational Recommender System built with React, Python Flask, MySQL and CRSLab.',
                 tags: ['Web', 'AI', 'Final Year Projects'],
                 info: undefined,
-                viewLinks: 'https://github.com/redfrogsss/CRS',
+                viewLinks: 'https://github.com/redfrogsss/gdsc-portfolio',
                 img: "/projects/gdsc/1.png",
             },
             {
@@ -49,7 +49,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 desc: 'A selfhosted To-do List Manager built with Next.js, Chakra-UI and MySQL.',
                 tags: ['Todo App', 'Side Project'],
                 info: undefined,
-                viewLinks: 'https://github.com/redfrogsss/CRS',
+                viewLinks: 'https://github.com/redfrogsss/selfremind',
                 img: "/projects/selfremind/home.png",
             },
             {
@@ -76,7 +76,8 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
         ];
 
-        setData(projectInfos);
+        setData(projectInfos as ProjectInfoProps[]);
+
         setLoading(false);
     }, [])
 

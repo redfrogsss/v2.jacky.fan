@@ -35,7 +35,7 @@ const config: Config = {
     },
     plugins: [
         require("daisyui"),
-        plugin(function ({ addBase }) {
+        plugin(function ({ addBase }: any) {
             addBase({
                 html: { fontSize: "18px" },
             });
