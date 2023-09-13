@@ -48,9 +48,8 @@ export default function PreviousWorkSlider() {
                 slidesPerView={slidesPerView}
                 centeredSlides={true}
                 spaceBetween={0}
-                // onSlideChange={() => console.log('slide change')}
-                // onSwiper={(swiper) => console.log(swiper)}
                 className=""
+                slideToClickedSlide={true}
             >
                 {displaySlides()}
             </Swiper>
