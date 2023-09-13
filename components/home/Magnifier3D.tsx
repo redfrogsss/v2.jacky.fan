@@ -57,7 +57,7 @@ export default function Magnifier3D() {
                         {/* <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
                         <Suspense fallback={null}>
                             {/* <Model /> */}
-                            <primitive object={gltf} scale={.0013} rotation={modelRotation} />
+                            {gltf && <primitive object={gltf} scale={.0013} rotation={modelRotation} />}
 
                             <Environment preset="city" />
                         </Suspense>
