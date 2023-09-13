@@ -1,13 +1,12 @@
 'use client'
 
-// import GLTFFile from "@/public/magnifier.glb";
 import { Suspense, useRef, useState, useEffect } from "react"
-import { Canvas, useLoader } from "@react-three/fiber"
-import { Environment, OrbitControls, useGLTF } from "@react-three/drei"
-import { GLTFLoader, GLTFParser } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion"
+import { Canvas } from "@react-three/fiber"
+import { Environment } from "@react-three/drei"
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { useMotionValueEvent, useScroll } from "framer-motion"
 import { calcRotation } from "@/helpers/calcRotation";
-import { Object3D } from "three";
+import { motion } from "framer-motion";
 
 export default function Magnifier3D() {
     const [inView, setInView] = useState(false);
@@ -16,6 +15,8 @@ export default function Magnifier3D() {
     const { scrollYProgress } = useScroll();
 
     const [gltf, setGltf] = useState<any>(undefined);
+    const [topValue, setTopValue] = useState(6);
+
     useEffect(() => {
         new GLTFLoader().load(`/magnifier.glb`, async (gltf) => {
             setGltf(gltf.scene);
@@ -25,12 +26,12 @@ export default function Magnifier3D() {
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         if (!inView) { return; }
         setModelRotation([calcRotation(latest * 360 / 2 + 210), calcRotation(latest * 360 / 4 - 230), calcRotation(latest * 360 / 4 - 50)]);
+        setTopValue(latest * 30);
     })
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                // console.log("entry.isIntersecting", entry.isIntersecting);
                 setInView(entry.isIntersecting);
             },
             {
@@ -50,7 +51,14 @@ export default function Magnifier3D() {
 
     return (
         <>
-            <div ref={ref} className="hidden xl:grid place-items-center h-full w-2/3 absolute -top-24 -bottom-4 -right-80">
+            <motion.div
+                ref={ref}
+                // className="hidden xl:grid place-items-center h-full w-2/3 absolute -top-24 -bottom-4 -right-80"
+                animate={{
+                    top: `-${topValue}rem`
+                }}
+                className="hidden xl:grid place-items-center h-full w-2/3 absolute -bottom-4 -right-80"
+            >
                 {inView && (
                     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
                         <ambientLight intensity={0.7} />
@@ -64,7 +72,7 @@ export default function Magnifier3D() {
                         {/* <OrbitControls autoRotate={false} /> */}
                     </Canvas>
                 )}
-            </div>
+            </motion.div>
         </>
     );
 }
