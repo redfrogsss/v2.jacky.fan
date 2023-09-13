@@ -14,7 +14,12 @@ export default function Letter3D() {
     const ref = useRef(null);
     const [modelRotation, setModelRotation] = useState([calcRotation(-30), calcRotation(120), calcRotation(0)]);
     const { scrollYProgress } = useScroll();
-    const gltf = useLoader(GLTFLoader, `/letter/scene.gltf`);
+    const [gltf, setGltf] = useState<any>(undefined);
+    useEffect(() => {
+        new GLTFLoader().load(`/letter.glb`, async (gltf) => {
+            setGltf(gltf.scene);
+        });
+    }, [])
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         if (!inView) { return; }
@@ -25,7 +30,6 @@ export default function Letter3D() {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setInView(entry.isIntersecting);
-                // console.log("entry.isIntersecting", entry.isIntersecting)
             },
             {
                 rootMargin: "0px",
@@ -49,7 +53,7 @@ export default function Letter3D() {
                     <ambientLight intensity={0.7} />
                     {/* <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
                     <Suspense fallback={null}>
-                        <primitive object={gltf.scene} scale={1.1} rotation={modelRotation} />
+                        <primitive object={gltf} scale={1.1} rotation={modelRotation} />
                         <Environment preset="city" />
                     </Suspense>
                     {/* <OrbitControls autoRotate={false} /> */}
