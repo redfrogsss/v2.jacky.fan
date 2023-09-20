@@ -1,4 +1,5 @@
 import Alert from '@/components/Alert'
+import LoadingScreen from '@/components/LoadingScreen'
 import Navbar from '@/components/Navbar'
 import AboutMeSection from '@/components/home/AboutMeSection'
 import BottomSection from '@/components/home/BottomSection'
@@ -12,14 +13,16 @@ export default function Home() {
   return (
     <main className="relative">
       <AlertContextProvider>
-        <Navbar />
-        <Hero />
-        <AboutMeSection />
-        <WorkSection />
-        <ContactMeSection />
-        <BottomSection />
-        <Footer />
-        <Alert />
+        <LoadingScreen>
+          <Navbar />
+          <Hero />
+          <AboutMeSection />
+          <WorkSection />
+          <ContactMeSection />
+          <BottomSection />
+          <Footer />
+          <Alert />
+        </LoadingScreen>
       </AlertContextProvider >
     </main >
   )
