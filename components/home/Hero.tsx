@@ -1,10 +1,24 @@
+'use client'
 
+import { motion } from "framer-motion";
 import FloatingArrow from "./FloatingArrow";
 
 export default function Hero() {
 
     return (
-        <section id="hero" className="`md:min-h-[900px] h-screen bg-base-300 relative">
+        <motion.section
+            id="hero"
+            className="`md:min-h-[900px] h-screen bg-base-300 relative"
+            initial={{ opacity: "0%" }}
+            // animate={{ opacity: 1 }}
+            whileInView={{ opacity: ["0%", "100%"] }}
+            viewport={{ once: true }}
+            transition={{
+                // delay: 1.5 * 3,
+                duration: 1.5,
+                ease: "easeInOut"
+            }}
+        >
             <div className="cotainer mx-auto h-full z-10 absolute w-full">
                 <div className="flex flex-col h-full justify-center items-center">
                     <div className="">
@@ -15,7 +29,7 @@ export default function Hero() {
                 </div>
             </div>
             <FloatingArrow text="About Me" />
-        </section>
+        </motion.section>
 
 
     );

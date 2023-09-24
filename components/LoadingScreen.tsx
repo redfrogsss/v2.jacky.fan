@@ -14,7 +14,8 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                     animate={{
                         inset: ["0px", "0% 0% 100% 0%"],
                         display: ["block"],
-                        opacity: [1, 0],
+                        opacity: ["100%", "0%"],
+                        // zIndex: [20, 0],
                         transitionEnd: {
                             // opacity: 0,
                             display: "none",
