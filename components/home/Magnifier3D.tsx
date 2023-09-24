@@ -55,23 +55,35 @@ export default function Magnifier3D() {
                 ref={ref}
                 // className="hidden xl:grid place-items-center h-full w-2/3 absolute -top-24 -bottom-4 -right-80"
                 animate={{
-                    top: `-${topValue}rem`
+                    top: `-${topValue}rem`,
                 }}
                 className="hidden xl:grid place-items-center h-full w-2/3 absolute -bottom-4 -right-80"
             >
-                {inView && (
-                    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
-                        <ambientLight intensity={0.7} />
-                        {/* <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
-                        <Suspense fallback={null}>
-                            {/* <Model /> */}
-                            {gltf && <primitive object={gltf} scale={.0013} rotation={modelRotation} />}
+                <motion.div
+                    className="w-full h-full"
+                    animate={{
+                        y: [0, 15, 0],
+                    }}
+                    transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeIn",
+                    }}
+                >
+                    {inView && (
+                        <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
+                            <ambientLight intensity={0.7} />
+                            {/* <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
+                            <Suspense fallback={null}>
+                                {/* <Model /> */}
+                                {gltf && <primitive object={gltf} scale={.0013} rotation={modelRotation} />}
 
-                            <Environment preset="city" />
-                        </Suspense>
-                        {/* <OrbitControls autoRotate={false} /> */}
-                    </Canvas>
-                )}
+                                <Environment preset="city" />
+                            </Suspense>
+                            {/* <OrbitControls autoRotate={false} /> */}
+                        </Canvas>
+                    )}
+                </motion.div>
             </motion.div>
         </>
     );

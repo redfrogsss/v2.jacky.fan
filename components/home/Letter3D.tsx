@@ -58,17 +58,29 @@ export default function Letter3D() {
             }}
             className="hidden xl:grid place-items-center h-full w-2/3 absolute -right-80"
         >
-            {inView &&
-                <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
-                    <ambientLight intensity={0.7} />
-                    {/* <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
-                    <Suspense fallback={null}>
-                        {gltf && <primitive object={gltf} scale={1.1} rotation={modelRotation} />}
-                        <Environment preset="city" />
-                    </Suspense>
-                    {/* <OrbitControls autoRotate={false} /> */}
-                </Canvas>
-            }
+            <motion.div
+                className="w-full h-full"
+                animate={{
+                    y: [0, 15, 0],
+                }}
+                transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeIn",
+                }}
+            >
+                {inView &&
+                    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
+                        <ambientLight intensity={0.7} />
+                        {/* <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow /> */}
+                        <Suspense fallback={null}>
+                            {gltf && <primitive object={gltf} scale={1.1} rotation={modelRotation} />}
+                            <Environment preset="city" />
+                        </Suspense>
+                        {/* <OrbitControls autoRotate={false} /> */}
+                    </Canvas>
+                }
+            </motion.div>
 
         </motion.div>
     );
