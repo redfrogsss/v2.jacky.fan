@@ -50,6 +50,7 @@ export default function PreviousWorkSlider() {
                 spaceBetween={0}
                 className=""
                 slideToClickedSlide={true}
+                loop={true}
             >
                 {displaySlides()}
             </Swiper>
