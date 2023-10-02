@@ -3,10 +3,10 @@ export default function Footer() {
         <footer className="footer footer-center p-10 bg-base-300 text-base-content rounded">
             <div>
                 <ul className="menu menu-horizontal">
-                    <li><a href="#!" className="link link-primary">Email</a></li>
-                    <li><a href="#!" className="link link-primary">GitHub</a></li>
-                    <li><a href="#!" className="link link-primary">LinkedIn</a></li>
-                    <li><a href="#!" className="link link-primary">Blog</a></li>
+                    <li><a href="mailto:contact@jacky.fan" className="link link-primary" target="_blank">Email</a></li>
+                    <li><a href="https://github.com/redfrogsss" className="link link-primary" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/jacky-fan-dev/" className="link link-primary" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://blog.jacky.fan" className="link link-primary" target="_blank">Blog</a></li>
                 </ul>
             </div>
             <div>
