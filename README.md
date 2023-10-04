@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[v2.jacky.fan](https://github.com/redfrogsss/v2.jacky.fan) is a
+
+You can access this website via https://jacky.fan
 
 ## Getting Started
 
