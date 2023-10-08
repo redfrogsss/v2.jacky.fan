@@ -37,6 +37,11 @@ body {
   animation-delay: 1.5s;
 }
 
+/* recaptcha v3 badge */
+.grecaptcha-badge {
+  z-index: 1;
+}
+
 @keyframes typing {
   from {
     width: 0
