@@ -5,7 +5,7 @@ import { CursorArrowRaysIcon } from "@heroicons/react/24/outline";
 export default function WorkSection() {
     return (
         <section id="work" className="min-h-[980px] bg-base-100 pt-10 relative">
-            <div className="container mx-auto pt-12 md:pt-32">
+            <div className="container mx-auto pt-12">
                 <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
                     <span className="text-sm md:text-lg flex font-light">
                         <hr className="w-8 md:w-16 inline-block my-auto mr-2 border-base-content" />
