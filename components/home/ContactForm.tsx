@@ -4,6 +4,8 @@ import { MouseEventHandler, useContext, useRef, useState } from "react";
 import { Databases, ID } from "appwrite";
 import { client } from "@/app/appwrite";
 import { AlertContext } from "@/contexts/AlertContext";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import verifyCaptcha from "@/helpers/verifyCaptcha";
 
 export default function ContactForm() {
 
@@ -11,6 +13,7 @@ export default function ContactForm() {
     const inputEmail = useRef<HTMLInputElement>(null)
     const inputMessage = useRef<HTMLTextAreaElement>(null)
     const { setAlert } = useContext(AlertContext);
+    const { executeRecaptcha } = useGoogleReCaptcha()
 
     const [showRequired, setShowRequired] = useState({ name: false, email: false, message: false });
 
@@ -24,7 +27,7 @@ export default function ContactForm() {
             created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Hong_Kong' }),
         }
 
-        const isEmpty = v => v === undefined || v.length === 0;
+        const isEmpty = (v: string | undefined) => v === undefined || v.length === 0;
 
         if (isEmpty(data.name) || isEmpty(data.email) || isEmpty(data.message)) {
             setShowRequired({ name: isEmpty(data.name), email: isEmpty(data.email), message: isEmpty(data.message) });
@@ -34,6 +37,17 @@ export default function ContactForm() {
         }
 
         try {
+            if (executeRecaptcha === undefined) {
+                throw new Error(`executeRecaptcha is undefine: ${executeRecaptcha}`);
+            }
+
+            const token = await executeRecaptcha();
+            const verified = await verifyCaptcha(token);
+
+            if (!verified) {
+                throw new Error(`Recaptcha is not verified: ${verified}`);
+            }
+
             const databases = new Databases(client);
 
             await databases.createDocument(
@@ -59,6 +73,7 @@ export default function ContactForm() {
                     type: "error",
                 });
             }
+            console.error(e);
         }
     }
 

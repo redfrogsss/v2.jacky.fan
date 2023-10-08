@@ -14,7 +14,6 @@ export default function Alert() {
     }
 
     useEffect(() => {
-        console.log(alert)
         if (alert?.show === true) {
             if (setAlert === undefined) { return; }
 
