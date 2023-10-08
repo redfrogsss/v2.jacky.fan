@@ -1,8 +1,11 @@
 import axios from "axios";
 
+export const runtime = "edge"; // cloudflare edge
+
 export async function POST(request: Request) {
     const { token } = await request.json();
     try {
+        if (!token) throw new Error();
         const res = await axios.post(
             `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
         );
