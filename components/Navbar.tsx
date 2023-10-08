@@ -1,18 +1,12 @@
 'use client'
 
 import { AlertContext, AlertContextProvider } from "@/contexts/AlertContext";
-import { AlertProps } from "@/interfaces/AlertProps";
 import { useContext, useEffect, useState } from "react";
 
 export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const [showModal, setShowModal] = useState(false);
-    // const [alert, setAlert] = useState<AlertProps>({
-    //     show: false,
-    //     message: "Hello World",
-    //     type: "success"
-    // });
     const { alert, setAlert } = useContext(AlertContext);
 
     const handleScroll = () => {
@@ -55,9 +49,9 @@ export default function Navbar() {
         <AlertContextProvider>
             <div className={`navbar bg-base-300 fixed z-50 transition-all ${visible ? "visible" : "hidden"} w-screen`}>
                 <div className="flex-1">
-                    <a href="#hero" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-patrick_hand">Jacky FAN</span></a>
+                    <a href="#hero" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-patrick_hand">🥺 Jacky FAN</span></a>
                 </div>
-                <div className="flex-none hidden md:flex">
+                <div className="flex-none hidden md:flex mx-5">
                     <ul className="menu menu-horizontal px-1">
                         <li><a href="#about">About</a></li>
                         <li><a href="#work">Work</a></li>

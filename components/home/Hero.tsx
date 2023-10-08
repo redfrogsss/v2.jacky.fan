@@ -24,7 +24,7 @@ export default function Hero() {
                     <div className="">
                         <h1 className="text-5xl md:text-7xl font-bold pr-2 leading-snug mb-4 text-center font-patrick_hand text-primary">Jacky FAN</h1>
                         <hr className="w-full block my-auto border-1.5" />
-                        <p className="mt-4 text-md md:text-xl text-center typed">I build websites and eat computer bugs.</p>
+                        <p className="mt-4 text-md md:text-xl text-center typed">I build websites and eat computer bugs 😉</p>
                     </div>
                 </div>
             </div>

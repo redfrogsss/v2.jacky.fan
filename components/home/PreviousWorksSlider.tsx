@@ -27,7 +27,6 @@ export default function PreviousWorkSlider() {
     const [slidesPerView, setSlidesPerView] = useState(2.5);
 
     useEffect(() => {
-        // console.log(breakpoint);
         if (breakpoint == "sm") {
             setSlidesPerView(1);
         } else if (breakpoint == "md") {
@@ -50,7 +49,7 @@ export default function PreviousWorkSlider() {
                 spaceBetween={0}
                 className=""
                 slideToClickedSlide={true}
-                loop={true}
+                loop={false}
             >
                 {displaySlides()}
             </Swiper>

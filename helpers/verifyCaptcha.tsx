@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export default function verifyCaptcha(token: string) {
     return new Promise(async (res, rej) => {
         const requestOpt: RequestInit | undefined = {
