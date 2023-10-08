@@ -22,7 +22,7 @@ export default function FloatingArrow(props: FloatingArrowProps) {
                 ease: "easeInOut",
             }}
         >
-            <p>{props.text}</p>
+            <p className="drop-shadow-sm">{props.text}</p>
             <span className="btn btn-circle btn-outline btn-sm border-0 mx-auto">
                 <ArrowLongDownIcon className="h-6 w-6 text-base-content" />
             </span>

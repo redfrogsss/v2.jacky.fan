@@ -10,11 +10,11 @@ export default function AboutMeSection() {
         <section id="about" className="min-h-[900px] bg-base-100 relative overflow-x-clip">
             <div className="container mx-auto py-12 md:py-32">
                 <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
-                    <span className="text-sm md:text-lg flex font-light">
+                    <span className="text-sm md:text-lg flex font-light drop-shadow-sm">
                         <hr className="w-8 md:w-16 inline-block my-auto mr-2 border-base-content" />
                         Know More
                     </span>
-                    <span className="text-primary">About</span> Me
+                    <span className="text-primary drop-shadow">About</span> Me
                 </h2>
 
                 <p className={sentencesClass}>Hello I am Jacky FAN, a <span className="text-primary">front end developer</span> in Hong Kong who focus on building high-quality websites.</p>
@@ -28,49 +28,49 @@ export default function AboutMeSection() {
                 <div className="rounded-md glass w-fit flex flex-row flex-wrap justify-center md:justify-start gap-4 mb-4 md:mb-8 pb-2 px-4">
                     <div className="my-2 w-16 md:w-24 relative">
                         <img src="/react.svg" alt="React" className="w-full aspect-square" />
-                        <p className="text-center">
+                        <p className="text-center drop-shadow-sm">
                             ReactJS
                         </p>
                     </div>
 
                     <div className="my-2 w-16 md:w-24 relative">
                         <img src="/typescript.svg" alt="Typescript" className="w-full aspect-square" />
-                        <p className="text-center">
+                        <p className="text-center drop-shadow-sm">
                             TypeScript
                         </p>
                     </div>
 
                     <div className="my-2 w-16 md:w-24 relative">
                         <img src="/html5.svg" alt="HTML5" className="w-full aspect-square" />
-                        <p className="text-center">
+                        <p className="text-center drop-shadow-sm">
                             HTML5
                         </p>
                     </div>
 
                     <div className="my-2 w-16 md:w-24 relative">
                         <img src="/css.svg" alt="CSS" className="w-full aspect-square" />
-                        <p className="text-center">
+                        <p className="text-center drop-shadow-sm">
                             CSS
                         </p>
                     </div>
 
                     <div className="my-2 w-16 md:w-24 relative">
                         <img src="/mysql.svg" alt="MySQL" className="w-full aspect-square" />
-                        <p className="text-center">
+                        <p className="text-center drop-shadow-sm">
                             MySQL
                         </p>
                     </div>
 
                     <div className="my-2 w-16 md:w-24 relative">
                         <img src="/git.svg" alt="Git" className="w-full aspect-square" />
-                        <p className="text-center">
+                        <p className="text-center drop-shadow-sm">
                             Git
                         </p>
                     </div>
 
                     <div className="my-2 w-16 md:w-24 relative">
                         <img src="/docker.svg" alt="Docker" className="w-full aspect-square" />
-                        <p className="text-center">
+                        <p className="text-center drop-shadow-sm">
                             Docker
                         </p>
                     </div>

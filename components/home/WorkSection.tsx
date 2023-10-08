@@ -6,8 +6,8 @@ export default function WorkSection() {
     return (
         <section id="work" className="min-h-[980px] bg-base-100 pt-10 relative">
             <div className="container mx-auto pt-12">
-                <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
-                    <span className="text-sm md:text-lg flex font-light">
+                <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16 drop-shadow">
+                    <span className="text-sm md:text-lg flex font-light drop-shadow-sm">
                         <hr className="w-8 md:w-16 inline-block my-auto mr-2 border-base-content" />
                         Checkout
                     </span>
