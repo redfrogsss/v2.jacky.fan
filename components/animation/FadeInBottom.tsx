@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function FadeInBottom({ children }: { children: React.ReactNode }) {
+export default function FadeInBottom({ children, triggerPoint = "-20%", extraClassName = "" }: { children: React.ReactNode, triggerPoint?: string, extraClassName?: string }) {
 
     const [isIntersecting, setIsIntersecting] = useState(false);
 
@@ -16,7 +16,7 @@ export default function FadeInBottom({ children }: { children: React.ReactNode }
                 }
             },
             {
-                rootMargin: '-30% 0px'
+                rootMargin: `0px 0px ${triggerPoint} 0px`
             }
         );
         if (ref.current) {
@@ -30,7 +30,7 @@ export default function FadeInBottom({ children }: { children: React.ReactNode }
     }, []);
 
     return (
-        <div className={isIntersecting ? "fadeInBottom" : "opacity-0"} ref={ref}>
+        <div className={`${isIntersecting ? "fadeInBottom" : "opacity-0"} ${extraClassName}`} ref={ref}>
             {children}
         </div>
     );

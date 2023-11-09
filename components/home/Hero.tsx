@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import FloatingArrow from "./FloatingArrow";
+import FadeInBottom from "../animation/FadeInBottom";
 
 export default function Hero() {
 
@@ -22,12 +23,18 @@ export default function Hero() {
             <div className="cotainer mx-auto h-full z-10 absolute w-full">
                 <div className="flex flex-col h-full justify-center items-center">
                     <div className="">
-                        <h1 className="text-5xl md:text-7xl font-bold pr-2 leading-snug mb-4 text-center font-patrick_hand text-primary drop-shadow">Jacky FAN</h1>
-                        <hr className="w-full block my-auto border-1.5" />
-                        <p className="mt-4 text-md md:text-xl text-center typed drop-shadow-md">I build websites and eat computer bugs 😉</p>
+                        <FadeInBottom triggerPoint="0%" extraClassName="animation-delay-1500">
+                            <h1 className="text-5xl md:text-7xl font-bold pr-2 leading-snug mb-4 text-center font-patrick_hand text-primary drop-shadow">Jacky FAN</h1>
+                            <hr className="w-full block my-auto border-1.5" />
+                        </FadeInBottom>
+
+                        <FadeInBottom triggerPoint="0%" extraClassName="animation-delay-2000">
+                            <p className="mt-4 text-md md:text-xl text-center typed drop-shadow-md">I build websites and eat computer bugs 😉</p>
+                        </FadeInBottom>
                     </div>
                 </div>
             </div>
+
             <FloatingArrow text="About Me" />
         </motion.section>
 
