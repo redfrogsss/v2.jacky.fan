@@ -65,3 +65,19 @@ body {
     border-color: transparent
   }
 }
+
+.fadeInBottom {
+  animation: fadeInBottom 500ms ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  to {
+    opacity: 1
+  }
+}
