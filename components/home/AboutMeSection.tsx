@@ -8,8 +8,8 @@ export default function AboutMeSection() {
 
     // Add animation transition from arrow to title
     return (
-        <section id="about" className="min-h-[900px] bg-base-100 relative overflow-x-clip">
-            <div className="container mx-auto py-12 md:py-32">
+        <section id="about" className="min-h-[900px] relative overflow-x-clip">
+            <div className="container mx-auto py-12 md:py-32 xl:pr-[33%]">
                 <FadeInBottom>
                     <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
                         <span className="text-sm md:text-lg flex font-light drop-shadow-sm">

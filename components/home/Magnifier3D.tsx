@@ -53,11 +53,10 @@ export default function Magnifier3D() {
         <>
             <motion.div
                 ref={ref}
-                // className="hidden xl:grid place-items-center h-full w-2/3 absolute -top-24 -bottom-4 -right-80"
                 animate={{
                     top: `-${topValue}rem`,
                 }}
-                className="hidden xl:grid place-items-center h-full w-2/3 absolute -bottom-4 -right-80"
+                className={`hidden xl:grid place-items-center h-full w-2/3 absolute -bottom-4 -right-[20vw] -z-10`}
             >
                 <motion.div
                     className="w-full h-full"
