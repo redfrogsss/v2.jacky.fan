@@ -1,45 +1,53 @@
-[v2.jacky.fan](https://github.com/redfrogsss/v2.jacky.fan) is a
-
 You can access this website via https://jacky.fan
+
+# [v2.Jacky.Fan](https://jacky.fan) - My Personal Website
+
+[v2.jacky.fan](https://github.com/redfrogsss/v2.jacky.fan) is a personal website built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [Framer Motion](https://www.framer.com/motion/).
+
+## Features
+
+-   Light / Dark Mode
+-   Animation
+-   Responsive Design
+-   Contact Form with reCAPTCHA
+-   Slider to showcase my previous works
+
+## Screenshots
+
+-   TODO
 
 ## Getting Started
 
-First, run the development server:
+Start `Dev` Server:
 
 ```bash
-npm run dev
-# or
+# Clone the repo
+git clone https://github.com/redfrogsss/v2.jacky.fan.git
+
+# Install dependencies
+cd v2.jacky.fan
+yarn
+
+# copy .env.local.template to .env.local and modifiy the values
+cp .env.local.template .env.local
+
+# Start dev server
 yarn dev
-# or
-pnpm dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+This project uses the following tech:
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Tech Stack
-
-HeroIcons - https://heroicons.dev/
-Tech Stack Icons - https://www.figma.com/community/file/1095337897898466786
-https://sketchfab.com/3d-models/vortexseries-mechanical-keyboard-gt-8-nj80-02d16e9dae72419aa24ec6788318f92b
-https://sketchfab.com/3d-models/magnifier-87fc0d63b7df4aa7b80d6fda5a18dc8a
-https://sketchfab.com/3d-models/letter-a3b88a6137864cafbf97423a30cb341c
-https://www.iconarchive.com/show/fluentui-emoji-mono-icons-by-microsoft/Pleading-Face-icon.html
+-   [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+-   [TypeScript](https://www.typescriptlang.org/) - A superset of JavaScript.
+-   [Vite](https://vitejs.dev/) - Next generation frontend tooling. It's fast!
+-   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
+-   [DaisyUI](https://daisyui.com/) - A simple, responsive and customizable UI components library for Tailwind CSS.
+-   [HeroIcons](https://heroicons.dev/) - A set of free MIT-licensed high-quality SVG icons for UI development.
+-   [Appwrite](https://appwrite.io/) - An open-source backend server.
+-   [Tech Stack Icons](https://www.figma.com/community/file/1095337897898466786) - A set of free MIT-licensed high-quality SVG icons for UI development.
+-   [Magnifier 3D Model](https://sketchfab.com/3d-models/magnifier-87fc0d63b7df4aa7b80d6fda5a18dc8a) - A 3D model of a magnifier.
+-   [Letter 3D Modal](https://sketchfab.com/3d-models/letter-a3b88a6137864cafbf97423a30cb341c) - A 3D model of a letter.
+-   [Pien Icon](https://www.iconarchive.com/show/fluentui-emoji-mono-icons-by-microsoft/Pleading-Face-icon.html) - A free icon from Microsoft.
+-   [Cloudflare Pages](https://pages.cloudflare.com/) - A website hosting service.
