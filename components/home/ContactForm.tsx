@@ -80,11 +80,11 @@ export default function ContactForm() {
     return (
         <form action="#" className="" onSubmit={handleSubmit}>
 
-            <div className="form-control w-full max-w-xs mb-4">
+            <div className="form-control w-full md:max-w-xs mb-4">
                 <label htmlFor="contactName" className="label">
                     <span className="label-text text-md md:text-xl">What is your name?</span>
                 </label>
-                <input id="contactName" type="text" placeholder="Type your name here" className="input input-bordered w-full max-w-xs" ref={inputName} formNoValidate />
+                <input id="contactName" type="text" placeholder="Type your name here" className="input input-bordered w-full md:max-w-xs" ref={inputName} formNoValidate />
                 {showRequired.name &&
                     <label className="label">
                         <span className="label-text-alt text-error">This field is required.</span>
@@ -92,11 +92,11 @@ export default function ContactForm() {
                 }
             </div>
 
-            <div className="form-control w-full max-w-xs mb-4">
+            <div className="form-control w-full md:max-w-xs mb-4">
                 <label htmlFor="contactEmail" className="label">
                     <span className="label-text text-md md:text-xl">What is your Email?</span>
                 </label>
-                <input id="contactEmail" type="email" placeholder="Type your email here" className="input input-bordered w-full max-w-xs" ref={inputEmail} formNoValidate />
+                <input id="contactEmail" type="email" placeholder="Type your email here" className="input input-bordered w-full md:max-w-xs" ref={inputEmail} formNoValidate />
                 {showRequired.email &&
                     <label className="label">
                         <span className="label-text-alt text-error">This field is required.</span>

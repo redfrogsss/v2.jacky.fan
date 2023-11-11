@@ -5,8 +5,8 @@ import FadeInBottom from '../animation/FadeInBottom';
 
 export default function WorkSection() {
     return (
-        <section id="work" className="min-h-[980px] bg-base-100 pt-10 relative">
-            <div className="container mx-auto pt-12">
+        <section id="work" className="md:min-h-[980px] bg-base-100 pt-10 relative">
+            <div className="container mx-auto pt-0 md:pt-12">
                 <FadeInBottom>
                     <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16 drop-shadow">
                         <span className="text-sm md:text-lg flex font-light drop-shadow-sm">

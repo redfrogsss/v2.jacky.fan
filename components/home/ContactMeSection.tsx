@@ -4,7 +4,7 @@ import FadeInBottom from '../animation/FadeInBottom';
 
 export default function ContactMeSection() {
     return (
-        <section className="min-h-[900px] relative overflow-x-clip">
+        <section className="md:min-h-[900px] relative overflow-x-clip">
             <div className="container mx-auto py-12 md:py-32">
                 <FadeInBottom>
                     <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
