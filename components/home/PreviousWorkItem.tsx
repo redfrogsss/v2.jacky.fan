@@ -37,7 +37,7 @@ export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
                 >
                     {/* <img src="https://plchldr.co/i/568x378" alt="Shoes" className="rounded-xl" /> */}
                     <img src={item.img} alt={item.name} className="rounded-xl" />
-                    <h2 className="absolute top-2 text-xl">{item.name}</h2>
+                    <h3 className="absolute top-2 text-xl">{item.name}</h3>
                     <p className="absolute bottom-2 left-2">{item.tech}</p>
                     <p className="absolute bottom-2 right-2">{item.date}</p>
                 </motion.figure>
