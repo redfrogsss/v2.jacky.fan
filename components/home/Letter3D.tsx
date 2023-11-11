@@ -56,7 +56,7 @@ export default function Letter3D() {
             animate={{
                 top: `${topValue}rem`
             }}
-            className="hidden xl:grid place-items-center h-full w-2/3 absolute -right-[20vw] -z-10"
+            className="!hidden xl:!grid place-items-center h-full w-2/3 absolute -right-[20vw] -z-10"
         >
             <motion.div
                 className="w-full h-full"
