@@ -2,6 +2,7 @@
 
 import { AlertContext, AlertContextProvider } from "@/contexts/AlertContext";
 import { useContext, useEffect, useState } from "react";
+import ToggleDayNight from "./ToggleDayNight";
 
 export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -51,11 +52,12 @@ export default function Navbar() {
                 <div className="flex-1">
                     <a href="#hero" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-patrick_hand drop-shadow">🥺 Jacky FAN</span></a>
                 </div>
-                <div className="flex-none hidden md:flex mx-5">
+                <div className="flex-none flex mx-5">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#work">Work</a></li>
-                        <li>
+                        <li className="flex"><ToggleDayNight /></li>
+                        <li className="hidden md:flex"><a href="#about">About</a></li>
+                        <li className="hidden md:flex"><a href="#work">Work</a></li>
+                        <li className="hidden md:flex">
                             <details>
                                 <summary>
                                     Quick Links
