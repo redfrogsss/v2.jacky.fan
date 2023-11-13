@@ -28,7 +28,11 @@ export default function ToggleDayNight() {
             data-set-theme={targetTheme}
             onClick={handleClick}
         >
-            <SunIcon className="h-5 w-5 text-base-content" />
+            {targetTheme === "night" ?
+                <SunIcon className="h-5 w-5 text-base-content" />
+                :
+                <MoonIcon className="h-5 w-5 text-base-content" />
+            }
         </button>
     );
 }
