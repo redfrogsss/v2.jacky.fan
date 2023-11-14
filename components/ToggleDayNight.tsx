@@ -6,27 +6,28 @@ import { themeChange } from 'theme-change'
 
 export default function ToggleDayNight() {
 
-    const [targetTheme, setTargetTheme] = useState<"night" | "winter">("night");
+    const [targetTheme, setTargetTheme] = useState<"night" | "cupcake">("night");
 
     useEffect(() => {
         themeChange(false);
         // 👆 false parameter is required for react project
 
         if (document.querySelector("html")?.dataset.theme === "night") {
-            setTargetTheme("winter");
+            setTargetTheme("cupcake");
         }
     }, [])
 
     const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-        setTargetTheme(targetTheme === "night" ? "winter" : "night");
+        setTargetTheme(targetTheme === "night" ? "cupcake" : "night");
     }
 
     return (
         <button
             className=""
-            // data-toggle-theme="night,winter"
+            // data-toggle-theme="night,cupcake"
             data-set-theme={targetTheme}
             onClick={handleClick}
+            aria-label="Toggle Day/Night Mode"
         >
             {targetTheme === "night" ?
                 <SunIcon className="h-5 w-5 text-base-content" />
