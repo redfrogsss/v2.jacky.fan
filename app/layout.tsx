@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { outfit, patrick_hand } from './fonts'
+import { outfit, patrick_hand, dosis } from './fonts'
 
 import { AlertContextProvider } from '@/contexts/AlertContext'
 import { RecaptchaProviders } from '@/providers/RecaptchaProvider'
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} ${outfit.variable} ${patrick_hand.variable} overflow-x-hidden`}>
+      <body className={`${outfit.className} ${outfit.variable} ${patrick_hand.variable} ${dosis.variable} overflow-x-hidden`}>
         <RecaptchaProviders>
           <AlertContextProvider>
             {children}

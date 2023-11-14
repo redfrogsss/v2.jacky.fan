@@ -31,6 +31,7 @@ const config: Config = {
                 "var(--font-patrick-hand)",
                 ...defaultTheme.fontFamily.sans,
             ],
+            dosis: ["var(--font-dosis)", ...defaultTheme.fontFamily.sans],
         },
     },
     plugins: [

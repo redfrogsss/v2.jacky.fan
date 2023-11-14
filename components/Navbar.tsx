@@ -50,7 +50,7 @@ export default function Navbar() {
         <AlertContextProvider>
             <div className={`navbar bg-base-300 fixed z-50 transition-all ${visible ? "visible" : "hidden"} w-screen`}>
                 <div className="flex-1">
-                    <a href="#hero" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-patrick_hand drop-shadow">🥺 Jacky FAN</span></a>
+                    <a href="#hero" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-dosis font-medium drop-shadow">🥺 Jacky FAN</span></a>
                 </div>
                 <div className="flex-none flex mx-5">
                     <ul className="menu menu-horizontal px-1">

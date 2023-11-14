@@ -24,7 +24,7 @@ export default function Hero() {
                 <div className="flex flex-col h-full justify-center items-center">
                     <div className="">
                         <FadeInBottom triggerPoint="0%" extraClassName="animation-delay-1500">
-                            <h1 className="text-5xl md:text-7xl font-bold pr-2 leading-snug mb-4 text-center font-patrick_hand text-primary drop-shadow">Jacky FAN</h1>
+                            <h1 className="text-5xl md:text-7xl font-medium pr-2 leading-snug mb-4 text-center font-dosis text-primary drop-shadow">Jacky FAN</h1>
                             <hr className="w-full block my-auto border-1.5" />
                         </FadeInBottom>
 
