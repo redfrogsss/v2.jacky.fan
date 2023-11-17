@@ -15,5 +15,6 @@ type Story = StoryObj<typeof Navbar>;
 export const FirstStory: Story = {
     args: {
         //👇 The args you need here will depend on your component
+        layout: 'fullscreen',
     },
 };
