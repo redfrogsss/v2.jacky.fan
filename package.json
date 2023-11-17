@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -36,6 +38,16 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/three": "^0.155.1"
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/nextjs": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/three": "^0.155.1",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "^7.5.3"
   }
 }
