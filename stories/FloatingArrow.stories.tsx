@@ -6,6 +6,10 @@ import FloatingArrow from '@/components/home/FloatingArrow';
 const meta: Meta<typeof FloatingArrow> = {
     component: FloatingArrow,
     render: (args) => <FloatingArrow {...args} />,
+    tags: ['autodocs'],
+    parameters: {
+        // layout: 'centered',
+    },
 };
 
 export default meta;
