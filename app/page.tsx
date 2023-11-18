@@ -11,16 +11,16 @@ import WorkSection from '@/components/home/WorkSection'
 export default function Home() {
   return (
     <main className="relative">
-      <LoadingScreen>
-        <Navbar />
-        <Hero />
-        <AboutMeSection />
-        <WorkSection />
-        <ContactMeSection />
-        <BottomSection />
-        <Footer />
-        <Alert />
-      </LoadingScreen>
+      {/* <LoadingScreen> */}
+      <Navbar />
+      <Hero />
+      <AboutMeSection />
+      <WorkSection />
+      <ContactMeSection />
+      <BottomSection />
+      <Footer />
+      <Alert />
+      {/* </LoadingScreen> */}
     </main >
   )
 }

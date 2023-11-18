@@ -4,6 +4,7 @@ import { outfit, patrick_hand, dosis } from './fonts'
 
 import { AlertContextProvider } from '@/contexts/AlertContext'
 import { RecaptchaProviders } from '@/providers/RecaptchaProvider'
+import { LoadingScreenProvider } from '@/contexts/LoadingContext'
 
 export const metadata: Metadata = {
   title: "Jacky FAN",
@@ -20,7 +21,9 @@ export default function RootLayout({
       <body className={`${outfit.className} ${outfit.variable} ${patrick_hand.variable} ${dosis.variable} overflow-x-hidden`}>
         <RecaptchaProviders>
           <AlertContextProvider>
-            {children}
+            <LoadingScreenProvider>
+              {children}
+            </LoadingScreenProvider>
           </AlertContextProvider >
         </RecaptchaProviders>
       </body>
