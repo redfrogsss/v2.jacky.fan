@@ -1,6 +1,6 @@
-import Letter3D from './Letter3D';
-import ContactForm from "./ContactForm";
-import FadeInBottom from '../animation/FadeInBottom';
+import Letter3D from '../Letter3D';
+import ContactForm from "../ContactForm";
+import FadeInBottom from '../../animation/FadeInBottom';
 
 export default function ContactMeSection() {
     return (

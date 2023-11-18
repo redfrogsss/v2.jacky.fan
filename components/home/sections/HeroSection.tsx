@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from "framer-motion";
-import FloatingArrow from "./FloatingArrow";
-import FadeInBottom from "../animation/FadeInBottom";
+import FloatingArrow from "../FloatingArrow";
+import FadeInBottom from "../../animation/FadeInBottom";
 
-export default function Hero() {
+export default function HeroSection() {
 
     return (
         <motion.section

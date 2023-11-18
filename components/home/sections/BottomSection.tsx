@@ -1,4 +1,4 @@
-import FadeInBottom from "../animation/FadeInBottom";
+import FadeInBottom from "../../animation/FadeInBottom";
 
 export default function BottomSection() {
     return (

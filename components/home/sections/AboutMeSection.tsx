@@ -1,6 +1,6 @@
 import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
-import Magnifier3D from "./Magnifier3D";
-import FadeInBottom from "../animation/FadeInBottom";
+import Magnifier3D from "../Magnifier3D";
+import FadeInBottom from "../../animation/FadeInBottom";
 
 export default function AboutMeSection() {
 

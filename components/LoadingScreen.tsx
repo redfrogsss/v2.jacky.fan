@@ -1,8 +1,8 @@
 'use client'
 
 import React from "react"
-import Pien from "./Pien"
 import { motion } from "framer-motion";
+import Pien from "./icons/Pien";
 
 export default function LoadingScreen({ children }: { children: React.ReactNode }) {
     return (
