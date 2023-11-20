@@ -5,16 +5,14 @@ import { AboutMeSection, ContactMeSection, HeroSection, BottomSection, WorkSecti
 export default function Home() {
   return (
     <main className="relative">
-      <Suspense fallback={<LoadingScreen />}>
-        <Navbar />
-        <HeroSection />
-        <AboutMeSection />
-        <WorkSection />
-        <ContactMeSection />
-        <BottomSection />
-        <Footer />
-        <Alert />
-      </Suspense>
+      <Navbar />
+      <HeroSection />
+      <AboutMeSection />
+      <WorkSection />
+      <ContactMeSection />
+      <BottomSection />
+      <Footer />
+      <Alert />
     </main >
   )
 }
