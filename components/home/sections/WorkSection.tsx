@@ -19,7 +19,7 @@ export default function WorkSection() {
                 </FadeInBottom>
 
                 <FadeInBottom>
-                    <p className="text-md md:text-xl mb-4 md:mb-8">I have worked on different projects for school and in my free time, and most of them have involved things related to the web.</p>
+                    <p className="text-md md:text-xl mb-4 md:mb-8">I worked on different school projects and side projects, most of which involved web-related things.</p>
                 </FadeInBottom>
             </div>
 
