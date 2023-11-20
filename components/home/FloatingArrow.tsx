@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from "framer-motion"
 import { ArrowLongDownIcon } from "@heroicons/react/24/outline";
 
 interface FloatingArrowProps {
@@ -10,23 +7,15 @@ interface FloatingArrowProps {
 export default function FloatingArrow(props: FloatingArrowProps) {
 
     return (
-        <motion.a
+        <a
             href="#about"
-            className="flex flex-col justify-center items-center absolute bottom-[10%] transition-all w-full z-20"
-            animate={{
-                y: [0, 15, 0],
-            }}
-            transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-            }}
+            className="flex flex-col justify-center items-center absolute bottom-[10%] transition-all w-fit z-20 left-0 right-0 mx-auto floating"
         >
             <p className="drop-shadow-sm">{props.text}</p>
             <span className="btn btn-circle btn-outline btn-sm border-0 mx-auto">
-                <ArrowLongDownIcon className="h-6 w-6 text-base-content" />
+                <ArrowLongDownIcon className="h-6 w-6 text-base-content hover:text-base-300" />
             </span>
-        </motion.a>
+        </a>
     );
 
 }

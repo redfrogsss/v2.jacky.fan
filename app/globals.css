@@ -82,6 +82,25 @@ body {
   }
 }
 
+.floating {
+  animation: floating 3s ease-in-out infinite;
+  /* animation-fill-mode: both; */
+}
+
+@keyframes floating {
+  0% {
+    transform: translatey(0%);
+  }
+
+  50% {
+    transform: translatey(-50%);
+  }
+
+  100% {
+    transform: translatey(0%);
+  }
+}
+
 .animation-delay-500 {
   animation-delay: 500ms;
 }
