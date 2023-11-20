@@ -22,7 +22,7 @@ export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
         <ClickAwayListener onClickAway={handleClickAway}>
             <motion.div
                 // href="#!"
-                className={`card bg-base-200 shadow-xl relative mx-auto w-5/6 cursor-pointer`}
+                className={`card bg-base-200 shadow-xl relative mx-auto w-5/6 max-w-[640px] cursor-pointer`}
                 animate={{
                     // width: isClicked ? "100%" : "fit-content",
                 }}
