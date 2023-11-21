@@ -57,8 +57,8 @@ export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
                             })}
                         </div>
                         <div className="flex gap-2">
-                            <button className="btn btn-info btn-sm">Info</button>
-                            <a href={item.viewLinks} className="btn btn-neutral btn-sm" target="_blank">View</a>
+                            {/* <button className="btn btn-info btn-sm">Info</button> */}
+                            {item.viewLinks ? <a href={item.viewLinks} className="btn btn-neutral btn-sm" target="_blank">View</a> : ""}
                         </div>
                     </div>
                 </motion.div>

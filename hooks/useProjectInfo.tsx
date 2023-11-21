@@ -16,7 +16,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 desc: 'A Student Attendance Management System built with ExpressJS/Java, Bootstrap, JQuery and MySQL. ',
                 tags: ['Web', 'School Project'],
                 info: undefined,
-                viewLink: 'https://github.com/redfrogsss/attendance-system-nodejs',
+                viewLinks: 'https://github.com/redfrogsss/attendance-system-nodejs',
                 img: "/projects/sas/01.png",
             },
             {
