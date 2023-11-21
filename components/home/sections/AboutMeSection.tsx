@@ -79,13 +79,6 @@ export default function AboutMeSection() {
                             </p>
                         </div>
 
-                        <div className="my-2 w-16 md:w-24 relative">
-                            <img src="/docker.svg" alt="Docker" className="w-full aspect-square" />
-                            <p className="text-center drop-shadow-sm">
-                                Docker
-                            </p>
-                        </div>
-
                     </div>
                 </FadeInBottom>
 
