@@ -23,7 +23,7 @@ export default function AboutMeSection() {
 
 
                 <FadeInBottom>
-                    <p className={sentencesClass}>Hello I am Jacky FAN, a <span className="text-primary">front end developer</span> in Hong Kong who focus on building high-quality websites.</p>
+                    <p className={sentencesClass}>Hello I am Jacky FAN, a <span className="text-primary">Frontend Developer</span> in Hong Kong who focus on building web applications.</p>
                 </FadeInBottom>
 
                 <FadeInBottom>
