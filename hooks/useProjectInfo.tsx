@@ -17,7 +17,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 tags: ['Web', 'School Project'],
                 info: undefined,
                 viewLinks: 'https://github.com/redfrogsss/attendance-system-nodejs',
-                img: "/projects/sas/01.png",
+                img: "/projects/sas/01.webp",
             },
             {
                 id: 2,
@@ -28,7 +28,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 tags: ['Web', 'Workshop'],
                 info: undefined,
                 viewLinks: 'https://github.com/redfrogsss/gdsc-portfolio',
-                img: "/projects/redstream/01.png",
+                img: "/projects/redstream/01.webp",
             },
             {
                 id: 3,
@@ -39,7 +39,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 tags: ['Web', 'AI', 'Final Year Projects'],
                 info: undefined,
                 viewLinks: 'https://github.com/redfrogsss/gdsc-portfolio',
-                img: "/projects/gdsc/1.png",
+                img: "/projects/gdsc/1.webp",
             },
             {
                 id: 4,
@@ -50,7 +50,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 tags: ['Todo App', 'Side Project'],
                 info: undefined,
                 viewLinks: 'https://github.com/redfrogsss/selfremind',
-                img: "/projects/selfremind/home.png",
+                img: "/projects/selfremind/home.webp",
             },
             {
                 id: 5,
@@ -61,7 +61,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 tags: ['Web', 'AI', 'Final Year Projects'],
                 info: undefined,
                 viewLinks: 'https://github.com/redfrogsss/CRS',
-                img: "/projects/crs/conversation-english-1.png",
+                img: "/projects/crs/conversation-english-1.webp",
             },
             {
                 id: 6,
@@ -72,7 +72,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 tags: ['Personal Website', 'Side Project'],
                 info: undefined,
                 viewLinks: 'https://github.com/redfrogsss/v2.jacky.fan',
-                img: "/projects/jackyfan/01.png",
+                img: "/projects/jackyfan/01.webp",
             },
         ];
 
