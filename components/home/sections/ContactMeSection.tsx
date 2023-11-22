@@ -17,7 +17,7 @@ export default function ContactMeSection() {
                 </FadeInBottom>
 
                 <FadeInBottom>
-                    <p className="text-md md:text-xl mb-4 md:mb-8">Feel free to leave me a message and say Hello to me.</p>
+                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">Feel free to leave me a message and say Hello to me.</p>
                 </FadeInBottom>
 
                 <FadeInBottom>

@@ -7,7 +7,7 @@ export default function BottomSection() {
                 <div className="container mx-auto py-12 lg:py-30">
                     <div className="flex flex-row justify-center">
                         <hr className="hidden xl:inline-block my-auto w-1/6 mr-4 border-base-content" />
-                        <p className="text-md md:text-xl">
+                        <p className="text-md md:text-xl leading-8">
                             That&apos;s all. Thanks for <span className="text-primary"> scrolling </span>and <span className="text-primary">visiting</span> my website.
                         </p>
                         <hr className="hidden xl:inline-block my-auto w-1/6 ml-4 border-base-content" />

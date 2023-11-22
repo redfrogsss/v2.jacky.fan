@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutMeSection() {
 
-    const sentencesClass = `text-md md:text-xl mb-4 md:mb-8`
+    const sentencesClass = `text-md md:text-xl mb-4 md:mb-8 leading-8`
 
     // Add animation transition from arrow to title
     return (
