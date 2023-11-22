@@ -1,6 +1,7 @@
 import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 import Magnifier3D from "../Magnifier3D";
 import FadeInBottom from "../../animation/FadeInBottom";
+import Image from "next/image";
 
 export default function AboutMeSection() {
 
@@ -38,42 +39,42 @@ export default function AboutMeSection() {
                 <FadeInBottom>
                     <div className="rounded-md glass w-fit flex flex-row flex-wrap justify-center md:justify-start gap-4 mb-4 md:mb-8 pb-2 px-4">
                         <div className="my-2 w-16 md:w-24 relative">
-                            <img src="/react.svg" alt="React" className="w-full aspect-square" />
+                            <Image src="/react.svg" alt="React" className="w-full aspect-square" width={64} height={64} />
                             <p className="text-center drop-shadow-sm">
                                 ReactJS
                             </p>
                         </div>
 
                         <div className="my-2 w-16 md:w-24 relative">
-                            <img src="/typescript.svg" alt="Typescript" className="w-full aspect-square" />
+                            <Image src="/typescript.svg" alt="Typescript" className="w-full aspect-square" width={64} height={64} />
                             <p className="text-center drop-shadow-sm">
                                 TypeScript
                             </p>
                         </div>
 
                         <div className="my-2 w-16 md:w-24 relative">
-                            <img src="/html5.svg" alt="HTML5" className="w-full aspect-square" />
+                            <Image src="/html5.svg" alt="HTML5" className="w-full aspect-square" width={64} height={64} />
                             <p className="text-center drop-shadow-sm">
                                 HTML5
                             </p>
                         </div>
 
                         <div className="my-2 w-16 md:w-24 relative">
-                            <img src="/css.svg" alt="CSS" className="w-full aspect-square" />
+                            <Image src="/css.svg" alt="CSS" className="w-full aspect-square" width={64} height={64} />
                             <p className="text-center drop-shadow-sm">
                                 CSS
                             </p>
                         </div>
 
                         <div className="my-2 w-16 md:w-24 relative">
-                            <img src="/mysql.svg" alt="MySQL" className="w-full aspect-square" />
+                            <Image src="/mysql.svg" alt="MySQL" className="w-full aspect-square" width={64} height={64} />
                             <p className="text-center drop-shadow-sm">
                                 MySQL
                             </p>
                         </div>
 
                         <div className="my-2 w-16 md:w-24 relative">
-                            <img src="/git.svg" alt="Git" className="w-full aspect-square" />
+                            <Image src="/git.svg" alt="Git" className="w-full aspect-square" width={64} height={64} />
                             <p className="text-center drop-shadow-sm">
                                 Git
                             </p>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ClickAwayListener from 'react-click-away-listener';
 import ProjectInfoProps from '@/interfaces/ProjectInfoProps';
+import Image from 'next/image';
 
 export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
 
@@ -35,8 +36,7 @@ export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
                     }}
                     onClick={(e) => { handleClick(e) }}
                 >
-                    {/* <img src="https://plchldr.co/i/568x378" alt="Shoes" className="rounded-xl" /> */}
-                    <img src={item.img} alt={item.name} className="rounded-xl" />
+                    <Image src={item.img} alt={item.name} className="rounded-xl object-contain" fill={true} />
                     <h3 className="absolute top-2 text-xl">{item.name}</h3>
                     <p className="absolute bottom-2 left-2">{item.tech}</p>
                     <p className="absolute bottom-2 right-2">{item.date}</p>
