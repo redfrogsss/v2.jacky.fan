@@ -1,4 +1,4 @@
-import { Outfit, Patrick_Hand, Dosis } from "next/font/google";
+import { Outfit, Patrick_Hand, Dosis, Cabin_Sketch } from "next/font/google";
 
 export const outfit = Outfit({
     subsets: ["latin"],
@@ -20,4 +20,11 @@ export const dosis = Dosis({
     display: "swap",
     weight: ["400", "500", "700"],
     variable: "--font-dosis",
+});
+
+export const cabinSketch = Cabin_Sketch({
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["400", "700"],
+    variable: "--font-cabin-sketch",
 });

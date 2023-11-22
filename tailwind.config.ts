@@ -32,6 +32,10 @@ const config: Config = {
                 ...defaultTheme.fontFamily.sans,
             ],
             dosis: ["var(--font-dosis)", ...defaultTheme.fontFamily.sans],
+            cabin_sketch: [
+                "var(--font-cabin-sketch)",
+                ...defaultTheme.fontFamily.sans,
+            ],
         },
     },
     plugins: [
@@ -46,6 +50,12 @@ const config: Config = {
     daisyui: {
         themes: [
             {
+                winter: {
+                    ...require("daisyui/src/theming/themes")[
+                        "[data-theme=winter]"
+                    ],
+                    primary: "#0764CE",
+                },
                 cupcake: {
                     ...require("daisyui/src/theming/themes")[
                         "[data-theme=cupcake]"
@@ -81,7 +91,6 @@ const config: Config = {
             "acid",
             "lemonade",
             "coffee",
-            "winter",
             "dim",
             "nord",
             "sunset",
