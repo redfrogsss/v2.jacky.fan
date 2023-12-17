@@ -9,7 +9,7 @@ export default function FloatingArrow(props: FloatingArrowProps) {
     return (
         <a
             href="#about"
-            className="flex flex-col justify-center items-center absolute bottom-[10%] transition-all w-fit z-20 left-0 right-0 mx-auto floating"
+            className="flex flex-col justify-center items-center absolute bottom-[10%] transition-all w-fit z-20 left-0 right-0 mx-auto animate-bounce"
             aria-label={props.text}
         >
             <span className="btn btn-circle btn-outline btn-sm border-0 mx-auto">
