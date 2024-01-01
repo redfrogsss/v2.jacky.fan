@@ -10,7 +10,7 @@ export default function Footer() {
                 </ul>
             </div>
             <div>
-                <p><a href="https://jacky.fan" className="text-primary">Jacky.Fan</a> @ 2023 - Open Source via <a className="link link-primary no-underline" href="https://github.com/redfrogsss/v2.jacky.fan" target="_blank">GitHub</a>.</p>
+                <p><a href="https://jacky.fan" className="text-primary">Jacky.Fan</a> @ 2023 ~ 2024<br />Open Source via <a className="link link-primary no-underline" href="https://github.com/redfrogsss/v2.jacky.fan" target="_blank">GitHub</a></p>
             </div>
         </footer>
     );
