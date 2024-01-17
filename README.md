@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/redfrogsss/v2.jacky.fan/badge)](https://www.codefactor.io/repository/github/redfrogsss/v2.jacky.fan)
+
 You can access this website via https://jacky.fan
 
 # [v2.Jacky.Fan](https://jacky.fan) - My Personal Website
