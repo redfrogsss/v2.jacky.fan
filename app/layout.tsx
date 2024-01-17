@@ -5,6 +5,7 @@ import { outfit, patrick_hand, dosis, cabinSketch } from './fonts'
 import { AlertContextProvider } from '@/contexts/AlertContext'
 import { RecaptchaProviders } from '@/providers/RecaptchaProvider'
 import { LoadingScreenProvider } from '@/contexts/LoadingContext'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 export const metadata: Metadata = {
   title: "Jacky FAN",
@@ -27,6 +28,7 @@ export default function RootLayout({
           </AlertContextProvider >
         </RecaptchaProviders>
       </body>
+      <GoogleAnalytics />
     </html>
   )
 }
