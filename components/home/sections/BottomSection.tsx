@@ -8,7 +8,7 @@ export default function BottomSection() {
                     <div className="flex flex-row justify-center">
                         <hr className="hidden xl:inline-block my-auto w-1/6 mr-4 border-base-content" />
                         <p className="text-md md:text-xl leading-8">
-                            That&apos;s all. Thanks for <span className="text-primary"> scrolling </span>and <span className="text-primary">visiting</span> my website.
+                            That&apos;s all. Thanks for <span className="text-primary"> scrolling </span>and <span className="text-primary">visiting</span> my website. 💖
                         </p>
                         <hr className="hidden xl:inline-block my-auto w-1/6 ml-4 border-base-content" />
                     </div>
