@@ -1,22 +1,20 @@
-
 'use client'
 
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { Suspense, useRef, useState, useEffect } from "react";
-import { useMotionValueEvent, useScroll } from "framer-motion"
+import { Suspense, useRef, useState, useEffect, useContext } from "react";
 import { calcRotation } from "@/helpers/calcRotation";
 import { motion } from "framer-motion";
+import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
 
 export default function Letter3D() {
 
     const [inView, setInView] = useState(false);
     const ref = useRef(null);
     const [modelRotation, setModelRotation] = useState([calcRotation(-30), calcRotation(120), calcRotation(0)]);
-    const { scrollYProgress } = useScroll();
     const [gltf, setGltf] = useState<any>(undefined);
     const [topValue, setTopValue] = useState(0);
+    const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
 
     useEffect(() => {
         new GLTFLoader().load(`/letter.glb`, async (gltf) => {
@@ -24,11 +22,13 @@ export default function Letter3D() {
         });
     }, [])
 
-    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    useEffect(()=>{
         if (!inView) { return; }
-        setModelRotation([calcRotation(latest * 360 / 4 + 10), calcRotation(latest * 360 / 4 + 0), calcRotation(latest * 360 / 4 + 180)]);
-        setTopValue(latest * 30 - 25);
-    })
+        let posY = ((scrollPos?.scroll.y ?? 0) / (scrollPos?.limit.y ?? 0));
+        
+        setModelRotation([calcRotation(posY * 360 / 4 + 10), calcRotation(posY * 360 / 4 + 0), calcRotation(posY * 360 / 4 + 180)]);
+        setTopValue(posY * 30 - 25);
+    }, [scrollPos])
 
     useEffect(() => {
         const observer = new IntersectionObserver(

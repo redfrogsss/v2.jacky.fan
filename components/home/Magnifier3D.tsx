@@ -2,24 +2,22 @@
 
 import { Suspense, useRef, useState, useEffect, useContext } from "react"
 import { Canvas } from "@react-three/fiber"
-import { Environment } from "@react-three/drei"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { useMotionValueEvent, useScroll } from "framer-motion"
 import { calcRotation } from "@/helpers/calcRotation";
 import { motion } from "framer-motion";
 import { LoadingScreenContext } from "@/contexts/LoadingContext";
-import { LoadingManager } from "three";
-
+import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
+    
 export default function Magnifier3D() {
     const [inView, setInView] = useState(false);
     const ref = useRef(null);
     const [modelRotation, setModelRotation] = useState([calcRotation(90), calcRotation(30), calcRotation(0)]);
-    const { scrollYProgress } = useScroll();
 
     const [gltf, setGltf] = useState<any>(undefined);
     const [topValue, setTopValue] = useState(6);
 
     const { isLoadingDone, setIsLoadingDone } = useContext(LoadingScreenContext);
+    const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
 
     useEffect(() => {
         new GLTFLoader().load(`/magnifier.glb`,
@@ -30,11 +28,13 @@ export default function Magnifier3D() {
         );
     }, [])
 
-    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    useEffect(()=>{
         if (!inView) { return; }
-        setModelRotation([calcRotation(latest * 360 / 2 + 210), calcRotation(latest * 360 / 4 - 230), calcRotation(latest * 360 / 4 - 50)]);
-        setTopValue(latest * 30);
-    })
+        let posY = ((scrollPos?.scroll.y ?? 0) / (scrollPos?.limit.y ?? 0));
+        
+        setModelRotation([calcRotation(posY * 360 / 2 + 220), calcRotation(posY * 360 / 4 - 230), calcRotation(posY * 360 / 4 - 40)]);
+        setTopValue(posY * 30);
+    }, [scrollPos])
 
     useEffect(() => {
         const observer = new IntersectionObserver(

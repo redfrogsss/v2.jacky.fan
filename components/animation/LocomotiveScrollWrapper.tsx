@@ -1,10 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
+import { LocomotiveScrollPositionContext } from '@/contexts/LocomotiveScrollPositionContext';
+import { useContext, useEffect, useRef } from 'react';
 
 function LocomotiveScrollWrappper({ children }: { children: React.ReactNode }) {
 
     const scrollRef = useRef<HTMLDivElement | null>(null);
+
+    const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
 
     useEffect(() => {
         (async () => {
@@ -17,7 +20,7 @@ function LocomotiveScrollWrappper({ children }: { children: React.ReactNode }) {
             });
 
             // Handle Anchor Links because Locomotive Scroll breaks the behavior of anchor scroll
-            scrollRef.current?.querySelectorAll("a[href*='#']").forEach(anchor => {
+            scrollRef.current?.querySelectorAll("a[href^='#']").forEach(anchor => {
                 anchor.addEventListener("click", event => {
                     const anchorTarget = anchor.getAttribute("href") ?? "";
 
@@ -25,6 +28,12 @@ function LocomotiveScrollWrappper({ children }: { children: React.ReactNode }) {
                     locomotiveScroll.scrollTo(anchorTarget)
                 })
             });
+
+            // Get Scroll Position
+            locomotiveScroll.on("scroll", ({limit, scroll}) => {
+                let newScrollPos = {limit, scroll};
+                if (setScrollPos) setScrollPos(newScrollPos);
+            })
         }
         )()
     }, [])
