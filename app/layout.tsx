@@ -6,6 +6,7 @@ import { AlertContextProvider } from '@/contexts/AlertContext'
 import { RecaptchaProviders } from '@/providers/RecaptchaProvider'
 import { LoadingScreenProvider } from '@/contexts/LoadingContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import LocomotiveScrollWrappper from '@/components/animation/LocomotiveScrollWrapper'
 
 export const metadata: Metadata = {
   title: "Jacky FAN",
@@ -23,7 +24,9 @@ export default function RootLayout({
         <RecaptchaProviders>
           <AlertContextProvider>
             <LoadingScreenProvider>
-              {children}
+              <LocomotiveScrollWrappper>
+                {children}
+              </LocomotiveScrollWrappper>
             </LoadingScreenProvider>
           </AlertContextProvider >
         </RecaptchaProviders>
