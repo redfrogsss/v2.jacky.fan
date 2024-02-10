@@ -166,7 +166,9 @@ html.has-scroll-dragging {
   height: 100%;
   transform-origin: center right;
   transition: transform 0.3s, opacity 0.3s;
-  opacity: 0; }
+  opacity: 0;
+  z-index: 1000;
+}
   .c-scrollbar:hover {
     transform: scaleX(1.45); }
   .c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
@@ -190,7 +192,9 @@ html.has-scroll-dragging {
   border-radius: 10px;
   margin: 2px;
   cursor: -webkit-grab;
-  cursor: grab; }
+  cursor: grab;
+  z-index: 1000;
+}
   .has-scroll-dragging .c-scrollbar_thumb {
     cursor: -webkit-grabbing;
     cursor: grabbing; }

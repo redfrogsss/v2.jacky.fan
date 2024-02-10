@@ -6,7 +6,6 @@ import { AlertContextProvider } from '@/contexts/AlertContext'
 import { RecaptchaProviders } from '@/providers/RecaptchaProvider'
 import { LoadingScreenProvider } from '@/contexts/LoadingContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-import LocomotiveScrollWrappper from '@/components/animation/LocomotiveScrollWrapper'
 import { LocomotiveScrollPositionProvider } from '@/contexts/LocomotiveScrollPositionContext'
 
 export const metadata: Metadata = {
@@ -26,9 +25,7 @@ export default function RootLayout({
           <AlertContextProvider>
             <LoadingScreenProvider>
               <LocomotiveScrollPositionProvider>
-                <LocomotiveScrollWrappper>
-                  {children}
-                </LocomotiveScrollWrappper>
+                {children}
               </LocomotiveScrollPositionProvider>
             </LoadingScreenProvider>
           </AlertContextProvider >
