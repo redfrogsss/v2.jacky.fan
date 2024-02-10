@@ -30,7 +30,7 @@ function LocomotiveScrollWrappper({ children }: { children: React.ReactNode }) {
     }, [])
 
     return (
-        <div ref={scrollRef}>
+        <div ref={scrollRef} data-scroll-container>
             {children}
         </div>
     );
