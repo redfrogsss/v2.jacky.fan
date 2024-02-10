@@ -20,7 +20,7 @@ function LocomotiveScrollWrappper({ children }: { children: React.ReactNode }) {
             });
 
             // Handle Anchor Links because Locomotive Scroll breaks the behavior of anchor scroll
-            scrollRef.current?.querySelectorAll("a[href^='#']").forEach(anchor => {
+            document.querySelectorAll("a[href^='#']").forEach(anchor => {
                 anchor.addEventListener("click", event => {
                     const anchorTarget = anchor.getAttribute("href") ?? "";
 
