@@ -17,7 +17,7 @@ export const patrick_hand = Patrick_Hand({
 
 export const dosis = Dosis({
     subsets: ["latin"],
-    display: "swap",
+    // display: "swap",
     weight: ["400", "500", "700"],
     variable: "--font-dosis",
 });
