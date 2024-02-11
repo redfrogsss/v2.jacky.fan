@@ -1,24 +1,32 @@
 'use client'
 
 import { AlertContext, AlertContextProvider } from "@/contexts/AlertContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import ToggleDayNight from "./ToggleDayNight";
+import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
 
 export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const [showModal, setShowModal] = useState(false);
-    const { alert, setAlert } = useContext(AlertContext);
+    const [isTop, setIsTop] = useState(true);
 
-    const handleScroll = () => {
-        const currentScrollPos = window.scrollY;
+    const { alert, setAlert } = useContext(AlertContext);
+    const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
+
+    const navbarRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(()=>{
+        const currentScrollPos = scrollPos?.scroll.y ?? 0;
+        const navbarHeight = navbarRef.current?.offsetHeight ?? 0;
 
         if (!showModal) {
-            setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+            setVisible(prevScrollPos > currentScrollPos || currentScrollPos <= navbarHeight);
         }
 
         setPrevScrollPos(currentScrollPos);
-    };
+        setIsTop(currentScrollPos <= navbarHeight);
+    }, [scrollPos])
 
     const toggleEmailModal = () => {
         setShowModal(!showModal);
@@ -36,19 +44,9 @@ export default function Navbar() {
         }
     }
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
-        return () => window.removeEventListener('scroll', handleScroll);
-
-    }, [prevScrollPos, visible, handleScroll]);
-
-    // Debug
-    useEffect(() => { console.log({ alert }) }, [alert])
-
     return (
         <AlertContextProvider>
-            <div className={`navbar bg-base-300 fixed z-50 transition-all ${visible ? "visible" : "hidden"} w-screen`}>
+            <div className={`navbar bg-base-300 fixed z-50 transition-all w-screen ${visible ? "translate-y-0" : `-translate-y-[110%]`} ${isTop ? "shadow-none" : "shadow-md"} rounded-2xl`} ref={navbarRef}>
                 <div className="flex-1">
                     <a href="#hero" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-dosis font-medium drop-shadow">🥺 Jacky FAN</span></a>
                 </div>
