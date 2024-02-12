@@ -46,11 +46,11 @@ export default function Navbar() {
 
     return (
         <AlertContextProvider>
-            <div className={`navbar bg-base-300 fixed z-50 transition-all w-screen ${visible ? "translate-y-0" : `-translate-y-[110%]`} ${isTop ? "shadow-none" : "shadow-md"} rounded-2xl`} ref={navbarRef}>
+            <div className={`navbar bg-base-300 fixed z-50 transition-all w-screen ${visible ? "translate-y-0" : `-translate-y-[110%]`} ${isTop ? "shadow-none" : "shadow-md"}`} ref={navbarRef}>
                 <div className="flex-1">
                     <a href="#hero" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-dosis font-medium drop-shadow">🥺 Jacky FAN</span></a>
                 </div>
-                <div className="flex-none flex mx-5">
+                <div className="flex-none flex md:mx-5">
                     <ul className="menu menu-horizontal px-1">
                         <li className="flex"><ToggleDayNight /></li>
                         <li className="hidden md:flex"><a href="#about">About</a></li>
