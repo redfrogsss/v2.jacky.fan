@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function FadeInBottom({ children, triggerPoint = "-20%", extraClassName = "" }: { children: React.ReactNode, triggerPoint?: string, extraClassName?: string }) {
+export default function FadeInBottom({ children, triggerPoint = "-20%", extraClassName = "" }: { children?: React.ReactNode, triggerPoint?: string, extraClassName?: string }) {
 
     const [isIntersecting, setIsIntersecting] = useState(false);
 

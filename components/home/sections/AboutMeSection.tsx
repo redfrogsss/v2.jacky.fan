@@ -7,7 +7,6 @@ export default function AboutMeSection() {
 
     const sentencesClass = `text-md md:text-xl mb-4 md:mb-8 leading-8`
 
-    // Add animation transition from arrow to title
     return (
         <section id="about" className="md:min-h-[900px] relative overflow-x-clip">
             <div className="container mx-auto py-12 md:py-32 xl:pr-[30%] 2xl:pr-[20%]">
