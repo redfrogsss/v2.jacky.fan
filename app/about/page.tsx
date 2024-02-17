@@ -23,7 +23,7 @@ export default function AboutPage() {
 
                         <FadeInBottom>
                             <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                                Hi There. My name is Jacky FAN, and I build websites and eat computer bugs. 😉
+                                Hi There. My name is Jacky FAN. I build websites and eat computer bugs. 😉
                             </p>
 
                             <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🤔 Who am I?</h2>
@@ -89,6 +89,59 @@ export default function AboutPage() {
                                 <a href="#!" className="underline text-blue-500 hover:text-blue-700 transition-all">View All of My Project Here</a>
                             </p>
 
+                        </FadeInBottom>
+
+
+                        <FadeInBottom>
+                            <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">💼 Experience</h2>
+
+                            <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
+                                I've been fortunate to work on different projects, where I've learned and improved my skills. Here are some key highlights:
+                            </p>
+
+                            <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+                                <li>
+                                    <div className="timeline-middle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                                    </div>
+                                    <div className="timeline-start md:text-end mb-10">
+                                        <time className="font-mono italic">July 2019</time>
+                                        <div className="text-lg font-black">IT Technician Trainee</div>
+                                        <div className="text-sm italic mb-2">CCC Tam Lee Lai Fun Memorial Secondary School</div>
+                                        I gained hands-on experience troubleshooting hardware and software issues, assisting with computer system upgrade, setting up information kiosk, and collaborating with team members to provide efficient technical support. 
+                                    </div>
+                                    <hr />
+                                </li>
+                                <li>
+                                    <hr />
+                                    <div className="timeline-middle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                                    </div>
+                                    <div className="timeline-end mb-10">
+                                        <time className="font-mono italic">June 2022</time>
+                                        <div className="text-lg font-black">Summer Intern</div>
+                                        <div className="text-sm italic mb-2">Consumer Council</div>
+                                        I contributed to various projects, gained practical experience in developing Intranet CMS enhancement and inventory management enhancement using PHP, while also conducting testing on Intranet features utilizing Selenium.
+                                    </div>
+                                    <hr />
+                                </li>
+                                <li>
+                                    <hr />
+                                    <div className="timeline-middle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                                    </div>
+                                    <div className="timeline-start md:text-end mb-10">
+                                        <time className="font-mono italic">July 2023</time>
+                                        <div className="text-lg font-black">Frontend Developer</div>
+                                        <div className="text-sm italic mb-2">theOrigo Ltd.</div>
+                                        I implemented intuitive user interfaces and interactive web experiences using HTML, CSS, JavaScript amd JQuery, while also collaborating with design and backend teams to ensure seamless integration and functionality across multiple platforms.
+                                    </div>
+                                    <hr />
+                                </li>
+                            </ul>
+                        </FadeInBottom>
+
+                        <FadeInBottom>
                             <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">📫 Contact Me</h2>
 
                             <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
@@ -101,8 +154,9 @@ export default function AboutPage() {
                                 <li><a href="https://jacky.fan" className="underline text-blue-500 hover:text-blue-700 transition-all">Website</a></li>
                                 <li><a href="https://www.linkedin.com/in/jacky-fan-dev/" className="underline text-blue-500 hover:text-blue-700 transition-all">LinkedIn</a></li>
                             </ul>
-                            
                         </FadeInBottom>
+
+
                     </div>
                 </section>
                 
