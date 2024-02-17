@@ -49,51 +49,53 @@ const config: Config = {
     // daisyUI config (optional - here are the default values)
     daisyui: {
         themes: [
+            // "nord",
             {
-                winter: {
-                    ...require("daisyui/src/theming/themes")[
-                        "[data-theme=winter]"
-                    ],
+                nord: {
+                    ...require("daisyui/src/theming/themes")["nord"],
                     primary: "#0764CE",
                 },
-                cupcake: {
-                    ...require("daisyui/src/theming/themes")[
-                        "[data-theme=cupcake]"
-                    ],
-                    primary: "#016C71",
-                },
             },
-            "night",
-
-            "light",
-            "dark",
-            "bumblebee",
-            "emerald",
-            "corporate",
-            "synthwave",
-            "retro",
-            "cyberpunk",
-            "valentine",
-            "halloween",
-            "garden",
-            "forest",
-            "aqua",
-            "lofi",
-            "pastel",
-            "fantasy",
-            "wireframe",
-            "black",
-            "luxury",
-            "dracula",
-            "cmyk",
-            "autumn",
-            "business",
-            "acid",
-            "lemonade",
-            "coffee",
-            "dim",
-            "nord",
             "sunset",
+            // {
+            //     winter: {
+            //         ...require("daisyui/src/theming/themes")["winter"],
+            //         primary: "#0764CE",
+            //     },
+            //     cupcake: {
+            //         ...require("daisyui/src/theming/themes")["cupcake"],
+            //         primary: "#016C71",
+            //     },
+            // },
+            // "night",
+
+            // "light",
+            // "dark",
+            // "bumblebee",
+            // "emerald",
+            // "corporate",
+            // "synthwave",
+            // "retro",
+            // "cyberpunk",
+            // "valentine",
+            // "halloween",
+            // "garden",
+            // "forest",
+            // "aqua",
+            // "lofi",
+            // "pastel",
+            // "fantasy",
+            // "wireframe",
+            // "black",
+            // "luxury",
+            // "dracula",
+            // "cmyk",
+            // "autumn",
+            // "business",
+            // "acid",
+            // "lemonade",
+            // "coffee",
+            // "dim",
         ], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
         // themes: true, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
         darkTheme: "night", // name of one of the included themes for dark mode

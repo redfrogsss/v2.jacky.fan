@@ -8,7 +8,7 @@ export default function AboutMeSection() {
     const sentencesClass = `text-md md:text-xl mb-4 md:mb-8 leading-8`
 
     return (
-        <section id="about" className="md:min-h-[900px] relative overflow-x-clip">
+        <section id="about" className="md:min-h-[900px] relative overflow-x-clip bg-base-100 text-base-content">
             <div className="container mx-auto py-12 md:py-32 xl:pr-[30%] 2xl:pr-[20%]">
                 <FadeInBottom>
                     <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
