@@ -201,3 +201,11 @@ html.has-scroll-dragging {
   [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
     right: auto;
     bottom: 0; }
+
+
+
+
+.transition-all {
+  transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  transition-duration: 400ms
+}

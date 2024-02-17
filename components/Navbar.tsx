@@ -4,6 +4,7 @@ import { AlertContext, AlertContextProvider } from "@/contexts/AlertContext";
 import { useContext, useEffect, useRef, useState } from "react";
 import ToggleDayNight from "./ToggleDayNight";
 import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
+import Link from "next/link";
 
 export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -12,11 +13,11 @@ export default function Navbar() {
     const [isTop, setIsTop] = useState(true);
 
     const { alert, setAlert } = useContext(AlertContext);
-    const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
+    const { scrollPos, setScrollPos } = useContext(LocomotiveScrollPositionContext);
 
     const navbarRef = useRef<HTMLDivElement | null>(null);
 
-    useEffect(()=>{
+    useEffect(() => {
         const currentScrollPos = scrollPos?.scroll.y ?? 0;
         const navbarHeight = navbarRef.current?.offsetHeight ?? 0;
 
@@ -48,13 +49,13 @@ export default function Navbar() {
         <AlertContextProvider>
             <div className={`navbar bg-base-300 fixed z-50 transition-all w-screen ${visible ? "translate-y-0" : `-translate-y-[110%]`} ${isTop ? "shadow-none" : "shadow-md"}`} ref={navbarRef}>
                 <div className="flex-1">
-                    <a href="#hero" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-dosis font-medium drop-shadow">🥺 Jacky FAN</span></a>
+                    <Link href="/" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-dosis font-medium drop-shadow">🥺 Jacky FAN</span></Link>
                 </div>
                 <div className="flex-none flex md:mx-5">
                     <ul className="menu menu-horizontal px-1">
                         <li className="flex"><ToggleDayNight /></li>
-                        <li className="hidden md:flex"><a href="#about">About</a></li>
-                        <li className="hidden md:flex"><a href="#work">Work</a></li>
+                        <li className="hidden md:flex"><Link href="/about">About</Link></li>
+                        <li className="hidden md:flex"><Link href="#work">Work</Link></li>
                         <li className="hidden md:flex">
                             <details>
                                 <summary>
@@ -62,9 +63,9 @@ export default function Navbar() {
                                 </summary>
                                 <ul className="p-2 bg-base-100">
                                     <li><button onClick={toggleEmailModal}>Email</button></li>
-                                    <li><a href="https://github.com/redfrogsss" target="_blank">GitHub</a></li>
-                                    <li><a href="https://www.linkedin.com/in/jacky-fan-682516190/" target="_blank">LinkedIn</a></li>
-                                    <li><a href="https://blog.jacky.fan" target="_blank">Blog</a></li>
+                                    <li><Link href="https://github.com/redfrogsss" target="_blank">GitHub</Link></li>
+                                    <li><Link href="https://www.linkedin.com/in/jacky-fan-682516190/" target="_blank">LinkedIn</Link></li>
+                                    <li><Link href="https://blog.jacky.fan" target="_blank">Blog</Link></li>
                                     <dialog id="email-modal" className={`modal modal-bottom sm:modal-middle z-30 ${showModal ? "modal-open" : ""}`} open={showModal}>
                                         <div className="modal-box">
                                             <h3 className="font-bold text-lg">Email</h3>
