@@ -25,7 +25,7 @@ export default function RootLayout({
           <AlertContextProvider>
             <LoadingScreenProvider>
               <LocomotiveScrollPositionProvider>
-                {children}
+                  {children}
               </LocomotiveScrollPositionProvider>
             </LoadingScreenProvider>
           </AlertContextProvider >
