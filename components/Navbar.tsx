@@ -17,6 +17,12 @@ export default function Navbar() {
 
     const navbarRef = useRef<HTMLDivElement | null>(null);
 
+    useEffect(()=>{
+        const navbarHeight = navbarRef.current?.offsetHeight ?? 0;
+
+        document.querySelector("html")?.style.setProperty("--navbar-height", `${navbarHeight}px`);
+    }, [])
+
     useEffect(() => {
         const currentScrollPos = scrollPos?.scroll.y ?? 0;
         const navbarHeight = navbarRef.current?.offsetHeight ?? 0;

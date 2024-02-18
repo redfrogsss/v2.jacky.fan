@@ -5,7 +5,7 @@ import { AboutMeSection, ContactMeSection, HeroSection, BottomSection, WorkSecti
 
 export default function Home() {
   return (
-    <Page>
+    <Page reserveNavbarHeight={false}>
       <HeroSection />
       <AboutMeSection />
       <WorkSection />
