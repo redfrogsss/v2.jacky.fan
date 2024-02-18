@@ -6,15 +6,17 @@ import { Suspense, useRef, useState, useEffect, useContext } from "react";
 import { calcRotation } from "@/helpers/calcRotation";
 import { motion } from "framer-motion";
 import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
+import { LocomotiveScrollContext } from "@/contexts/LocomotiveScrollContext";
 
 export default function Letter3D() {
 
     const [inView, setInView] = useState(false);
     const ref = useRef(null);
-    const [modelRotation, setModelRotation] = useState([calcRotation(-30), calcRotation(120), calcRotation(0)]);
+    const [modelRotation, setModelRotation] = useState([calcRotation(-10), calcRotation(70), calcRotation(-20)]);
     const [gltf, setGltf] = useState<any>(undefined);
-    const [topValue, setTopValue] = useState(0);
+    const [topValue, setTopValue] = useState(-10);
     const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
+    const {locoScroll, setlocoScroll} = useContext(LocomotiveScrollContext);
 
     useEffect(() => {
         new GLTFLoader().load(`/letter.glb`, async (gltf) => {
@@ -24,11 +26,13 @@ export default function Letter3D() {
 
     useEffect(()=>{
         if (!inView) { return; }
-        let posY = ((scrollPos?.scroll.y ?? 0) / (scrollPos?.limit.y ?? 0));
+        let posY = ((scrollPos?.scroll?.y ?? 0) / (scrollPos?.limit?.y ?? 1));
+        let scrollY = scrollPos?.scroll?.y ?? 0;
         
-        setModelRotation([calcRotation(posY * 360 / 4 + 10), calcRotation(posY * 360 / 4 + 0), calcRotation(posY * 360 / 4 + 180)]);
-        setTopValue(posY * 30 - 25);
-    }, [scrollPos])
+        setModelRotation([calcRotation(Math.min(scrollY * 0.2 - 10, 30)), calcRotation(70), calcRotation(-20)]);
+        setTopValue(-10 * (posY));
+
+    }, [scrollPos, locoScroll])
 
     useEffect(() => {
         const observer = new IntersectionObserver(

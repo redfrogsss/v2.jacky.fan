@@ -2,12 +2,14 @@
 
 import { LocomotiveScrollPositionContext } from '@/contexts/LocomotiveScrollPositionContext';
 import { useContext, useEffect, useRef } from 'react';
+import { LocomotiveScrollContext } from '@/contexts/LocomotiveScrollContext';
 
 function LocomotiveScrollWrappper({ children }: { children: React.ReactNode }) {
 
     const scrollRef = useRef<HTMLDivElement | null>(null);
 
     const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
+    const {locoScroll, setlocoScroll} = useContext(LocomotiveScrollContext);
 
     useEffect(() => {
         (async () => {
@@ -33,7 +35,12 @@ function LocomotiveScrollWrappper({ children }: { children: React.ReactNode }) {
             locomotiveScroll.on("scroll", ({limit, scroll}) => {
                 let newScrollPos = {limit, scroll};
                 if (setScrollPos) setScrollPos(newScrollPos);
-            })
+                if (setlocoScroll) setlocoScroll(locomotiveScroll);
+            });
+            
+            locomotiveScroll.on("call", () => {
+                if (setlocoScroll) setlocoScroll(locomotiveScroll);
+            });
         }
         )()
     }, [])
