@@ -67,7 +67,7 @@ export default function ProjectBanner({
                             {posReverse && 
                                 <div className={`relative lg:absolute right-0 w-full lg:w-[calc(50vw-2rem)] max-w-[924px] aspect-video lg:aspect-auto lg:pb-[100%] !sm:max-lg:top-0 transition-opacity ${showImg ? "opacity-50" : "opacity-100"}`} ref={imgRef} style={{ top: `calc(-100px * (${posPercentage} / 100))` }}>
                                     <Image
-                                        src="/projects/v2jackyfan/01.webp"
+                                        src={img}
                                         fill={true}
                                         alt="Project Name"
                                         className="object-contain"
