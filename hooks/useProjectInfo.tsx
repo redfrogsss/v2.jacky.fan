@@ -97,7 +97,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
                 img: "/projects/nuxt-blog/01.webp",
             },
             {
-                id: 8,
+                id: 9,
                 name: 'v2.Jacky.Fan',
                 tech: 'NextJS',
                 date: 'November 2023',

@@ -61,7 +61,8 @@ export default function Navbar() {
                     <ul className="menu menu-horizontal px-1">
                         <li className="flex"><ToggleDayNight /></li>
                         <li className="hidden md:flex"><Link href="/about">About</Link></li>
-                        <li className="hidden md:flex"><Link href="#work">Work</Link></li>
+                        <li className="hidden md:flex"><Link href="/projects">Projects</Link></li>
+                        <li className="hidden md:flex"><Link href="/contact">Contact</Link></li>
                         <li className="hidden md:flex">
                             <details>
                                 <summary>
