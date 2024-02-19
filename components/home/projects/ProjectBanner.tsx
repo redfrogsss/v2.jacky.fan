@@ -31,8 +31,6 @@ export default function ProjectBanner({
     useEffect(() => {
         setPosPercentage(clamp(((imgWrapperRef.current?.getBoundingClientRect().top ?? 100) / (window.innerHeight * 0.75)) * 100, 0, 100));
         const imgTop = imgRef.current?.getBoundingClientRect().top ?? 0;
-        // const imgHeight = imgRef.current?.offsetHeight ?? 0;
-        // const imgCenterY = imgTop + (imgHeight / 2);
         setShowImg(imgTop < -200);
     }, [scrollPos]);
 
@@ -49,7 +47,8 @@ export default function ProjectBanner({
                                 {description}
                             </p>
 
-                            <Link href={link} className="btn btn-neutral w-fit">
+                            {/* <Link href={link} className="btn btn-neutral w-fit"> */}
+                            <Link href="/projects/demo" className="btn btn-neutral w-fit">
                                 View More
                             </Link>
                         </div>

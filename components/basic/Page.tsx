@@ -6,7 +6,7 @@ export default function Page({ children, reserveNavbarHeight = true }: { childre
         <main className="relative">
             <Navbar />
             <LocomotiveScrollWrappper>
-                <div className={`min-h-screen ${reserveNavbarHeight? "page" : ""}`}>
+                <div className={`min-h-screen text-md md:text-xl ${reserveNavbarHeight? "page" : ""}`}>
                     {children}
                 </div>
                 <Footer />

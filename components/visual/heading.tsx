@@ -1,12 +1,12 @@
 export default function Heading({
     topTitle,
-    leftTitle,
-    rightTitle,
+    leftTitle = "",
+    rightTitle = "",
     colorReverse
 }: {
     topTitle?: string;
-    leftTitle: string;
-    rightTitle: string;
+    leftTitle?: string;
+    rightTitle?: string;
     colorReverse?: boolean
 }) {
     return (
