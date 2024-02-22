@@ -37,7 +37,7 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
 
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <div className="mockup-window border bg-base-300 my-auto">
+                            <div className="mockup-window border bg-base-300 my-auto shadow-xl">
                                 <div className="flex justify-center px-4 py-16 bg-base-200">
                                     {/* <figure> */}
                                     {/* <Image

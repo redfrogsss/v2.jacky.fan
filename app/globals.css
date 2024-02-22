@@ -213,3 +213,106 @@ html.has-scroll-dragging {
 .page {
   padding-top: var(--navbar-height);
 }
+
+.page-enter-animation {
+  animation: 1000ms pageEnter;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-fill-mode: forwards;
+}
+
+.page-enter-animation--fadein {
+  animation: 1000ms pageEnter;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-fill-mode: forwards;
+}
+
+.page-enter-animation--faded {
+  animation: none;
+  height: 100vh;
+}
+
+.page-enter-animation--fadeout {
+  animation: 1000ms pageEnterFadeOut;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-fill-mode: forwards;
+}
+
+.page-enter-animation__text {
+  opacity: 0;
+  animation: 600ms fadeInBottom;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-fill-mode: forwards;
+}
+
+.page-enter-animation__text--fadeout {
+  animation: 600ms fadeOutUp;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes pageEnter {
+  0% {
+    height: 0vh;
+  }
+
+  100% {
+    height: 100vh;
+  }
+}
+
+@keyframes pageEnterFadeOut {
+  0% {
+    height: 100vh;
+  }
+  
+  100% {
+    height: 0vh;
+  }
+
+}
+
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes fadeOutBottom {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1
+  }
+  
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}

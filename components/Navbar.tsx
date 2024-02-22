@@ -5,6 +5,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import ToggleDayNight from "./ToggleDayNight";
 import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
 import Link from "next/link";
+import { ActiveLink } from "./basic";
 
 export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -60,9 +61,9 @@ export default function Navbar() {
                 <div className="flex-none flex md:mx-5">
                     <ul className="menu menu-horizontal px-1">
                         <li className="flex"><ToggleDayNight /></li>
-                        <li className="hidden md:flex"><Link href="/about">About</Link></li>
-                        <li className="hidden md:flex"><Link href="/projects">Projects</Link></li>
-                        <li className="hidden md:flex"><Link href="/contact">Contact</Link></li>
+                        <li className="hidden md:flex"><ActiveLink href="/about">About</ActiveLink></li>
+                        <li className="hidden md:flex"><ActiveLink href="/projects">Projects</ActiveLink></li>
+                        <li className="hidden md:flex"><ActiveLink href="/contact">Contact</ActiveLink></li>
                         <li className="hidden md:flex">
                             <details>
                                 <summary>
