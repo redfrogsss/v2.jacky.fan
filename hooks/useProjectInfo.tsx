@@ -10,6 +10,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
         const projectInfos = [
             {
                 id: 1,
+                proj: "sas",
                 name: 'Student Attendance System',
                 tech: 'Java / JavaScript',
                 date: 'April 2021',
@@ -21,6 +22,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
             {
                 id: 2,
+                proj: "redstream",
                 name: 'RedStream',
                 tech: 'React / ExpressJS',
                 date: 'April 2021',
@@ -32,6 +34,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
             {
                 id: 3,
+                proj: "gdsc-portfolio",
                 name: 'GDSC Portfolio',
                 tech: 'React',
                 date: 'February 2022',
@@ -43,6 +46,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
             {
                 id: 4,
+                proj: "selfremind",
                 name: 'SelfRemind',
                 tech: 'NextJS',
                 date: 'February 2022',
@@ -54,6 +58,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
             {
                 id: 5,
+                proj: "jacky-fan",
                 name: 'Jacky.Fan',
                 tech: 'ReactJS',
                 date: 'February 2023',
@@ -65,6 +70,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
             {
                 id: 6,
+                proj: "crs-web",
                 name: 'CRS Web',
                 tech: 'React',
                 date: 'May 2023',
@@ -76,6 +82,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
             {
                 id: 7,
+                proj: "mcmyconsole",
                 name: 'McMyConsole',
                 tech: 'React Native',
                 date: 'May 2023',
@@ -87,6 +94,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
             {
                 id: 8,
+                proj: "nuxt-blog",
                 name: 'Nuxt Blog',
                 tech: 'NuxtJS',
                 date: 'July 2023',
@@ -98,6 +106,7 @@ export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
             },
             {
                 id: 9,
+                proj: "v2-jacky-fan",
                 name: 'v2.Jacky.Fan',
                 tech: 'NextJS',
                 date: 'November 2023',

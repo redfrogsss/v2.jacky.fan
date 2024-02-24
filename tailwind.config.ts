@@ -45,6 +45,7 @@ const config: Config = {
                 html: { fontSize: "18px" },
             });
         }),
+        require('@tailwindcss/typography'),
     ],
     // daisyUI config (optional - here are the default values)
     daisyui: {
