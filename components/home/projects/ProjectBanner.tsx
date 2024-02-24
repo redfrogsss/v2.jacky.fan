@@ -1,11 +1,10 @@
 'use client'
 
 import FadeInBottom from "@/components/animation/FadeInBottom";
-import { SectionContainer } from "@/components/basic";
+import { ActiveLink, SectionContainer } from "@/components/basic";
 import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
 import { clamp } from "@/helpers/clamp";
 import Image from 'next/image'
-import Link from "next/link";
 import { useContext, useEffect, useRef, useState } from "react";
 
 export default function ProjectBanner({
@@ -48,9 +47,9 @@ export default function ProjectBanner({
                             </p>
 
                             {/* <Link href={link} className="btn btn-neutral w-fit"> */}
-                            <Link href="/projects/demo" className="btn btn-neutral w-fit">
+                            <ActiveLink href="/projects/demo" className="btn btn-neutral w-fit">
                                 View More
-                            </Link>
+                            </ActiveLink>
                         </div>
                         <div className="relative w-full" ref={imgWrapperRef}>
                             {(!posReverse) &&

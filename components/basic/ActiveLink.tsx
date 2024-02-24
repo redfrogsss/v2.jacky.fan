@@ -4,7 +4,7 @@ import { PageExitContext } from '@/contexts/PageExitContext';
 import { useRouter } from 'next/navigation'
 import { MouseEventHandler, useContext } from 'react'
 
-function ActiveLink({ children, href }: { children?: React.ReactNode, href: string }) {
+function ActiveLink({ children, href, className = "" }: { children?: React.ReactNode, href: string, className?: string }) {
     const router = useRouter()
 
     const { pageExit, setPageExit } = useContext(PageExitContext);
@@ -19,7 +19,7 @@ function ActiveLink({ children, href }: { children?: React.ReactNode, href: stri
     }
 
     return (
-        <a href={href} onClick={handleClick}>
+        <a href={href} onClick={handleClick} className={className}>
             {children}
         </a>
     )

@@ -1,7 +1,8 @@
 import FadeInBottom from "@/components/animation/FadeInBottom";
-import { Page, SectionContainer } from "@/components/basic";
+import { ActiveLink, Page, SectionContainer } from "@/components/basic";
 import { Heading } from "@/components/visual";
 import Image from "next/image";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export default function ProjectDescPage({ params }: { params: { slug: string } }) {
 
@@ -9,8 +10,15 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
 
     return (
         <Page>
-            <SectionContainer extendRightSpacing={true} extraClassName="bg-base-300">
+            <SectionContainer extendRightSpacing={true} extraClassName="bg-base-300 -mt-1">
                 <FadeInBottom>
+                    <div className="mb-4 md:mb-8">
+                        <ActiveLink href="javascript:history.back()" className="btn btn-outline w-fit">
+                            <ArrowLeftIcon className="h-[1em]" />
+                            Back
+                        </ActiveLink>
+                    </div>
+
                     <div className="flex flex-col lg:flex-row gap-x-4 gap-y-8">
                         <div className="w-full lg:w-2/3">
                             <Heading topTitle="Side Project" leftTitle="v2.Jacky.Fan" />
