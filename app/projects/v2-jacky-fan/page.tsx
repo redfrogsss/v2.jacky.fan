@@ -5,10 +5,25 @@ import Image from "next/image";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { LinkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Markdown from 'react-markdown';
+import MDoverview from './overview.md';
 
 export default function ProjectDescPage({ params }: { params: { slug: string } }) {
 
     const projectPageNmae = params.slug;
+    
+    const project = {
+        id: 9,
+        proj: "v2-jacky-fan",
+        name: 'v2.Jacky.Fan',
+        tech: 'NextJS',
+        date: 'November 2023',
+        desc: 'A personal website built with NextJS, Typescript, DaisyUI and TailwindCSS.',
+        tags: ['Personal Website', 'Side Project'],
+        info: undefined,
+        viewLinks: 'https://github.com/redfrogsss/v2.jacky.fan',
+        img: "/projects/v2jackyfan/01.webp",  // TODO: Add image
+    }
 
     return (
         <Page>
@@ -25,19 +40,13 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
                         <div className="w-full lg:w-2/3">
                             <Heading topTitle="Side Project" leftTitle="v2.Jacky.Fan" />
                             <div className="flex flex-row flex-wrap gap-2 mb-4 lg:mb-8">
-                                <div className="badge badge-lg badge-primary badge-outline">primary</div>
-                                <div className="badge badge-lg badge-primary badge-outline">primary</div>
-                                <div className="badge badge-lg badge-primary badge-outline">primary</div>
-                                <div className="badge badge-lg badge-primary badge-outline">primary</div>
-                                <div className="badge badge-lg badge-primary badge-outline">primary</div>
-                                <div className="badge badge-lg badge-primary badge-outline">primary</div>
-                                <div className="badge badge-lg badge-primary badge-outline">primary</div>
+                                {project.tags.map(tag => <div className="badge badge-lg badge-primary badge-outline">{tag}</div>)}
                             </div>
                             <p className="mb-4 lg:mb-8">
-                                v2.jacky.fan is a personal website built with Next.js, Tailwind CSS, and Framer Motion.
+                                {project.desc}
                             </p>
                             <div className="flex flex-row flex-wrap gap-2">
-                                <Link href="https://github.com/redfrogsss/v2.jacky.fan" className="btn btn-primary">
+                                <Link href="" className="btn btn-primary">
                                     <LinkIcon className="h-[1em]" />
                                     GitHub
                                 </Link>
@@ -74,21 +83,10 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
 
             <SectionContainer topSpacing={false} extendRightSpacing={false}>
                 <FadeInBottom extraClassName="animation-delay-500">
-                    <article id="overview" className="prose text-md md:text-xl leading-8 text-base-content">
-                      <p>v2.jacky.fan is a personal website built with Next.js, Tailwind CSS, and Framer Motion.</p>
-
-                      <h2>Features</h2>
-                      <ul>
-                        <li>Light / Dark Mode</li>
-                        <li>Animation</li>
-                        <li>Responsive Design</li>
-                        <li>Contact Form with reCAPTCHA</li>
-                        <li>Slider to showcase my previous works </li>
-                      </ul>
-
-                      <h2>Getting Started</h2>
-                      Start <code>Dev</code> Server:
-
+                    <article id="overview" className="prose text-md md:text-xl leading-6 md:leading-8 text-base-content">
+                        <Markdown>
+                            {MDoverview.toString()}
+                        </Markdown>
                     </article>
                 </FadeInBottom>
             </SectionContainer>

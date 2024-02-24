@@ -46,8 +46,7 @@ export default function ProjectBanner({
                                 {description}
                             </p>
 
-                            {/* <Link href={link} className="btn btn-neutral w-fit"> */}
-                            <ActiveLink href="/projects/demo" className="btn btn-neutral w-fit">
+                            <ActiveLink href={link} className="btn btn-neutral w-fit">
                                 View More
                             </ActiveLink>
                         </div>

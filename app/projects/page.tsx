@@ -39,7 +39,7 @@ export default function ProjectPage() {
                     name: item.name,
                     desc: item.desc,
                     img: item.img,
-                    link: item.viewLinks
+                    link: `/projects/${item.proj}`
                 }
             }).reverse()
         );
