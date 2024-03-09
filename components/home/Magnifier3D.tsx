@@ -19,6 +19,8 @@ export default function Magnifier3D() {
     const { isLoadingDone, setIsLoadingDone } = useContext(LoadingScreenContext);
     const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
 
+    const [isResized, setIsResized] = useState(false);
+
     useEffect(() => {
         new GLTFLoader().load(`/magnifier.glb`,
             async (gltf) => {
@@ -32,7 +34,8 @@ export default function Magnifier3D() {
         if (!inView) { return; }
         let posY = ((scrollPos?.scroll.y ?? 0) / (scrollPos?.limit.y ?? 0));
         
-        setModelRotation([calcRotation(posY * 360 / 2 + 220), calcRotation(posY * 360 / 4 - 230), calcRotation(posY * 360 / 4 - 40)]);
+        // setModelRotation([calcRotation(posY * 360 / 2 + 220), calcRotation(posY * 360 / 4 - 230), calcRotation(posY * 360 / 4 - 40)]);
+        setModelRotation([calcRotation(posY * 360 / 2 + 200), calcRotation(posY * 360 / 4 - 250), calcRotation(posY * 360 / 4 - 40)]);
         setTopValue(posY * 30);
     }, [scrollPos])
 
@@ -49,12 +52,25 @@ export default function Magnifier3D() {
         if (ref.current) {
             observer.observe(ref.current);
         }
+
+        window.addEventListener("resize", ()=> {
+            setIsResized(true);
+
+            setTimeout(()=>{
+                setIsResized(false);
+            }, 50)
+        });
         return () => {
             if (ref.current) {
                 observer.unobserve(ref.current);
             }
         };
     }, []);
+
+    // debug
+    useEffect(()=>{
+        console.log(isResized);
+    }, [isResized])
 
     return (
         <>
@@ -63,7 +79,7 @@ export default function Magnifier3D() {
                 animate={{
                     top: `-${topValue}rem`,
                 }}
-                className={`!hidden xl:!grid place-items-center h-full w-2/3 absolute -bottom-4 -right-[20vw] -z-10`}
+                className={`!hidden xl:!grid place-items-center h-full w-[66vw] absolute -bottom-4 -z-10 -right-[20vw]`}
             >
                 <motion.div
                     className="w-full h-full"
@@ -76,7 +92,7 @@ export default function Magnifier3D() {
                         ease: "easeIn",
                     }}
                 >
-                    {inView && (
+                    {(inView && !isResized) && (
                         <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4], fov: 50 }}>
                             {/* <pointLight position={[0, 1, 1]} intensity={2} />
                             <pointLight position={[0, 0, 1]} intensity={2} />

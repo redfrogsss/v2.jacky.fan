@@ -9,7 +9,7 @@ export default function AboutMeSection() {
     const sentencesClass = `text-md md:text-xl mb-4 md:mb-8 leading-8`
 
     return (
-        <SectionContainer id="about" extraClassName="min-h-[900px]">
+        <SectionContainer id="about" extraClassName="min-h-[900px] md:mt-16">
             <FadeInBottom>
                 <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
                     <span className="text-sm md:text-lg flex font-light drop-shadow-sm">
