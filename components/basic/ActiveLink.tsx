@@ -11,6 +11,9 @@ function ActiveLink({ children, href, className = "" }: { children?: React.React
 
     const handleClick: MouseEventHandler = (e) => {
         e.preventDefault();
+
+        if (window.location.pathname == href) return;
+        
         setPageExit(!pageExit);
 
         setTimeout(() => {
