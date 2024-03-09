@@ -2,7 +2,7 @@ import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 import Magnifier3D from "../Magnifier3D";
 import FadeInBottom from "../../animation/FadeInBottom";
 import Image from "next/image";
-import { SectionContainer } from "@/components/basic";
+import { SectionContainer, ActiveLink } from "@/components/basic";
 
 export default function AboutMeSection() {
 
@@ -83,10 +83,10 @@ export default function AboutMeSection() {
             </FadeInBottom>
 
             <FadeInBottom>
-                <a href="#work" className="btn btn-neutral">
-                    Check out my projects
-                    <ArrowSmallDownIcon className="h-6 w-6 text-content" />
-                </a>
+                <ActiveLink href="/about" className="btn btn-neutral">
+                    Learn More About Me
+                    <ArrowSmallDownIcon className="h-6 w-6 text-content -rotate-90" />
+                </ActiveLink>
             </FadeInBottom>
 
             <Magnifier3D />

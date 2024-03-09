@@ -70,7 +70,7 @@ export default function Navbar() {
                                     Quick Links
                                 </summary>
                                 <ul className="p-2 bg-base-100">
-                                    <li><button onClick={toggleEmailModal}>Email</button></li>
+                                    {/* <li><button onClick={toggleEmailModal}>Email</button></li> */}
                                     <li><Link href="https://github.com/redfrogsss" target="_blank">GitHub</Link></li>
                                     <li><Link href="https://www.linkedin.com/in/jacky-fan-682516190/" target="_blank">LinkedIn</Link></li>
                                     <li><Link href="https://blog.jacky.fan" target="_blank">Blog</Link></li>

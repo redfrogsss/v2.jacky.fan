@@ -2,7 +2,8 @@ import 'swiper/css';
 import PreviousWorkSlider from '../PreviousWorksSlider';
 import { CursorArrowRaysIcon } from "@heroicons/react/24/outline";
 import FadeInBottom from '../../animation/FadeInBottom';
-import { SectionContainer } from '@/components/basic';
+import { SectionContainer, ActiveLink } from "@/components/basic";
+import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 
 export default function WorkSection() {
     return (
