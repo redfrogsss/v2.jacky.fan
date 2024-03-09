@@ -59,7 +59,7 @@ export default function ProjectPage() {
 
     return (
         <Page>
-            <SectionContainer>
+            <SectionContainer extraClassName="md:pb-10">
                 <FadeInBottom>
                     <Heading topTitle="Checkout" leftTitle="My" rightTitle="Previous Projects" colorReverse={true} />
 
