@@ -1,6 +1,6 @@
 'use client'
 
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { PageExitContext } from "@/contexts/PageExitContext";
 
 
@@ -11,6 +11,10 @@ export default function PageEnterAnimation() {
 
     const { pageExit } = useContext(PageExitContext);
 
+
+    const [emojiDisplay, setEmojiDisplay] = useState("");
+    const [quoteDisplay, setQuoteDisplay] = useState("");
+    
     useEffect(() => {
         setTimeout(() => {
             animWrapperRef.current?.classList.toggle("page-enter-animation--fadeout", true);
@@ -20,6 +24,36 @@ export default function PageEnterAnimation() {
         setTimeout(() => {
             animContentRef.current?.classList.toggle("page-enter-animation__text--fadeout", true);
         }, (800));
+
+        const emoji = [
+            "🥺",
+            "💭",
+            "🤔",
+            "😉",
+            "💖",
+            "✨",
+            "🥹",
+            "🧐",
+            "🤓",
+            "🤤",
+            "🥴",
+            "💩",
+            "👻",
+        ];
+        const quotes = [
+            "Hello World",
+            "こんにちは",
+            "Wait, how to center a div?",
+            "Welcome to my website"
+        ];
+
+        if (window.location.pathname == "/") {
+            setEmojiDisplay("🥺");
+            setQuoteDisplay("Welcome to my website");
+        } else {
+            setEmojiDisplay(emoji[Math.floor(Math.random() * emoji.length)]);
+            setQuoteDisplay(quotes[Math.floor(Math.random() * quotes.length)]);
+        }
     }, []);
 
     useEffect(() => {
@@ -32,7 +66,11 @@ export default function PageEnterAnimation() {
 
     return (
         <div className="fixed top-0 left-0 w-screen h-[0vh] bg-base-300 z-50 page-enter-animation page-enter-animation--faded overflow-clip" ref={animWrapperRef}>
-            <div className="absolute inset-0 m-auto text-2xl w-fit h-fit page-enter-animation__text" ref={animContentRef}>Hello World</div>
+            <div className="absolute inset-0 m-auto text-2xl w-fit h-fit page-enter-animation__text" ref={animContentRef}>
+                <span className="block text-center text-4xl pb-4">{emojiDisplay}</span>
+                <span className="block text-center">{quoteDisplay}</span>
+             
+            </div>
         </div>
     );
 }
