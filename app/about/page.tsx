@@ -1,5 +1,6 @@
 import FadeInBottom from "@/components/animation/FadeInBottom";
-import { Page, SectionContainer } from "@/components/basic";
+import { ActiveLink, Page, SectionContainer } from "@/components/basic";
+import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 
 export default function AboutPage() {
     return (
@@ -81,7 +82,10 @@ export default function AboutPage() {
                     </ul>
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        <a href="#!" className="underline text-blue-500 hover:text-blue-700 transition-all">View All of My Project Here</a>
+                        <ActiveLink href="/projects" className="btn btn-neutral">
+                            Checkout My Projects
+                            <ArrowSmallDownIcon className="h-6 w-6 text-content -rotate-90" />
+                        </ActiveLink>
                     </p>
 
                 </FadeInBottom>
