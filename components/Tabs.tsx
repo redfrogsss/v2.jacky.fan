@@ -2,12 +2,15 @@
 
 import FadeInBottom from "@/components/animation/FadeInBottom";
 import { ActiveLink, SectionContainer } from "@/components/basic";
-import { MouseEventHandler, useState } from "react";
+import Image from "next/image";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import Markdown from "react-markdown";
 
 export default function Tabs({data} : {data: any[]}) {
 
     const [activeTab, setActiveTab] = useState<number>(0);
+    const tabEl = useRef<HTMLDivElement>(null);
+
 
     const selectTab = (e: React.MouseEvent<Element, MouseEvent>, i: number) => {
         e.preventDefault();
@@ -15,8 +18,25 @@ export default function Tabs({data} : {data: any[]}) {
         window.dispatchEvent(new Event('resize'));  // force window resize so locoscroll could update page's height
     }
 
+    
+    useEffect(()=>{
+        const onImgLoad = () => {
+            window.dispatchEvent(new Event("resize"));
+        }
+
+        // update page height for locoscroll when img loaded
+        tabEl.current?.querySelectorAll("img").forEach(img => {
+            img.addEventListener("load", onImgLoad)
+        });
+
+        return () => tabEl.current?.querySelectorAll("img").forEach(img => {
+            img.removeEventListener("load", onImgLoad);
+        });
+
+    }, [tabEl]);
+
     return (
-        <>
+        <div ref={tabEl}>
             <SectionContainer extendRightSpacing={true} topSpacing={true} bottomSpacing={false}>
                 <FadeInBottom extraClassName="animation-delay-500">
                     <div role="tablist" className="tabs tabs-boxed w-fit mx-auto mb-8 md:mb-16">
@@ -38,6 +58,6 @@ export default function Tabs({data} : {data: any[]}) {
                     )}
                 </FadeInBottom>
             </SectionContainer>
-        </>
+        </div>
     );
 }
