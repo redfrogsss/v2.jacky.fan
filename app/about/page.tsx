@@ -24,17 +24,17 @@ export default function AboutPage() {
 
                     <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🤔 Who am I?</h2>
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I'm currently a Frontend Developer in Hong Kong with a passion for building attractive and interactive websites. With a background in Bachelor Degree in Computing, I bring a unique blend of skills ranging from HTML, CSS, Typescript, ReactJS to solving programming problems, or communicating with teammates.
+                        I&apos;m currently a Frontend Developer in Hong Kong with a passion for building attractive and interactive websites. With a background in Bachelor Degree in Computing, I bring a unique blend of skills ranging from HTML, CSS, Typescript, ReactJS to solving programming problems, or communicating with teammates.
                     </p>
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I believe in the power of continuous learning and growth, and I'm always excited to dive into new technologies and methodologies to expand my knowledge base.
+                        I believe in the power of continuous learning and growth, and I&apos;m always excited to dive into new technologies and methodologies to expand my knowledge base.
                     </p>
 
                     <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🌐 Languages & Tools</h2>
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I'm passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills. Here's a overview of the tech stack I've been using in my projects:
+                        I&apos;m passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills. Here&apos;s a overview of the tech stack I&apos;ve been using in my projects:
                     </p>
 
                     <ul className="list-disc text-md md:text-xl ps-8 !leading-8 mb-4 md:mb-8">
@@ -63,12 +63,12 @@ export default function AboutPage() {
 
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        💡 I'm also interested in Mobile App Development.
+                        💡 I&apos;m also interested in Mobile App Development.
                     </p>
 
                     <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">📽️ Projects</h2>
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I've had the fantastic opportunity to work on various projects, where I've learned and honed my skills. Here are a few highlights:
+                        I&apos;ve had the fantastic opportunity to work on various projects, where I&apos;ve learned and honed my skills. Here are a few highlights:
                     </p>
 
                     <ul className="list-disc text-md md:text-xl ps-8 !leading-8 mb-4 md:mb-8">
@@ -95,7 +95,7 @@ export default function AboutPage() {
                     <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">💼 Experience</h2>
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I've been fortunate to work on different projects, where I've learned and improved my skills. Here are some key highlights:
+                        I&apos;ve been fortunate to work on different projects, where I&apos;ve learned and improved my skills. Here are some key highlights:
                     </p>
 
                     <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">

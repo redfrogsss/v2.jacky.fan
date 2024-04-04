@@ -70,14 +70,14 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
                         <div className="w-full lg:w-2/3">
                             <Heading topTitle="My Project" leftTitle={projectData?.name} />
                             <div className="flex flex-row flex-wrap gap-2 mb-4 lg:mb-8">
-                                {projectData?.tags.map((tag, i) => <div className="badge badge-lg badge-primary badge-outline" key={i}>{tag}</div>)}
+                                {projectData?.tags.map((tag: any, i: number) => <div className="badge badge-lg badge-primary badge-outline" key={i}>{tag}</div>)}
                                 
                             </div>
                             <p className="mb-4 lg:mb-8">
                                 {projectData?.desc}
                             </p>
                             <div className="flex flex-row flex-wrap gap-2">
-                                { projectData?.links.map((link, i) => <Link href={link.link} target="_blank" className={`btn ${i == 0 ? "btn-primary" : i == 1 ? "btn-secondary" : "btn-outline" }`} key={i}>
+                                { projectData?.links.map((link: any, i: number) => <Link href={link.link} target="_blank" className={`btn ${i == 0 ? "btn-primary" : i == 1 ? "btn-secondary" : "btn-outline" }`} key={i}>
                                     <LinkIcon className="h-[1em]" />
                                     {link.name}
                                 </Link>) }
