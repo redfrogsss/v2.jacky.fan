@@ -154,7 +154,8 @@ export const projectInfos = [
         viewLinks: 'https://github.com/redfrogsss/nuxt-blog',
         img: "/projects/nuxt-blog/01.webp",
         links: [
-            {name: "GitHub", link: "https://github.com/redfrogsss/nuxt-blog"}
+            {name: "GitHub", link: "https://github.com/redfrogsss/nuxt-blog"},
+            {name: "Blog", link: "https://blog.jacky.fan"}
         ],
         docs: [
             { name: "Overview", link: "/projects/nuxt-blog/doc/overview.md" },
@@ -174,7 +175,8 @@ export const projectInfos = [
         viewLinks: 'https://github.com/redfrogsss/v2.jacky.fan',
         img: "/projects/v2jackyfan/01.webp",  // TODO: Add image
         links: [
-            {name: "GitHub", link: "https://github.com/redfrogsss/v2.jacky.fan"}
+            {name: "GitHub", link: "https://github.com/redfrogsss/v2.jacky.fan"},
+            {name: "Website", link: "https://jacky.fan"}
         ],
         docs: [
             { name: "Overview", link: "/projects/v2jackyfan/doc/overview.md" },

@@ -12,6 +12,7 @@ export default function Tabs({data} : {data: any[]}) {
     const selectTab = (e: React.MouseEvent<Element, MouseEvent>, i: number) => {
         e.preventDefault();
         setActiveTab(i);
+        window.dispatchEvent(new Event('resize'));  // force window resize so locoscroll could update page's height
     }
 
     return (

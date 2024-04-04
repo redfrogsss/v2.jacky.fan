@@ -34,6 +34,7 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
         }
         
         setDocs(newDocsState);
+        window.dispatchEvent(new Event('resize'));  // force window resize so locoscroll could update page's height
     }
 
     useEffect(()=>{
@@ -70,7 +71,7 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
                                 {projectData?.desc}
                             </p>
                             <div className="flex flex-row flex-wrap gap-2">
-                                { projectData?.links.map((link, i) => <Link href={link.link} target="_blank" className={`btn ${i == 0 ? "btn-primary" : i == 1 ? "btn-primary" : "btn-outline" }`} key={i}>
+                                { projectData?.links.map((link, i) => <Link href={link.link} target="_blank" className={`btn ${i == 0 ? "btn-primary" : i == 1 ? "btn-secondary" : "btn-outline" }`} key={i}>
                                     <LinkIcon className="h-[1em]" />
                                     {link.name}
                                 </Link>) }
