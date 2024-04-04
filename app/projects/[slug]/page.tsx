@@ -6,16 +6,18 @@ import { Heading } from "@/components/visual";
 import Image from "next/image";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { projectInfos } from "@/hooks/useProjectInfo";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Tabs from "@/components/Tabs";
 import { LinkIcon } from "@heroicons/react/24/outline";
+import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
 
 export default function ProjectDescPage({ params }: { params: { slug: string } }) {
 
     const projectPageNmae = params.slug;
     const [projectData, setProjectData] = useState<any | undefined>(undefined);
     const [docs, setDocs] = useState<any[]>([]);
+    const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
 
     const updateDocs = async (docs : any) => {
         if (!docs) return;
@@ -35,6 +37,10 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
         
         setDocs(newDocsState);
         window.dispatchEvent(new Event('resize'));  // force window resize so locoscroll could update page's height
+
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));  // force window resize so locoscroll could update page's height
+        }, 1000);
     }
 
     useEffect(()=>{

@@ -18,7 +18,6 @@ export const projectInfos = [
         ],
         docs: [
             { name: "Overview", link: "/projects/sas/doc/overview.md" },
-            { name: "Tech Spec", link: "/projects/sas/doc/tech-spec.md" },
             { name: "Screenshots", link: "/projects/sas/doc/screenshots.md" },
         ]
     },
@@ -38,7 +37,6 @@ export const projectInfos = [
         ],
         docs: [
             { name: "Overview", link: "/projects/redstream/doc/overview.md" },
-            { name: "Tech Spec", link: "/projects/redstream/doc/tech-spec.md" },
             { name: "Screenshots", link: "/projects/redstream/doc/screenshots.md" },
         ]
     },
@@ -58,7 +56,6 @@ export const projectInfos = [
         ],
         docs: [
             { name: "Overview", link: "/projects/gdsc/doc/overview.md" },
-            { name: "Tech Spec", link: "/projects/gdsc/doc/tech-spec.md" },
             { name: "Screenshots", link: "/projects/gdsc/doc/screenshots.md" },
         ]
     },
@@ -181,7 +178,7 @@ export const projectInfos = [
         docs: [
             { name: "Overview", link: "/projects/v2jackyfan/doc/overview.md" },
             { name: "Tech Spec", link: "/projects/v2jackyfan/doc/tech-spec.md" },
-            { name: "Screenshots", link: "/projects/v2jackyfan/doc/screenshots.md" },
+            // { name: "Screenshots", link: "/projects/v2jackyfan/doc/screenshots.md" },
         ]
     },
 ];

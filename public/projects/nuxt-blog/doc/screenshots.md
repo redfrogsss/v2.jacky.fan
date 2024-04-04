@@ -17,3 +17,8 @@ The blog post page displays code blocks with syntax highlighting.
 ### Blog Post Comments Section
 The blog post page displays comments section using Utterances.
 ![Home Page](./nuxt-blog/05.png)
+
+
+### Dark Mode
+The blog post will switch to dark mode theme when user's system is in dark mode.
+![Home Page](./nuxt-blog/02.png)
