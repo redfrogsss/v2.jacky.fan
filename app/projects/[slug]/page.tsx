@@ -108,3 +108,5 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
         </Page>
     );
 } 
+
+export const runtime = 'edge';
