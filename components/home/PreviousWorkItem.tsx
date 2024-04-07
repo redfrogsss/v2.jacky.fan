@@ -13,10 +13,12 @@ export default function PreviousWorkItem({ item }: { item: ProjectInfoProps }) {
     const handleClick = (e: any) => {
         e.preventDefault();
         setIsClicked(!isClicked);
+        window.dispatchEvent(new Event("resize"));
     };
 
     const handleClickAway = () => {
         setIsClicked(false);
+        window.dispatchEvent(new Event("resize"));
     }
 
     return (
