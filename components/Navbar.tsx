@@ -110,14 +110,18 @@ export default function Navbar() {
                             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                             <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content ml-0">
                                 {/* Sidebar content here */}
+                                <p className="ml-4 my-4 font-bold">Pages</p>
                                 <li><ActiveLink href="/about">About</ActiveLink></li>
                                 <li><ActiveLink href="/projects">Projects</ActiveLink></li>
                                 <li><ActiveLink href="/contact">Contact</ActiveLink></li>
                                 <hr className="border-base-content my-4 ml-4 mr-8" />
+                                <p className="ml-4 my-4 font-bold">Quick Links</p>
                                 <li><Link href="https://github.com/redfrogsss" target="_blank">GitHub</Link></li>
                                 <li><Link href="https://www.linkedin.com/in/jacky-fan-682516190/" target="_blank">LinkedIn</Link></li>
                                 <li><Link href="https://blog.jacky.fan" target="_blank">Blog</Link></li>
                                 <li><a href="mailto:contact@jacky.fan">Email</a></li>
+                                <hr className="border-base-content my-4 ml-4 mr-8" />
+                                <li className="w-fit"><ToggleDayNight /></li>
                             </ul>
                         </div>
                     </div>
