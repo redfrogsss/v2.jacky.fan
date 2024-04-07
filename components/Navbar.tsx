@@ -6,6 +6,7 @@ import ToggleDayNight from "./ToggleDayNight";
 import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
 import Link from "next/link";
 import { ActiveLink } from "./basic";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -58,7 +59,7 @@ export default function Navbar() {
                 <div className="flex-1">
                     <ActiveLink href="/" className="btn btn-ghost normal-case text-xl"><span className="text-primary font-dosis font-medium drop-shadow">🥺 Jacky FAN</span></ActiveLink>
                 </div>
-                <div className="flex-none flex md:mx-5">
+                <div className="flex-none hidden md:flex md:mx-5">
                     <ul className="menu menu-horizontal px-1">
                         <li className="flex"><ToggleDayNight /></li>
                         <li className="hidden md:flex"><ActiveLink href="/about">About</ActiveLink></li>
@@ -96,6 +97,32 @@ export default function Navbar() {
                         </li>
                     </ul>
                 </div>
+                <div className="flex-none flex md:hidden md:mx-5">
+                    <div className="drawer">
+                        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                        <div className="drawer-content">
+                            {/* Page content here */}
+                            <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">
+                                <Bars3Icon className="h-5 w-5 text-base-content" />
+                            </label>
+                        </div>
+                        <div className="drawer-side">
+                            <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                            <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content ml-0">
+                                {/* Sidebar content here */}
+                                <li><ActiveLink href="/about">About</ActiveLink></li>
+                                <li><ActiveLink href="/projects">Projects</ActiveLink></li>
+                                <li><ActiveLink href="/contact">Contact</ActiveLink></li>
+                                <hr className="border-base-content my-4 ml-4 mr-8" />
+                                <li><Link href="https://github.com/redfrogsss" target="_blank">GitHub</Link></li>
+                                <li><Link href="https://www.linkedin.com/in/jacky-fan-682516190/" target="_blank">LinkedIn</Link></li>
+                                <li><Link href="https://blog.jacky.fan" target="_blank">Blog</Link></li>
+                                <li><a href="mailto:contact@jacky.fan">Email</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </AlertContextProvider>
 
