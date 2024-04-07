@@ -7,6 +7,8 @@ import { RecaptchaProviders } from '@/providers/RecaptchaProvider'
 import { LoadingScreenProvider } from '@/contexts/LoadingContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { LocomotiveScrollPositionProvider } from '@/contexts/LocomotiveScrollPositionContext'
+import { LocomotiveScrollProvider } from '@/contexts/LocomotiveScrollContext'
+import { PageExitContextProvider } from '@/contexts/PageExitContext'
 
 export const metadata: Metadata = {
   title: "Jacky FAN",
@@ -24,9 +26,13 @@ export default function RootLayout({
         <RecaptchaProviders>
           <AlertContextProvider>
             <LoadingScreenProvider>
+              <PageExitContextProvider>
               <LocomotiveScrollPositionProvider>
-                {children}
+                <LocomotiveScrollProvider>
+                  {children}
+                </LocomotiveScrollProvider>
               </LocomotiveScrollPositionProvider>
+              </PageExitContextProvider>
             </LoadingScreenProvider>
           </AlertContextProvider >
         </RecaptchaProviders>

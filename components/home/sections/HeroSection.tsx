@@ -6,7 +6,7 @@ export default function HeroSection() {
     return (
         <section
             id="hero"
-            className="`md:min-h-[900px] h-screen bg-base-300 relative z-10"
+            className="`md:min-h-[900px] h-screen bg-base-300 text-base-content relative z-10"
         >
             <div className="cotainer mx-auto h-full z-10 absolute w-full">
                 <div className="flex flex-col h-full justify-center items-center">

@@ -2,11 +2,13 @@ import 'swiper/css';
 import PreviousWorkSlider from '../PreviousWorksSlider';
 import { CursorArrowRaysIcon } from "@heroicons/react/24/outline";
 import FadeInBottom from '../../animation/FadeInBottom';
+import { SectionContainer, ActiveLink } from "@/components/basic";
+import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 
 export default function WorkSection() {
     return (
-        <section id="work" className="md:min-h-[980px] bg-base-100 pt-10 relative">
-            <div className="container mx-auto pt-0 md:pt-12">
+        <>
+            <SectionContainer id="projects" bottomSpacing={false}>
                 <FadeInBottom>
                     <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16 drop-shadow">
                         <span className="text-sm md:text-lg flex font-light drop-shadow-sm">
@@ -21,11 +23,11 @@ export default function WorkSection() {
                 <FadeInBottom>
                     <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">I worked on different school projects and side projects, most of which involved web-related things.</p>
                 </FadeInBottom>
-            </div>
+            </SectionContainer>
 
             <FadeInBottom>
                 <PreviousWorkSlider />
             </FadeInBottom>
-        </section>
+        </>
     );
 }

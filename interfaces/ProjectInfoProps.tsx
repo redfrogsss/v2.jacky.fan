@@ -1,5 +1,6 @@
 export default interface ProjectInfoProps {
     id: number;
+    proj: string;
     name: string;
     tech: string;
     date: string;

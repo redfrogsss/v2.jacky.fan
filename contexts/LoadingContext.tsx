@@ -8,10 +8,6 @@ export const LoadingScreenContext = createContext<LoadingScreenContextProps>({ i
 export function LoadingScreenProvider({ children }: { children: React.ReactNode }) {
     const [isLoadingDone, setIsLoadingDone] = useState<boolean>(false);
 
-    useEffect(() => {
-        console.log("LoadingScreenContext isDone: ", isLoadingDone);
-    }, [isLoadingDone])
-
     return (
         <LoadingScreenContext.Provider value={{ isLoadingDone, setIsLoadingDone }}>
             {children}
