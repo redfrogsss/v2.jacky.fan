@@ -91,7 +91,7 @@ export default function AboutPage() {
                 </FadeInBottom>
 
 
-                <FadeInBottom>
+                {/* <FadeInBottom>
                     <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">💼 Experience</h2>
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
@@ -138,7 +138,7 @@ export default function AboutPage() {
                             <hr />
                         </li>
                     </ul>
-                </FadeInBottom>
+                </FadeInBottom> */}
 
                 <FadeInBottom>
                     <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">📫 Contact Me</h2>
