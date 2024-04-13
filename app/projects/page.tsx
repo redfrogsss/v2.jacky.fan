@@ -78,7 +78,7 @@ export default function ProjectPage() {
             <SectionContainer extendRightSpacing={true} topSpacing={false}>
                 <FadeInBottom>
                     <div className="flex flex-wrap flex-row">
-                        {banners.map((item, index) => <div className="w-full md:w-1/2 xl:w-1/3 grow-0 shrink p-3"><ProjectBlock name={item.name} description={item.desc} link={item.link} key={index} img={item.img} /></div>)}
+                        {banners.map((item, index) => <div className="w-full md:w-1/2 xl:w-1/3 grow-0 shrink p-3" key={index}><ProjectBlock name={item.name} description={item.desc} link={item.link} key={index} img={item.img} /></div>)}
                     </div>
                 </FadeInBottom>
             </SectionContainer>
