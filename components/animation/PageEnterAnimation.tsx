@@ -19,6 +19,8 @@ export default function PageEnterAnimation() {
         setTimeout(() => {
             animWrapperRef.current?.classList.toggle("page-enter-animation--fadeout", true);
             animWrapperRef.current?.classList.toggle("page-enter-animation--faded", false);
+
+            window.dispatchEvent(new Event("resize"));
         }, (1000));
 
         setTimeout(() => {
