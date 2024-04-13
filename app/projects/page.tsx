@@ -3,6 +3,7 @@
 import FadeInBottom from "@/components/animation/FadeInBottom";
 import { Page, SectionContainer } from "@/components/basic";
 import { ProjectBanner, ProjectFilter, ProjectFilterBadge } from "@/components/home/projects";
+import ProjectBlock from "@/components/home/projects/ProjectBlock";
 import { Heading } from "@/components/visual";
 import { LocomotiveScrollContext } from "@/contexts/LocomotiveScrollContext";
 import useProjectInfo from "@/hooks/useProjectInfo";
@@ -59,21 +60,29 @@ export default function ProjectPage() {
 
     return (
         <Page>
-            <SectionContainer extraClassName="md:pb-10">
+            <SectionContainer extraClassName="md:pb-10" bottomSpacing={false}>
                 <FadeInBottom>
-                    <Heading topTitle="Checkout" leftTitle="My" rightTitle="Previous Projects" colorReverse={true} />
+                    <Heading topTitle="Checkout" leftTitle="My" rightTitle="Projects" colorReverse={true} />
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                        I worked on different school projects and side projects, most of which involved web-related things.
+                        During my leisure hours, I dedicated myself to various side projects, mostly focusing on web development.
+                    </p>
+                    
+                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
+                        Here are some of my projects:
                     </p>
                 </FadeInBottom>
 
+            </SectionContainer>
+
+            <SectionContainer extendRightSpacing={true} topSpacing={false}>
                 <FadeInBottom>
-                    <ProjectFilter filterBadges={filterBadges} />
+                    <div className="flex flex-wrap flex-row">
+                        {banners.map((item, index) => <div className="w-full md:w-1/2 xl:w-1/3 grow-0 shrink p-3"><ProjectBlock name={item.name} description={item.desc} link={item.link} key={index} img={item.img} /></div>)}
+                    </div>
                 </FadeInBottom>
             </SectionContainer>
 
-            {banners.map((item, index) => <ProjectBanner name={item.name} description={item.desc} link={item.link} key={index} posReverse={index % 2 == 0} img={item.img}/>)}
         </Page>
     );
 }
