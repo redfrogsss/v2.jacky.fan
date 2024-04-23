@@ -18,6 +18,7 @@ export default function ContactForm() {
     const [showRequired, setShowRequired] = useState({ name: false, email: false, message: false });
 
     const handleSubmit: MouseEventHandler<HTMLFormElement> = async (e) => {
+        return;
         e.preventDefault();
 
         const data = {
@@ -78,13 +79,13 @@ export default function ContactForm() {
     }
 
     return (
-        <form action="#" className="" onSubmit={handleSubmit}>
+        <form action="mailto:contact@jacky.fan" onSubmit={handleSubmit} method="get">
 
             <div className="form-control w-full md:max-w-xs mb-4">
                 <label htmlFor="contactName" className="label">
                     <span className="label-text text-md md:text-xl">What is your name?</span>
                 </label>
-                <input id="contactName" type="text" placeholder="Type your name here" className="input input-bordered w-full md:max-w-xs" ref={inputName} formNoValidate />
+                <input id="contactName" type="text" placeholder="Type your name here" className="input input-bordered w-full md:max-w-xs" ref={inputName} formNoValidate name="subject" />
                 {showRequired.name &&
                     <label className="label">
                         <span className="label-text-alt text-error">This field is required.</span>
@@ -108,7 +109,7 @@ export default function ContactForm() {
                 <label htmlFor="contactMessage" className="label">
                     <span className="label-text text-md md:text-xl">What is your message?</span>
                 </label>
-                <textarea id="contactMessage" className="textarea textarea-bordered h-24" placeholder="Type your message here" ref={inputMessage}></textarea>
+                <textarea id="contactMessage" className="textarea textarea-bordered h-24" placeholder="Type your message here" ref={inputMessage} name="body"></textarea>
                 {showRequired.message &&
                     <label className="label">
                         <span className="label-text-alt text-error">This field is required.</span>
