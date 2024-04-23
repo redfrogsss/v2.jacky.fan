@@ -17,69 +17,8 @@ export default function ContactForm() {
 
     const [showRequired, setShowRequired] = useState({ name: false, email: false, message: false });
 
-    const handleSubmit: MouseEventHandler<HTMLFormElement> = async (e) => {
-        return;
-        e.preventDefault();
-
-        const data = {
-            name: inputName?.current?.value || undefined,
-            email: inputEmail?.current?.value || undefined,
-            message: inputMessage?.current?.value || undefined,
-            created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Hong_Kong' }),
-        }
-
-        const isEmpty = (v: string | undefined) => v === undefined || v.length === 0;
-
-        if (isEmpty(data.name) || isEmpty(data.email) || isEmpty(data.message)) {
-            setShowRequired({ name: isEmpty(data.name), email: isEmpty(data.email), message: isEmpty(data.message) });
-            return;
-        } else {
-            setShowRequired({ name: false, email: false, message: false })
-        }
-
-        try {
-            if (executeRecaptcha === undefined) {
-                throw new Error(`executeRecaptcha is undefine: ${executeRecaptcha}`);
-            }
-
-            const token = await executeRecaptcha();
-            const verified = await verifyCaptcha(token);
-
-            if (!verified) {
-                throw new Error(`Recaptcha is not verified: ${verified}`);
-            }
-
-            const databases = new Databases(client);
-
-            await databases.createDocument(
-                'jacky_fan',
-                'contact_form',
-                ID.unique(),
-                data
-            );
-
-            if (setAlert) {
-                setAlert({
-                    show: true,
-                    message: "Submitted Successfully.",
-                    type: "success",
-                });
-            }
-
-        } catch (e) {
-            if (setAlert) {
-                setAlert({
-                    show: true,
-                    message: "Something Went Wrong. Please try again later.",
-                    type: "error",
-                });
-            }
-            console.error(e);
-        }
-    }
-
     return (
-        <form action="mailto:contact@jacky.fan" onSubmit={handleSubmit} method="get">
+        <form action="mailto:contact@jacky.fan" method="get">
 
             <div className="form-control w-full md:max-w-xs mb-4">
                 <label htmlFor="contactName" className="label">
