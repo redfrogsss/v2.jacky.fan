@@ -61,5 +61,9 @@
   },
   "resolutions": {
     "jackspeak": "2.1.1"
+  },
+  "engines": {
+    "yarn": "please-use-pnpm",
+    "npm": "please-use-pnpm"
   }
 }
