@@ -1,4 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/redfrogsss/v2.jacky.fan/badge)](https://www.codefactor.io/repository/github/redfrogsss/v2.jacky.fan)
+[![wakatime](https://wakatime.com/badge/user/2cbd8003-b8b8-4565-92d7-ad9c23ff1846/project/365135c2-65e9-4ed2-a03e-733a4b9c6fd7.svg)](https://wakatime.com/badge/user/2cbd8003-b8b8-4565-92d7-ad9c23ff1846/project/365135c2-65e9-4ed2-a03e-733a4b9c6fd7)
 
 You can access this website via https://jacky.fan
 
