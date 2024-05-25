@@ -34,8 +34,12 @@ export default function Magnifier3D() {
         if (!inView) { return; }
         let posY = ((scrollPos?.scroll.y ?? 0) / (scrollPos?.limit.y ?? 0));
         
-        // setModelRotation([calcRotation(posY * 360 / 2 + 220), calcRotation(posY * 360 / 4 - 230), calcRotation(posY * 360 / 4 - 40)]);
-        setModelRotation([calcRotation(posY * 360 / 2 + 200), calcRotation(posY * 360 / 4 - 250), calcRotation(posY * 360 / 4 - 40)]);
+        let newX = calcRotation(posY * 360 / 2 + 200), 
+            newY = calcRotation(posY * 360 / 4 - 250),
+            newZ = calcRotation(posY * 360 / 4 - 40)
+        if (newX <= 4.70779210639 && newY <= -3.754756328 && newZ <= 0.089564899) {
+            setModelRotation([newX, newY, newZ]);
+        }
         setTopValue(posY * 30);
     }, [scrollPos])
 
@@ -68,9 +72,9 @@ export default function Magnifier3D() {
     }, []);
 
     // debug
-    useEffect(()=>{
-        console.log(isResized);
-    }, [isResized])
+    // useEffect(()=>{
+    //     console.log(modelRotation);
+    // }, [modelRotation])
 
     return (
         <>
