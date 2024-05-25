@@ -17,9 +17,9 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
     const projectPageNmae = params.slug;
     const [projectData, setProjectData] = useState<any | undefined>(undefined);
     const [docs, setDocs] = useState<any[]>([]);
-    const {scrollPos, setScrollPos} = useContext(LocomotiveScrollPositionContext);
+    const { scrollPos, setScrollPos } = useContext(LocomotiveScrollPositionContext);
 
-    const updateDocs = async (docs : any) => {
+    const updateDocs = async (docs: any) => {
         if (!docs) return;
 
         let newDocsState = [];
@@ -28,13 +28,13 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
             try {
                 let md = await fetch(docs[i].link);
                 let mdText = await md.text();
-                
-                newDocsState.push({...docs[i], md: mdText});
+
+                newDocsState.push({ ...docs[i], md: mdText });
             } catch (error) {
                 console.error("md not found");
             }
         }
-        
+
         setDocs(newDocsState);
         window.dispatchEvent(new Event('resize'));  // force window resize so locoscroll could update page's height
 
@@ -43,11 +43,11 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
         }, 1000);
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         setProjectData(projectInfos.filter(proj => proj.proj == projectPageNmae)[0] ?? undefined);
     }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
         updateDocs(projectData?.docs);
     }, [projectData])
 
@@ -66,38 +66,33 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
                         </ActiveLink>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-x-4 gap-y-8">
-                        <div className="w-full lg:w-2/3">
+                    <div className="flex flex-col xl:flex-row gap-x-4 gap-y-8">
+                        <div className="w-full xl:w-2/5">
                             <Heading topTitle="My Project" leftTitle={projectData?.name} />
-                            <div className="flex flex-row flex-wrap gap-2 mb-4 lg:mb-8">
+                            <div className="flex flex-row flex-wrap gap-2 mb-4 xl:mb-8">
                                 {projectData?.tags.map((tag: any, i: number) => <div className="badge badge-lg badge-primary badge-outline" key={i}>{tag}</div>)}
-                                
+
                             </div>
-                            <p className="mb-4 lg:mb-8">
+                            <p className="mb-4 xl:mb-8">
                                 {projectData?.desc}
                             </p>
                             <div className="flex flex-row flex-wrap gap-2">
-                                { projectData?.links.map((link: any, i: number) => <Link href={link.link} target="_blank" className={`btn ${i == 0 ? "btn-primary" : i == 1 ? "btn-secondary" : "btn-outline" }`} key={i}>
+                                {projectData?.links.map((link: any, i: number) => <Link href={link.link} target="_blank" className={`btn ${i == 0 ? "btn-primary" : i == 1 ? "btn-secondary" : "btn-outline"}`} key={i}>
                                     <LinkIcon className="h-[1em]" />
                                     {link.name}
-                                </Link>) }
+                                </Link>)}
                             </div>
 
                         </div>
-                        <div className="w-full lg:w-1/2">
-                            <div className="mockup-window border bg-base-300 my-auto shadow-xl transition-all proj-window-3d">
-                                <div className="flex justify-center px-4 py-4 bg-base-200">
-                                    <figure>
-                                    <Image
-                                        src={projectData?.img}
-                                        width={500}
-                                        height={0}
-                                        alt="Project Name"
-                                        className="object-contain"
-                                    />
-                                    </figure>
-                                </div>
-                            </div>
+                        <div className="w-full xl:w-3/5">
+                            <figure className="block aspect-video border-red-400 border-1 rounded-2xl bg-base-content relative">
+                                <Image
+                                    src={projectData?.img}
+                                    fill={true}
+                                    alt="Project Name"
+                                    className="object-contain p-2"
+                                />
+                            </figure>
                         </div>
                     </div>
                 </FadeInBottom>
@@ -107,6 +102,6 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
 
         </Page>
     );
-} 
+}
 
 export const runtime = 'edge';
