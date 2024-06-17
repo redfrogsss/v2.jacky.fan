@@ -181,6 +181,27 @@ export const projectInfos = [
             // { name: "Screenshots", link: "/projects/v2jackyfan/doc/screenshots.md" },
         ]
     },
+    {
+        id: 10,
+        proj: "designo",
+        name: 'Designo Multipage Website',
+        tech: 'NextJS',
+        date: 'June 2024',
+        desc: 'A multi-page website built with Next.js, TypeScript, SASS and integrated with Strapi CMS.',
+        tags: ['Website', 'Strapi CMS', 'Side Project'],
+        info: undefined,
+        viewLinks: 'https://github.com/redfrogsss/designo-multipage-website',
+        img: "/projects/designo/01.png",
+        links: [
+            {name: "GitHub", link: "https://github.com/redfrogsss/designo-multipage-website"},
+            {name: "Website", link: "https://designo.demo.jacky.fan/"}
+        ],
+        docs: [
+            { name: "Overview", link: "/projects/designo/doc/overview.md" },
+            { name: "Tech Spec", link: "/projects/designo/doc/tech-spec.md" },
+            { name: "Screenshots", link: "/projects/designo/doc/screenshots.md" },
+        ]
+    },
 ];
 
 export default function useProjectInfo(initialValue?: ProjectInfoProps[]) {
