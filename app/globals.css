@@ -332,3 +332,8 @@ html.has-scroll-dragging {
     transform: unset;
   } 
 }
+
+.text-outlined {
+    -webkit-text-stroke: 3px oklch(var(--p));
+    -webkit-text-fill-color: transparent;
+}

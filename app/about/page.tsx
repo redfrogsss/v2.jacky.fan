@@ -1,97 +1,99 @@
 import FadeInBottom from "@/components/animation/FadeInBottom";
 import { ActiveLink, Page, SectionContainer } from "@/components/basic";
+import BgHeading from "@/components/visual/bgHeading";
 import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 
 export default function AboutPage() {
     return (
-        <Page>
-            <SectionContainer>
-                <FadeInBottom>
-                    <h1 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
-                        <span className="text-sm md:text-lg flex font-light drop-shadow-sm">
-                            <hr className="w-8 md:w-16 inline-block my-auto mr-2 border-base-content" />
-                            Know More
-                        </span>
-                        <span className="text-primary drop-shadow">About</span> Me
-                    </h1>
+        <>
+            <Page>
+                <SectionContainer>
+                    <FadeInBottom>
+                        <h1 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
+                            <span className="text-sm md:text-lg flex font-light drop-shadow-sm">
+                                <hr className="w-8 md:w-16 inline-block my-auto mr-2 border-base-content" />
+                                Know More
+                            </span>
+                            <span className="text-primary drop-shadow">About</span> Me
+                        </h1>
 
-                </FadeInBottom>
+                    </FadeInBottom>
 
-                <FadeInBottom>
-                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                        Hi There. My name is Jacky FAN. I build websites and eat computer bugs. 😉
-                    </p>
+                    <FadeInBottom>
+                        <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
+                            Hi There. My name is Jacky FAN. I build websites and eat computer bugs. 😉
+                        </p>
 
-                    <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🤔 Who am I?</h2>
-                    <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I&apos;m currently a Frontend Developer in Hong Kong with a passion for building attractive and interactive websites. With a background in Bachelor Degree in Computing, I bring a unique blend of skills ranging from HTML, CSS, Typescript, ReactJS to solving programming problems, or communicating with teammates.
-                    </p>
+                        <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🤔 Who am I?</h2>
+                        <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
+                            I&apos;m currently a Frontend Developer in Hong Kong with a passion for building attractive and interactive websites. With a background in Bachelor Degree in Computing, I bring a unique blend of skills ranging from HTML, CSS, Typescript, ReactJS to solving programming problems, or communicating with teammates.
+                        </p>
 
-                    <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I believe in the power of continuous learning and growth, and I&apos;m always excited to dive into new technologies and methodologies to expand my knowledge base.
-                    </p>
+                        <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
+                            I believe in the power of continuous learning and growth, and I&apos;m always excited to dive into new technologies and methodologies to expand my knowledge base.
+                        </p>
 
-                    <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🌐 Languages & Tools</h2>
+                        <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🌐 Languages & Tools</h2>
 
-                    <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I&apos;m passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills. Here&apos;s a overview of the tech stack I&apos;ve been using in my projects:
-                    </p>
+                        <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
+                            I&apos;m passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills. Here&apos;s a overview of the tech stack I&apos;ve been using in my projects:
+                        </p>
 
-                    <ul className="list-disc text-md md:text-xl ps-8 !leading-8 mb-4 md:mb-8">
-                        <li>
-                            JavaScript
-                        </li>
-                        <li>
-                            TypeScript
-                        </li>
-                        <li>
-                            ReactJS
-                        </li>
-                        <li>
-                            JQuery
-                        </li>
-                        <li>
-                            CSS3
-                        </li>
-                        <li>
-                            HTML5
-                        </li>
-                        <li>
-                            etc.
-                        </li>
-                    </ul>
-
-
-                    <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        💡 I&apos;m also interested in Mobile App Development.
-                    </p>
-
-                    <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">📽️ Projects</h2>
-                    <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        I&apos;ve had the fantastic opportunity to work on various projects, where I&apos;ve learned and honed my skills. Here are a few highlights:
-                    </p>
-
-                    <ul className="list-disc text-md md:text-xl ps-8 !leading-8 mb-4 md:mb-8">
-                        <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/nuxt-blog">Nuxt Blog</a> - My personal blog</li>
-                        <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/v2.jacky.fan">v2.jacky.fan</a> - My personal website</li>
-                        <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/CRS">CRS Web</a> - Web-based Conversational Recommender System</li>
-                        <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/selfremind">selfremind</a> - Selfhosted To-do List Manager</li>
-                        <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/RedStream">RedStream</a> - Movie Streaming Website</li>
-                        <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/gdsc-portfolio">gdsc-portfolio</a> - Simple Portfolio Website</li>
-                        <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/attendance-system-java">attendance-system</a> - Student Attendance System</li>
-                    </ul>
-
-                    <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                        <ActiveLink href="/projects" className="btn btn-neutral">
-                            Checkout My Projects
-                            <ArrowSmallDownIcon className="h-6 w-6 text-content -rotate-90" />
-                        </ActiveLink>
-                    </p>
-
-                </FadeInBottom>
+                        <ul className="list-disc text-md md:text-xl ps-8 !leading-8 mb-4 md:mb-8">
+                            <li>
+                                JavaScript
+                            </li>
+                            <li>
+                                TypeScript
+                            </li>
+                            <li>
+                                ReactJS
+                            </li>
+                            <li>
+                                JQuery
+                            </li>
+                            <li>
+                                CSS3
+                            </li>
+                            <li>
+                                HTML5
+                            </li>
+                            <li>
+                                etc.
+                            </li>
+                        </ul>
 
 
-                {/* <FadeInBottom>
+                        <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
+                            💡 I&apos;m also interested in Mobile App Development.
+                        </p>
+
+                        <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">📽️ Projects</h2>
+                        <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
+                            I&apos;ve had the fantastic opportunity to work on various projects, where I&apos;ve learned and honed my skills. Here are a few highlights:
+                        </p>
+
+                        <ul className="list-disc text-md md:text-xl ps-8 !leading-8 mb-4 md:mb-8">
+                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/nuxt-blog">Nuxt Blog</a> - My personal blog</li>
+                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/v2.jacky.fan">v2.jacky.fan</a> - My personal website</li>
+                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/CRS">CRS Web</a> - Web-based Conversational Recommender System</li>
+                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/selfremind">selfremind</a> - Selfhosted To-do List Manager</li>
+                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/RedStream">RedStream</a> - Movie Streaming Website</li>
+                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/gdsc-portfolio">gdsc-portfolio</a> - Simple Portfolio Website</li>
+                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/attendance-system-java">attendance-system</a> - Student Attendance System</li>
+                        </ul>
+
+                        <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
+                            <ActiveLink href="/projects" className="btn btn-neutral">
+                                Checkout My Projects
+                                <ArrowSmallDownIcon className="h-6 w-6 text-content -rotate-90" />
+                            </ActiveLink>
+                        </p>
+
+                    </FadeInBottom>
+
+
+                    {/* <FadeInBottom>
                     <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">💼 Experience</h2>
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
@@ -140,9 +142,11 @@ export default function AboutPage() {
                     </ul>
                 </FadeInBottom> */}
 
-                
-            </SectionContainer>
-        </Page>
+
+                </SectionContainer>
+            </Page>
+            <BgHeading title="About Me" />
+        </>
 
     );
 }
