@@ -32,26 +32,26 @@ export default function PageEnterAnimation() {
             "💭",
             "🤔",
             "😉",
-            "💖",
             "✨",
             "🥹",
             "🧐",
             "🤓",
             "🤤",
             "🥴",
-            "💩",
-            "👻",
         ];
         const quotes = [
             "Hello World",
-            "こんにちは",
-            "Wait, how to center a div?",
-            "Welcome to my website"
         ];
 
         if (window.location.pathname == "/") {
-            setEmojiDisplay("🥺");
+            setEmojiDisplay("🍙");
             setQuoteDisplay("Welcome to my website");
+        } else if (window.location.pathname.includes("/projects")) {
+            setEmojiDisplay("😉");
+            setQuoteDisplay("Hey look, I made a thing!");
+        } else if (window.location.pathname.includes("/about")) {
+            setEmojiDisplay("🤔");
+            setQuoteDisplay("Who am I?");
         } else {
             setEmojiDisplay(emoji[Math.floor(Math.random() * emoji.length)]);
             setQuoteDisplay(quotes[Math.floor(Math.random() * quotes.length)]);

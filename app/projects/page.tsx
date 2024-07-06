@@ -65,11 +65,11 @@ export default function ProjectPage() {
                     <Heading topTitle="Checkout" leftTitle="My" rightTitle="Projects" colorReverse={true} />
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                        During my leisure hours, I dedicated myself to various side projects, mostly focusing on web development.
+                        I'm passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills.
                     </p>
                     
                     <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                        Here are some of my projects:
+                        Free free to checkout my projects. 😉
                     </p>
                 </FadeInBottom>
 

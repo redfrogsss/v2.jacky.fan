@@ -2,6 +2,12 @@ import FadeInBottom from "@/components/animation/FadeInBottom";
 import { ActiveLink, Page, SectionContainer } from "@/components/basic";
 import BgHeading from "@/components/visual/bgHeading";
 import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'About Me - Jacky FAN',
+    description: 'Hi there. My name is Jacky FAN. I build websites and eat computer bugs.',
+}
 
 export default function AboutPage() {
     return (
@@ -21,7 +27,7 @@ export default function AboutPage() {
 
                     <FadeInBottom>
                         <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                            Hi There. My name is Jacky FAN. I build websites and eat computer bugs. 😉
+                            Hi there. My name is Jacky FAN. I build websites and eat computer bugs. 😉
                         </p>
 
                         <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🤔 Who am I?</h2>

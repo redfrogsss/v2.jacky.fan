@@ -5,8 +5,9 @@
 -   Light / Dark Mode
 -   Animation
 -   Responsive Design
--   Contact Form with reCAPTCHA
+-   Contact Form
 -   Slider to showcase my previous works
+-   3D Object Elements
 
 ## Getting Started
 

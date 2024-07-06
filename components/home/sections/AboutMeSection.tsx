@@ -3,6 +3,7 @@ import Magnifier3D from "../Magnifier3D";
 import FadeInBottom from "../../animation/FadeInBottom";
 import Image from "next/image";
 import { SectionContainer, ActiveLink } from "@/components/basic";
+import Link from "next/link";
 
 export default function AboutMeSection() {
 
@@ -22,17 +23,17 @@ export default function AboutMeSection() {
 
 
             <FadeInBottom>
-                <p className={sentencesClass}>Hello I am Jacky FAN, a <span className="text-primary">Frontend Developer</span> in Hong Kong who focus on building web applications.</p>
+                <p className={sentencesClass}>I am a <span className="text-primary">Frontend Developer</span> with a passion for building <span className="text-primary">attractive and interactive</span> websites.</p>
             </FadeInBottom>
 
             <FadeInBottom>
-                <p className={sentencesClass}>I recently graduated with a <span className="text-primary">Bachelor Degree in Computing</span> from The Hong Kong Polytechnic University.</p>
+                <p className={sentencesClass}>I graduated with a <span className="text-primary">Bachelor Degree in Computing</span> from <Link target="_blank" href="https://www.polyu.edu.hk/" className="underline hover:no-underline transition-all">The Hong Kong Polytechnic University</Link>.</p>
             </FadeInBottom>
 
             {/* <p className={sentencesClass}>I am passionate about Programming, Web Technology and Problem Solving.</p> */}
 
             <FadeInBottom>
-                <p className={sentencesClass}>I enjoy working on <span className="text-primary">Web Development</span> projects, especially with these technologies:</p>
+                <p className={sentencesClass}>I love working on <span className="text-primary">Web Development</span> projects with these technologies:</p>
             </FadeInBottom>
 
             <FadeInBottom>

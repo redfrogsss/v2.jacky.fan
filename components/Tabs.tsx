@@ -38,13 +38,13 @@ export default function Tabs({data} : {data: any[]}) {
     return (
         <div ref={tabEl}>
             <SectionContainer extendRightSpacing={true} topSpacing={true} bottomSpacing={false}>
-                <FadeInBottom extraClassName="animation-delay-500">
+                {/* <FadeInBottom extraClassName="animation-delay-500"> */}
                     <div role="tablist" className="tabs tabs-boxed w-fit mx-auto mb-8 md:mb-16">
                         {data.map((item, i) =>
                             <a role="tab" className={`tab${i == activeTab ? " tab-active font-black" : ""}`} key={i} onClick={(e) => selectTab(e, i)}>{item.name ?? ""}</a>
                         )}
                     </div>
-                </FadeInBottom>
+                {/* </FadeInBottom> */}
             </SectionContainer>
 
             <SectionContainer topSpacing={false} extendRightSpacing={false}>
