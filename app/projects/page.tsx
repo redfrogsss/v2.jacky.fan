@@ -65,7 +65,7 @@ export default function ProjectPage() {
                     <Heading topTitle="Checkout" leftTitle="My" rightTitle="Projects" colorReverse={true} />
 
                     <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                        I'm passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills.
+                        I&apos;m passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills.
                     </p>
                     
                     <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
