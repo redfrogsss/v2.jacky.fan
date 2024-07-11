@@ -15,13 +15,13 @@ export default function WorkSection() {
                             <hr className="w-8 md:w-16 inline-block my-auto mr-2 border-base-content" />
                             Checkout
                         </span>
-                        My <span className="text-primary">Previous Projects</span>
+                        My <span className="text-primary">Projects</span>
                         <CursorArrowRaysIcon className="w-6 h-6 md:h-10 md:w-10 text-base-content inline ml-2" />
                     </h2>
                 </FadeInBottom>
 
                 <FadeInBottom>
-                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">I worked on different school projects and side projects, most of which involved web-related things.</p>
+                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">I'm passionate about diving into various projects and constantly exploring new technologies to enhance my skills.</p>
                 </FadeInBottom>
             </SectionContainer>
 

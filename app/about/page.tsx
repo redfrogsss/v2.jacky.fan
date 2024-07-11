@@ -42,7 +42,7 @@ export default function AboutPage() {
                         <h2 className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">🌐 Languages & Tools</h2>
 
                         <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                            I&apos;m passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills. Here&apos;s a overview of the tech stack I&apos;ve been using in my projects:
+                            I&apos;m passionate about diving into various projects and constantly exploring new technologies to enhance my skills. Here&apos;s a overview of the tech stack I&apos;ve been using in my projects:
                         </p>
 
                         <ul className="list-disc text-md md:text-xl ps-8 !leading-8 mb-4 md:mb-8">
@@ -80,13 +80,12 @@ export default function AboutPage() {
                         </p>
 
                         <ul className="list-disc text-md md:text-xl ps-8 !leading-8 mb-4 md:mb-8">
-                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/nuxt-blog">Nuxt Blog</a> - My personal blog</li>
-                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/v2.jacky.fan">v2.jacky.fan</a> - My personal website</li>
-                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/CRS">CRS Web</a> - Web-based Conversational Recommender System</li>
-                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/selfremind">selfremind</a> - Selfhosted To-do List Manager</li>
-                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/RedStream">RedStream</a> - Movie Streaming Website</li>
-                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/gdsc-portfolio">gdsc-portfolio</a> - Simple Portfolio Website</li>
-                            <li><a className="underline text-blue-500 hover:text-blue-700 transition-all" href="https://github.com/redfrogsss/attendance-system-java">attendance-system</a> - Student Attendance System</li>
+                            <li><ActiveLink className="underline text-blue-500 hover:text-blue-700 transition-all" href="/projects/nuxt-blog">Nuxt Blog</ActiveLink> - My personal blog</li>
+                            <li><ActiveLink className="underline text-blue-500 hover:text-blue-700 transition-all" href="/projects/v2-jacky-fan">v2.jacky.fan</ActiveLink> - My personal website</li>
+                            <li><ActiveLink className="underline text-blue-500 hover:text-blue-700 transition-all" href="/projects/crs-web">CRS Web</ActiveLink> - Web-based Conversational Recommender System</li>
+                            <li><ActiveLink className="underline text-blue-500 hover:text-blue-700 transition-all" href="/projects/selfremind">selfremind</ActiveLink> - Selfhosted To-do List Manager</li>
+                            <li><ActiveLink className="underline text-blue-500 hover:text-blue-700 transition-all" href="/projects/RedStream">RedStream</ActiveLink> - Movie Streaming Website</li>
+                            <li><ActiveLink className="underline text-blue-500 hover:text-blue-700 transition-all" href="/projects/attendance-system-java">attendance-system</ActiveLink> - Student Attendance System</li>
                         </ul>
 
                         <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
