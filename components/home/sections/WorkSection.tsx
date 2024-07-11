@@ -21,7 +21,7 @@ export default function WorkSection() {
                 </FadeInBottom>
 
                 <FadeInBottom>
-                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">I'm passionate about diving into various projects and constantly exploring new technologies to enhance my skills.</p>
+                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">I&amp;m passionate about diving into various projects and constantly exploring new technologies to enhance my skills.</p>
                 </FadeInBottom>
             </SectionContainer>
 
