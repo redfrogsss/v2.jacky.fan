@@ -1,88 +1,64 @@
-'use client'
-
 import FadeInBottom from "@/components/animation/FadeInBottom";
 import { Page, SectionContainer } from "@/components/basic";
-import { ProjectBanner, ProjectFilter, ProjectFilterBadge } from "@/components/home/projects";
 import ProjectBlock from "@/components/home/projects/ProjectBlock";
 import { Heading } from "@/components/visual";
-import { LocomotiveScrollContext } from "@/contexts/LocomotiveScrollContext";
-import useProjectInfo from "@/hooks/useProjectInfo";
-import { useContext, useEffect, useState } from "react";
 
-export default function ProjectPage() {
+async function getData() {
+  const res = await fetch("http://localhost:1337/api/projects?populate=*");
 
-    const { data, loading } = useProjectInfo();
-    const [filterBadges, setFilterBadges] = useState<string[]>([]);
-    const [banners, setBanners] = useState<any[]>([]);
-    const { locoScroll, setlocoScroll } = useContext(LocomotiveScrollContext);
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
 
-    const getFilterBadges = () => {
-        function flatten<T>(arr: T[][]): T[] {
-            return arr.reduce((acc, val) => acc.concat(val), []);
-        }
+  return res.json();
+}
 
-        function getUniqueValues<T>(arr: T[]): T[] {
-            return Array.from(new Set(arr));
-        }
+export default async function ProjectPage() {
+  const { data } = await getData();
 
-        const arrayOfArrays = data.map(item => item.tags);
-        const flattenedArray = flatten(arrayOfArrays);
-        const uniqueValues = getUniqueValues(flattenedArray);
+  return (
+    <Page>
+      <SectionContainer extraClassName="md:pb-10" bottomSpacing={false}>
+        <FadeInBottom>
+          <Heading
+            topTitle="Checkout"
+            leftTitle="My"
+            rightTitle="Projects"
+            colorReverse={true}
+          />
 
-        uniqueValues.sort();
-        setFilterBadges(uniqueValues);
-    }
+          <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
+            I&apos;m passionate about diving into Web Development projects and
+            constantly exploring new technologies to enhance my skills.
+          </p>
 
-    const getBanners = () => {
-        setBanners(
-            data.map(item => {
-                return {
-                    name: item.name,
-                    desc: item.desc,
-                    img: item.img,
-                    link: `/projects/${item.proj}`
-                }
-            }).reverse()
-        );
-    }
+          <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
+            Free free to checkout my projects. 😉
+          </p>
+        </FadeInBottom>
+      </SectionContainer>
 
-    useEffect(() => {
-        getFilterBadges();
-        getBanners();
-        setTimeout(() => {
-            try {
-                locoScroll?.update();
-            } catch (e) {
-                return;
-            }
-        }, 300)
-    }, [data]);
-
-    return (
-        <Page>
-            <SectionContainer extraClassName="md:pb-10" bottomSpacing={false}>
-                <FadeInBottom>
-                    <Heading topTitle="Checkout" leftTitle="My" rightTitle="Projects" colorReverse={true} />
-
-                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                        I&apos;m passionate about diving into Web Development projects and constantly exploring new technologies to enhance my skills.
-                    </p>
-                    
-                    <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-                        Free free to checkout my projects. 😉
-                    </p>
-                </FadeInBottom>
-
-            </SectionContainer>
-
-            <SectionContainer extendRightSpacing={true} topSpacing={false}>
-                <FadeInBottom>
-                    <div className="flex flex-wrap flex-row">
-                        {banners.map((item, index) => <div className="w-full md:w-1/2 xl:w-1/3 grow-0 shrink p-3" key={index}><ProjectBlock name={item.name} description={item.desc} link={item.link} key={index} img={item.img} /></div>)}
-                    </div>
-                </FadeInBottom>
-            </SectionContainer>
-
-        </Page>
-    );
+      <SectionContainer extendRightSpacing={true} topSpacing={false}>
+        <FadeInBottom>
+          <div className="flex flex-wrap flex-row">{JSON.stringify(data)}</div>
+          <div className="flex flex-wrap flex-row">
+            {data.map((item: any, index: number) => (
+              <div
+                className="w-full md:w-1/2 xl:w-1/3 grow-0 shrink p-3"
+                key={index}
+              >
+                <ProjectBlock
+                  name={item.attributes.title}
+                  description={item.attributes.desc}
+                  link={`/projects/${item.attributes.alias}`}
+                  key={index}
+                  img={`${process.env.STRAPI_URL}${item.attributes.img.data.attributes.url}`}
+                />
+              </div>
+            ))}
+          </div>
+        </FadeInBottom>
+      </SectionContainer>
+    </Page>
+  );
 }
