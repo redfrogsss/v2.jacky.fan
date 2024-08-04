@@ -1,7 +1,8 @@
 import FadeInBottom from "@/components/animation/FadeInBottom";
 import { Page, SectionContainer } from "@/components/basic";
 import ProjectBlock from "@/components/home/projects/ProjectBlock";
-import { Heading } from "@/components/visual";
+import ProjectPageHead from "@/components/projects/ProjectPageHead";
+// import { Heading } from "@/components/visual";
 
 async function getData() {
   const res = await fetch("http://localhost:1337/api/projects?populate=*");
@@ -19,7 +20,7 @@ export default async function ProjectPage() {
   return (
     <Page>
       <SectionContainer extraClassName="md:pb-10" bottomSpacing={false}>
-        <FadeInBottom>
+        {/* <FadeInBottom>
           <Heading
             topTitle="Checkout"
             leftTitle="My"
@@ -35,12 +36,13 @@ export default async function ProjectPage() {
           <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
             Free free to checkout my projects. 😉
           </p>
-        </FadeInBottom>
+        </FadeInBottom> */}
+
+        <ProjectPageHead />
       </SectionContainer>
 
       <SectionContainer extendRightSpacing={true} topSpacing={false}>
         <FadeInBottom>
-          <div className="flex flex-wrap flex-row">{JSON.stringify(data)}</div>
           <div className="flex flex-wrap flex-row">
             {data.map((item: any, index: number) => (
               <div
