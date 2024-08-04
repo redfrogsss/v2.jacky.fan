@@ -82,7 +82,7 @@ function getList(list: any) {
 
 }
 
-function getRichTextBlocks(block: any) {
+function getRichTextBlocks(block: any, attrs: any = {}) {
   if (!block || !block.type) return <></>;
 
   if (block.type == "heading") {
@@ -119,7 +119,7 @@ function getRichTextBlocks(block: any) {
       return getTextStyles(c);
     });
 
-    return <p>{elements}</p>;
+    return <p {...attrs}>{elements}</p>;
   }
 
   if (block.type == "code") {

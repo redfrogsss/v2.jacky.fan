@@ -20,7 +20,9 @@ async function getData() {
 export default async function ProjectPageHead() {
   const { data } = await getData();
   const desc = data.attributes.desc.map((block: any, index: number) => {
-    return getRichTextBlocks(block);
+    return getRichTextBlocks(block, {
+      className: "text-md md:text-xl mb-4 md:mb-8 leading-8",
+    });
   });
 
   return (
