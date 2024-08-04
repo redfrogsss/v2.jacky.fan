@@ -1,60 +1,54 @@
-'use client'
-
 import FadeInBottom from "@/components/animation/FadeInBottom";
 import { ActiveLink, Page, SectionContainer } from "@/components/basic";
 import { Heading } from "@/components/visual";
 import Image from "next/image";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { projectInfos } from "@/hooks/useProjectInfo";
-import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Tabs from "@/components/Tabs";
 import { LinkIcon } from "@heroicons/react/24/outline";
-import { LocomotiveScrollPositionContext } from "@/contexts/LocomotiveScrollPositionContext";
 import BgHeading from "@/components/visual/bgHeading";
+import type { Metadata, ResolvingMetadata } from 'next'
 
-export default function ProjectDescPage({ params }: { params: { slug: string } }) {
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
-    const projectPageNmae = params.slug;
-    const [projectData, setProjectData] = useState<any | undefined>(undefined);
-    const [docs, setDocs] = useState<any[]>([]);
-    const { scrollPos, setScrollPos } = useContext(LocomotiveScrollPositionContext);
+export async function generateMetadata( { params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const alias = params.slug;
+  
+  const endpoint = `${process.env.STRAPI_URL}/api/projects?populate=*&filters[alias][$eqi]=${alias}`;
+  const { data } = await fetch(endpoint).then((res) => res.json())
 
-    const updateDocs = async (docs: any) => {
-        if (!docs) return;
+  if (!data || !data[0].attributes?.title) return {
+    title: "Jacky FAN",
+  };
 
-        let newDocsState = [];
+  return {
+    title: `${data[0].attributes.title} - Jacky FAN`,
+  }
+}
 
-        for (let i = 0; i < docs.length; i++) {
-            try {
-                let md = await fetch(docs[i].link);
-                let mdText = await md.text();
+async function getData(alias: string) {
+    const res = await fetch(`${process.env.STRAPI_URL}/api/projects?populate=*&filters[alias][$eqi]=${alias}`);
 
-                newDocsState.push({ ...docs[i], md: mdText });
-            } catch (error) {
-                console.error("md not found");
-            }
-        }
-
-        setDocs(newDocsState);
-        window.dispatchEvent(new Event('resize'));  // force window resize so locoscroll could update page's height
-
-        setTimeout(() => {
-            window.dispatchEvent(new Event('resize'));  // force window resize so locoscroll could update page's height
-        }, 1000);
+    if (!res.ok) {
+        throw new Error("Failed to fetch data");
     }
 
-    useEffect(() => {
-        setProjectData(projectInfos.filter(proj => proj.proj == projectPageNmae)[0] ?? undefined);
-    }, [])
+    return res.json();
+}
 
-    useEffect(() => {
-        updateDocs(projectData?.docs);
-    }, [projectData])
+export default async function ProjectDescPage({ params }: { params: { slug: string } }) {
+    const alias = params.slug;
 
-    // debug 
-    // useEffect(()=>{console.log(projectData)}, [projectData])
-    // useEffect(()=>{console.log(docs)}, [docs])
+    const { data } = await getData(alias);
+
+    if (!data || data.length == 0) {
+        return <div>Project not found</div>;
+    }
+
+    const { title, date, desc, tags, img, links, Contents } = data[0].attributes;
 
     return (
         <>
@@ -70,16 +64,15 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
 
                         <div className="flex flex-col xl:flex-row gap-x-4 gap-y-8">
                             <div className="w-full xl:w-2/5">
-                                <Heading topTitle="My Project" leftTitle={projectData?.name} />
+                                <Heading topTitle="My Project" leftTitle={title} />
                                 <div className="flex flex-row flex-wrap gap-2 mb-4 xl:mb-8">
-                                    {projectData?.tags.map((tag: any, i: number) => <div className="badge badge-lg badge-primary badge-outline" key={i}>{tag}</div>)}
-
+                                    {tags.map((tag: any, i: number) => <div className="badge badge-lg badge-primary badge-outline" key={i}>{tag}</div>)}
                                 </div>
                                 <p className="mb-4 xl:mb-8">
-                                    {projectData?.desc}
+                                    {desc}
                                 </p>
                                 <div className="flex flex-row flex-wrap gap-2">
-                                    {projectData?.links.map((link: any, i: number) => <Link href={link.link} target="_blank" className={`btn ${i == 0 ? "btn-primary" : i == 1 ? "btn-secondary" : "btn-outline"}`} key={i}>
+                                    {links.map((link: any, i: number) => <Link href={link.links} target="_blank" className={`btn ${i == 0 ? "btn-primary" : i == 1 ? "btn-secondary" : "btn-outline"}`} key={i}>
                                         <LinkIcon className="h-[1em]" />
                                         {link.name}
                                     </Link>)}
@@ -89,9 +82,9 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
                             <div className="w-full xl:w-3/5">
                                 <figure className="block aspect-video border-red-400 border-1 rounded-2xl bg-base-content relative">
                                     <Image
-                                        src={projectData?.img}
+                                        src={`${process.env.STRAPI_URL}${img.data.attributes.url}`}
                                         fill={true}
-                                        alt="Project Name"
+                                        alt={title}
                                         className="object-contain p-2"
                                     />
                                 </figure>
@@ -100,10 +93,10 @@ export default function ProjectDescPage({ params }: { params: { slug: string } }
                     </FadeInBottom>
                 </SectionContainer>
 
-                <Tabs data={docs} />
+                <Tabs data={Contents} />
 
             </Page>
-            <BgHeading title={projectData?.name} />
+            <BgHeading title={title} />
         </>
     );
 }

@@ -2,10 +2,28 @@ import FadeInBottom from "@/components/animation/FadeInBottom";
 import { Page, SectionContainer } from "@/components/basic";
 import ProjectBlock from "@/components/home/projects/ProjectBlock";
 import ProjectPageHead from "@/components/projects/ProjectPageHead";
-// import { Heading } from "@/components/visual";
+import type { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata( { params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const endpoint = `${process.env.STRAPI_URL}/api/project-page-setting?populate=*`;
+  const { data } = await fetch(endpoint).then((res) => res.json())
+
+  if (!data || !data.attributes?.metaTitle) return {
+    title: "Jacky FAN"
+  };
+
+  return {
+    title: data.attributes.metaTitle,
+  }
+}
 
 async function getData() {
-  const res = await fetch("http://localhost:1337/api/projects?populate=*");
+  const res = await fetch(`${process.env.STRAPI_URL}/api/projects?populate=*`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -20,24 +38,6 @@ export default async function ProjectPage() {
   return (
     <Page>
       <SectionContainer extraClassName="md:pb-10" bottomSpacing={false}>
-        {/* <FadeInBottom>
-          <Heading
-            topTitle="Checkout"
-            leftTitle="My"
-            rightTitle="Projects"
-            colorReverse={true}
-          />
-
-          <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-            I&apos;m passionate about diving into Web Development projects and
-            constantly exploring new technologies to enhance my skills.
-          </p>
-
-          <p className="text-md md:text-xl mb-4 md:mb-8 leading-8">
-            Free free to checkout my projects. 😉
-          </p>
-        </FadeInBottom> */}
-
         <ProjectPageHead />
       </SectionContainer>
 
