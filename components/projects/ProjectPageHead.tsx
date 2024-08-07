@@ -6,7 +6,7 @@ import { get } from "http";
 
 async function getData() {
   const res = await fetch(
-    "http://localhost:1337/api/project-page-setting?populate=*",
+    `${process.env.STRAPI_URL}/api/project-page-setting?populate=*`,
   );
 
   if (!res.ok) {

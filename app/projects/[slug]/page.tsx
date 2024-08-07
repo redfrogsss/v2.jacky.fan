@@ -20,7 +20,7 @@ export async function generateMetadata( { params, searchParams }: Props, parent:
   const endpoint = `${process.env.STRAPI_URL}/api/projects?populate=*&filters[alias][$eqi]=${alias}`;
   const { data } = await fetch(endpoint).then((res) => res.json())
 
-  if (!data || !data[0].attributes?.title) return {
+  if (!data || !data[0] || !data[0].attributes?.title) return {
     title: "Jacky FAN",
   };
 
@@ -45,7 +45,10 @@ export default async function ProjectDescPage({ params }: { params: { slug: stri
     const { data } = await getData(alias);
 
     if (!data || data.length == 0) {
-        return <div>Project not found</div>;
+        return <div className="min-h-screen w-screen flex flex-col gap-4 items-center justify-center">
+        <p className="text-xl md:text-2xl w-fit">😵 Project Not Found 😵</p>
+        <Link href="/" className="btn">Back to Home Page</Link>
+    </div>;
     }
 
     const { title, date, desc, tags, img, links, Contents } = data[0].attributes;
