@@ -9,7 +9,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetadata( { params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const endpoint = `${process.env.STRAPI_URL}/api/project-page-setting?populate=*`;
   const { data } = await fetch(endpoint).then((res) => res.json())
 
@@ -34,6 +34,7 @@ async function getData() {
 
 export default async function ProjectPage() {
   const { data } = await getData();
+  const sortedData = data.sort((a: any, b: any) => new Date(a.attributes.date).getTime() - new Date().getTime());
 
   return (
     <Page>
@@ -44,7 +45,7 @@ export default async function ProjectPage() {
       <SectionContainer extendRightSpacing={true} topSpacing={false}>
         <FadeInBottom>
           <div className="flex flex-wrap flex-row">
-            {data.map((item: any, index: number) => (
+            {sortedData.map((item: any, index: number) => (
               <div
                 className="w-full md:w-1/2 xl:w-1/3 grow-0 shrink p-3"
                 key={index}
