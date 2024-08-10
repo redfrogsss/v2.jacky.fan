@@ -16,8 +16,8 @@ function getTextStyles(text: any) {
   if (text.code == true) {
     return <code>{text.text}</code>;
   }
-  if (text.url == true) {
-    return <ActiveLink href={text.url}>{text.text}</ActiveLink>;
+  if (text.url) {
+    return <ActiveLink href={text.url}>{text.children.map((c:any) => getTextStyles(c))}</ActiveLink>;
   }
   return text.text;
 }
