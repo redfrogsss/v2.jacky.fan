@@ -57,13 +57,6 @@ function getContents(data: any) {
                 <div className={classes}>
                     {block.content.map((c: any) => getRichTextBlocks(c))}
                 </div>
-
-                <p className="text-md md:text-xl mb-4 md:mb-8 !leading-8">
-                    <ActiveLink href="/projects" className="btn btn-neutral">
-                        Checkout My Projects
-                        <ArrowSmallDownIcon className="h-6 w-6 text-content -rotate-90" />
-                    </ActiveLink>
-                </p>
             </FadeInBottom>;
         }
 
