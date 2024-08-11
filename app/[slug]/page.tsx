@@ -2,6 +2,7 @@ import { Page, SectionContainer } from "@/components/basic";
 import BgHeading from "@/components/visual/bgHeading";
 import { getContents } from "@/helpers/strapi";
 import type { Metadata } from 'next';
+import { revalidatePath } from "next/cache";
 import { redirect } from 'next/navigation'
 
 type Props = {
@@ -44,11 +45,12 @@ async function checkPageExist(params: { slug: string }) {
     const { data } = await getData(params.slug);
 
     if (data.length == 0) {
+        revalidatePath(`/${params.slug}`);
         redirect("/404?from=" + params.slug);
     }
 }
 
-export default async function AboutPage({ params }: { params: { slug: string } }) {
+export default async function NormalPage ({ params }: { params: { slug: string } }) {
 
     await checkPageExist(params);
 
@@ -57,9 +59,7 @@ export default async function AboutPage({ params }: { params: { slug: string } }
     return (
         <>
             <Page>
-                <SectionContainer>
-                    {getContents(data[0].attributes.Contents)}
-                </SectionContainer>
+                {getContents(data[0].attributes.Contents)}
             </Page>
             <BgHeading title={data[0].attributes.pageTitle} />
         </>
