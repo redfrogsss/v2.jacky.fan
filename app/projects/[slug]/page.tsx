@@ -56,7 +56,7 @@ export default async function ProjectDescPage({ params }: { params: { slug: stri
     return (
         <>
             <Page>
-                <SectionContainer extendRightSpacing={true} extraClassName="bg-base-300 -mt-1 z-40">
+                <SectionContainer extendRightSpacing={true} extraClassName="bg-base-300 -mt-1 z-40 py-12 md:py-6" topSpacing={false}>
                     <FadeInBottom>
                         <div className="mb-4 md:mb-8">
                             <ActiveLink href="/projects" className="btn btn-outline w-fit">

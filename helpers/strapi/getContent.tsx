@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ActiveLink, SectionContainer } from "@/components/basic";
 import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 import { ProjectGrid } from "@/components/home/projects";
+import { ContactForm, Letter3D } from "@/components/home";
 
 function getContents(data: any) {
 
@@ -65,6 +66,28 @@ function getContents(data: any) {
         if (block.__component === "page.project-grid") {
             return <ProjectGrid />
         }
+
+        if (block.__component === "page.contact-form") {
+            return <SectionContainer>
+                <FadeInBottom>
+                    <p className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">{block.title}</p>
+                    <div className="card w-full bg-base-300 shadow-xl">
+                        <div className="card-body">
+                            <ContactForm />
+                        </div>
+                    </div>
+                </FadeInBottom>
+            </SectionContainer>
+        }
+
+        if (block.__component === "page.3-d-letter") {
+            if (block.enable) {
+                return <Letter3D />
+            } else {
+                return <></>
+            }
+        }
+
 
         return <></>
     });

@@ -61,7 +61,7 @@ export default async function NormalPage ({ params }: { params: { slug: string }
             <Page>
                 {getContents(data[0].attributes.Contents)}
             </Page>
-            <BgHeading title={data[0].attributes.pageTitle} />
+            {data[0].attributes.enableBgHeading && <BgHeading title={data[0].attributes.pageTitle} />}
         </>
 
     );

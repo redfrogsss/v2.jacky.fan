@@ -79,7 +79,7 @@ export default function Letter3D() {
                         <directionalLight position={[1, 0, 2]} intensity={2} />
                         <directionalLight position={[-1, 0, 2]} intensity={1} />
                         <Suspense fallback={null}>
-                            {gltf && <primitive object={gltf} scale={1.1} rotation={modelRotation} />}
+                            {gltf && <primitive object={gltf} scale={.9} rotation={modelRotation} />}
                             {/* <Environment preset="city" /> */}
                             {/* <Environment files="/img/kloofendal_misty_morning_puresky_1k.hdr" /> */}
                         </Suspense>
