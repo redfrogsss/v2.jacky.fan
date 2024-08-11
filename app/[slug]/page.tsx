@@ -83,7 +83,6 @@ export default async function AboutPage({ params }: { params: { slug: string } }
     await checkPageExist(params);
 
     const { data } = await getData(params.slug);
-    console.log(data[0].attributes.Contents);
 
     return (
         <>
