@@ -34,7 +34,7 @@ export default function Navbar({ siteSetting }: { siteSetting: any }) {
         <div className={`navbar bg-base-300 fixed z-50 transition-all w-screen ${visible ? "translate-y-0" : `-translate-y-[110%]`} ${isTop ? "shadow-none" : "shadow-md"}`} ref={navbarRef}>
             <div className="flex-1">
                 <ActiveLink href="/" className="btn btn-ghost normal-case text-xl">
-                    <span className="text-primary font-dosis font-semibold">{siteSetting.attributes.sitename}</span>
+                    <span className="text-primary font-dosis font-semibold">{siteSetting.attributes.siteLogoText}</span>
                 </ActiveLink>
             </div>
             <div className="flex-none hidden md:flex md:mx-5">
