@@ -1,7 +1,7 @@
 import { Page, SectionContainer } from "@/components/basic";
 import BgHeading from "@/components/visual/bgHeading";
 import { getContents } from "@/helpers/strapi";
-import type { Metadata } from 'next';
+import type { Metadata, ResolvingMetadata } from 'next';
 import { revalidatePath } from "next/cache";
 import { redirect } from 'next/navigation'
 

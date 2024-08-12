@@ -6,6 +6,7 @@ import { ActiveLink, SectionContainer } from "@/components/basic";
 import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 import { ProjectGrid } from "@/components/home/projects";
 import { ContactForm, Letter3D } from "@/components/home";
+import { HeroSection } from "@/components/home/sections";
 
 function getContents(data: any) {
 
@@ -88,6 +89,9 @@ function getContents(data: any) {
             }
         }
 
+        if (block.__component === "page.hero-section") {
+            return <HeroSection title={block.title} desc={block.desc} />
+        }
 
         return <></>
     });
