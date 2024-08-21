@@ -2,7 +2,7 @@ import { ActiveLink } from "@/components/basic";
 
 function getTextStyles(text: any) {
   if (text.bold == true) {
-    return <b>{text.text}</b>;
+    return <strong>{text.text}</strong>;
   }
   if (text.italic == true) {
     return <i>{text.text}</i>;

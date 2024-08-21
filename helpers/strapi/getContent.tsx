@@ -6,7 +6,7 @@ import { ActiveLink, SectionContainer } from "@/components/basic";
 import { ArrowSmallDownIcon } from "@heroicons/react/24/outline";
 import { ProjectGrid } from "@/components/home/projects";
 import { ContactForm, Letter3D } from "@/components/home";
-import { HeroSection } from "@/components/home/sections";
+import { AboutMeSection, HeroSection } from "@/components/home/sections";
 
 function getContents(data: any) {
 
@@ -91,6 +91,18 @@ function getContents(data: any) {
 
         if (block.__component === "page.hero-section") {
             return <HeroSection title={block.title} desc={block.desc} arrowText={block.arrowText} arrowLink={block.arrowLink} />
+        }
+
+        if (block.__component === "page.about-me-section") {
+            return <AboutMeSection
+                topTitle={block.topTitle}
+                leftTitle={block.leftTitle}
+                rightTitle={block.rightTitle}
+                contents={block.contents.map((c: any) => getRichTextBlocks(c))}
+                techs={block.techs}
+                btnLink={block.btnLink}
+                btnText={block.btnText}
+            />
         }
 
         return <></>
