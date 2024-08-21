@@ -90,7 +90,7 @@ function getContents(data: any) {
         }
 
         if (block.__component === "page.hero-section") {
-            return <HeroSection title={block.title} desc={block.desc} />
+            return <HeroSection title={block.title} desc={block.desc} arrowText={block.arrowText} arrowLink={block.arrowLink} />
         }
 
         return <></>

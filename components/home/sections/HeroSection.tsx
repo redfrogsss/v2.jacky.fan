@@ -1,6 +1,6 @@
 import FloatingArrow from "../FloatingArrow";
 
-export default function HeroSection({title, desc}: {title: string, desc: string}) {
+export default function HeroSection({ title, desc, arrowText = "", arrowLink = "" }: { title: string, desc: string, arrowText: string, arrowLink: string }) {
 
     return (
         <section
@@ -17,7 +17,7 @@ export default function HeroSection({title, desc}: {title: string, desc: string}
                     </div>
                 </div>
             </div>
-            <FloatingArrow text="About Me" />
+            <FloatingArrow text={arrowText} link={arrowLink} />
         </section>
     );
 }
