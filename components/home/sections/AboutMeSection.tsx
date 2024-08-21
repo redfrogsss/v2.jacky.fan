@@ -20,8 +20,6 @@ interface AboutMeSectionProps {
 
 export default function AboutMeSection(props: AboutMeSectionProps) {
 
-    const sentencesClass = `text-md md:text-xl mb-4 md:mb-8 leading-8`
-
     return (
         <SectionContainer id="about" extraClassName="min-h-[900px] md:mt-8 py-6 md:py-16">
             <FadeInBottom>
@@ -42,48 +40,6 @@ export default function AboutMeSection(props: AboutMeSectionProps) {
 
             <FadeInBottom>
                 <div className="rounded-md glass w-fit flex flex-row flex-wrap justify-center md:justify-start gap-4 mb-4 md:mb-8 pb-2 px-4">
-                    {/* <div className="my-2 w-16 md:w-24 relative">
-                        <Image src="/react.svg" alt="React" className="w-full aspect-square" width={64} height={64} />
-                        <p className="text-center drop-shadow-sm">
-                            ReactJS
-                        </p>
-                    </div>
-
-                    <div className="my-2 w-16 md:w-24 relative">
-                        <Image src="/typescript.svg" alt="Typescript" className="w-full aspect-square" width={64} height={64} />
-                        <p className="text-center drop-shadow-sm">
-                            TypeScript
-                        </p>
-                    </div>
-
-                    <div className="my-2 w-16 md:w-24 relative">
-                        <Image src="/html5.svg" alt="HTML5" className="w-full aspect-square" width={64} height={64} />
-                        <p className="text-center drop-shadow-sm">
-                            HTML5
-                        </p>
-                    </div>
-
-                    <div className="my-2 w-16 md:w-24 relative">
-                        <Image src="/css.svg" alt="CSS" className="w-full aspect-square" width={64} height={64} />
-                        <p className="text-center drop-shadow-sm">
-                            CSS
-                        </p>
-                    </div>
-
-                    <div className="my-2 w-16 md:w-24 relative">
-                        <Image src="/mysql.svg" alt="MySQL" className="w-full aspect-square" width={64} height={64} />
-                        <p className="text-center drop-shadow-sm">
-                            MySQL
-                        </p>
-                    </div>
-
-                    <div className="my-2 w-16 md:w-24 relative">
-                        <Image src="/git.svg" alt="Git" className="w-full aspect-square" width={64} height={64} />
-                        <p className="text-center drop-shadow-sm">
-                            Git
-                        </p>
-                    </div> */}
-
                     {props.techs.map((tech, index) => (
                         <div key={index} className="my-2 w-16 md:w-24 relative">
                             <Image src={`${process.env.STRAPI_URL}${tech.icon.data.attributes.url}`} alt={tech.title} className="w-full aspect-square" width={64} height={64} />
