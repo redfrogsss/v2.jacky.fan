@@ -15,7 +15,7 @@ interface AboutMeSectionProps {
         icon: any;
     }[];
     btnText: string;
-    btnLink: string;
+    btnLinks: string;
 }
 
 export default function AboutMeSection(props: AboutMeSectionProps) {
@@ -54,7 +54,7 @@ export default function AboutMeSection(props: AboutMeSectionProps) {
             </FadeInBottom>
 
             <FadeInBottom>
-                <ActiveLink href={props.btnLink} className="btn btn-neutral">
+                <ActiveLink href={props.btnLinks} className="btn btn-neutral">
                     {props.btnText}
                     <ArrowSmallDownIcon className="h-6 w-6 text-content -rotate-90" />
                 </ActiveLink>

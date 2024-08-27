@@ -100,7 +100,7 @@ function getContents(data: any) {
                 rightTitle={block.rightTitle}
                 contents={block.contents.map((c: any) => getRichTextBlocks(c))}
                 techs={block.techs}
-                btnLink={block.btnLink}
+                btnLinks={block.btnLinks}
                 btnText={block.btnText}
             />
         }
