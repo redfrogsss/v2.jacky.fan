@@ -26,6 +26,7 @@ export async function generateMetadata( { params, searchParams }: Props, parent:
 
   return {
     title: `${data[0].attributes.title} - Jacky FAN`,
+    description: data[0].attributes.desc ?? "",
   }
 }
 

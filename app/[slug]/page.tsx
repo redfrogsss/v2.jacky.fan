@@ -16,12 +16,14 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
     const endpoint = `${process.env.STRAPI_URL}/api/pages?populate=*&filters[url][$eqi]=/${url}`;
     const { data } = await fetch(endpoint).then((res) => res.json())
 
-    if (!data || !data[0] || !data[0].attributes?.pageTitle) return {
+    if (!data || !data[0] || !data[0].attributes?.pageTitle || !data[0].attributes?.metaDesc) return {
         title: "Jacky FAN",
+        description: "I build websites and eat computer bugs 😉",
     };
 
     return {
         title: `${data[0].attributes.pageTitle} - Jacky FAN`,
+        description: data[0].attributes.metaDesc,
     }
 }
 

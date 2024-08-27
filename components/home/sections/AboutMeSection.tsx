@@ -21,7 +21,7 @@ interface AboutMeSectionProps {
 export default function AboutMeSection(props: AboutMeSectionProps) {
 
     return (
-        <SectionContainer id="about" extraClassName="min-h-[900px] md:mt-8 py-6 md:py-16">
+        <SectionContainer id="about" extraClassName="min-h-[900px] h-screen md:mt-8 py-6 md:py-16">
             <FadeInBottom>
                 <h2 className="font-bold text-3xl md:text-5xl mb-8 md:mb-16">
                     <span className="text-sm md:text-lg flex font-light drop-shadow-sm">
