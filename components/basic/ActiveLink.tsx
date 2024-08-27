@@ -10,8 +10,10 @@ function ActiveLink({ children, href, className = "" }: { children?: React.React
     const { pageExit, setPageExit } = useContext(PageExitContext);
 
     const handleClick: MouseEventHandler = (e) => {
-        e.preventDefault();
 
+        if (!href.startsWith("/") && !href.includes(window.location.origin)) return;    // use default behavior for external links
+
+        e.preventDefault();
         if (window.location.pathname == href) return;
         
         setPageExit(!pageExit);
@@ -22,7 +24,7 @@ function ActiveLink({ children, href, className = "" }: { children?: React.React
     }
 
     return (
-        <a href={href} onClick={handleClick} className={className}>
+        <a href={href} onClick={handleClick} target="_blank" className={className}>
             {children}
         </a>
     )
