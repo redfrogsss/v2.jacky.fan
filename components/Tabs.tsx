@@ -52,7 +52,7 @@ export default function Tabs({data} : {data: any[]}) {
                     {data.map((item, i) =>
                         <article id={item.name?.toString().toLowerCase().replace(" ", "-")} className={`prose text-md md:text-xl leading-6 md:leading-8 text-base-content${activeTab == i ? "" : " hidden"}`} key={i}>
                             <Markdown>
-                                {item.md}
+                                {item.contents}
                             </Markdown>
                         </article>
                     )}

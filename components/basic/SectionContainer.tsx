@@ -17,11 +17,11 @@ export default function SectionContainer({
     const getSpacing = () => {
 
         if (topSpacing && bottomSpacing) {
-            return `py-12 md:py-16`;
+            return `my-12 md:my-16`;
         } else if (topSpacing) {
-            return `pt-12 md:pt-16`;
+            return `mt-12 md:mt-16`;
         } else if (bottomSpacing) {
-            return `pb-12 md:pb-16`;
+            return `mb-12 md:mb-16`;
         } else {
             return "";
         }
