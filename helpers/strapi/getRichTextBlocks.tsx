@@ -1,28 +1,28 @@
 import { ActiveLink } from "@/components/basic";
 
-function getTextStyles(text: any) {
+function getTextStyles(text: any, attrs: any = {}) {
   if (text.bold == true) {
-    return <strong>{text.text}</strong>;
+    return <strong {...attrs} key={attrs.key ?? ""}>{text.text}</strong>;
   }
   if (text.italic == true) {
-    return <i>{text.text}</i>;
+    return <i {...attrs} key={attrs.key ?? ""}>{text.text}</i>;
   }
   if (text.underline == true) {
-    return <u>{text.text}</u>;
+    return <u {...attrs} key={attrs.key ?? ""}>{text.text}</u>;
   }
   if (text.strikethrough == true) {
-    return <s>{text.text}</s>;
+    return <s {...attrs} key={attrs.key ?? ""}>{text.text}</s>;
   }
   if (text.code == true) {
-    return <code>{text.text}</code>;
+    return <code {...attrs} key={attrs.key ?? ""}>{text.text}</code>;
   }
   if (text.url) {
-    return <ActiveLink href={text.url}>{text.children.map((c:any) => getTextStyles(c))}</ActiveLink>;
+    return <ActiveLink {...attrs} key={attrs.key ?? ""} href={text.url}>{text.children.map((c:any) => getTextStyles(c))}</ActiveLink>;
   }
   return text.text;
 }
 
-function getList(list: any) {
+function getList(list: any, key: number) {
 
   if (list.type == "list") {
     const { format, children } = list;
@@ -48,18 +48,18 @@ function getList(list: any) {
       }
     });
 
-    const elements = listChildren.map((c: any) => {
+    const elements = listChildren.map((c: any, i: number) => {
       if (c.type.includes("list")) {
-        return getList(c);
+        return getList(c, i);
       } else {
-        return getTextStyles(c);
+        return getTextStyles(c, { key: i });
       }
     });
 
     if (format == "unordered") {
-      return <ul>{elements}</ul>;
+      return <ul key={key}>{elements}</ul>;
     } else {
-      return <ol>{elements}</ol>;
+      return <ol key={key}>{elements}</ol>;
     }
 
   }
@@ -67,83 +67,83 @@ function getList(list: any) {
   if (list.type == "list-item") {
     const { children } = list;
 
-    const elements = children.map((c: any) => {
+    const elements = children.map((c: any, i: number) => {
       if (c.type.includes("list")) {
-        return getList(c);
+        return getList(c, i);
       } else {
-        return getTextStyles(c);
+        return getTextStyles(c, { key: i });
       }
     });
 
-    return <li>{elements}</li>;
+    return <li key={key}>{elements}</li>;
   }
 
   return <></>;
 
 }
 
-function getRichTextBlocks(block: any, attrs: any = {}) {
+function getRichTextBlocks(block: any, attrs: any = {}, key: number) {
   if (!block || !block.type) return <></>;
 
   if (block.type == "heading") {
     const { level, children } = block;
 
-    const elements = children.map((c: any) => {
-      return getTextStyles(c);
+    const elements = children.map((c: any, i: number) => {
+      return getTextStyles(c, { key: i });
     });
 
     if (level == 1) {
-      return <h1>{elements}</h1>;
+      return <h1 key={key}>{elements}</h1>;
     }
     if (level == 2) {
-      return <h2>{elements}</h2>;
+      return <h2 key={key}>{elements}</h2>;
     }
     if (level == 3) {
-      return <h3>{elements}</h3>;
+      return <h3 key={key}>{elements}</h3>;
     }
     if (level == 4) {
-      return <h4>{elements}</h4>;
+      return <h4 key={key}>{elements}</h4>;
     }
     if (level == 5) {
-      return <h5>{elements}</h5>;
+      return <h5 key={key}>{elements}</h5>;
     }
     if (level == 6) {
-      return <h6>{elements}</h6>;
+      return <h6 key={key}>{elements}</h6>;
     }
   }
 
   if (block.type == "paragraph") {
     const { children } = block;
 
-    const elements = children.map((c: any) => {
-      return getTextStyles(c);
+    const elements = children.map((c: any, i: number) => {
+      return getTextStyles(c, { key: i });
     });
 
-    return <p {...attrs}>{elements}</p>;
+    return <p {...attrs} key={key}>{elements}</p>;
   }
 
   if (block.type == "code") {
     const { children } = block;
 
-    const elements = children.map((c: any) => {
-      return getTextStyles(c);
+    const elements = children.map((c: any, i: number) => {
+      return getTextStyles(c, { key: i });
     });
 
-    return <code>{ elements }</code>
+    return <code key={key}>{ elements }</code>
   }
   
   if (block.type == "quote") {
     const { children } = block;
 
-    const elements = children.map((c: any) => {
-      return getTextStyles(c);
+    const elements = children.map((c: any, i: number) => {
+      return getTextStyles(c, { key: i });
     });
 
-    return <blockquote>{ elements }</blockquote>
+    return <blockquote key={key}>{ elements }</blockquote>
   }
 
   if (block.type == "list") {
-    return getList(block);
+    return getList(block, key);
   }
 
   return <></>

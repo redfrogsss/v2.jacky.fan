@@ -22,7 +22,7 @@ export default async function ProjectPageHead() {
   const desc = data.attributes.desc.map((block: any, index: number) => {
     return getRichTextBlocks(block, {
       className: "text-md md:text-xl mb-4 md:mb-8 leading-8",
-    });
+    }, index);
   });
 
   return (

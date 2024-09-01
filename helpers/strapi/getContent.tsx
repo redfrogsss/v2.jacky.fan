@@ -12,7 +12,7 @@ function getContents(data: any) {
 
     if (!data) return <></>
 
-    return data.map((block: any) => {
+    return data.map((block: any, i: number) => {
         if (block.__component === "page.page-rich-text") {
 
             const classes = [
@@ -25,17 +25,17 @@ function getContents(data: any) {
                 "prose-a:link prose-a:link-primary"  // a class
             ].join(" ");
 
-            return <SectionContainer>
+            return <SectionContainer key={i}>
                 <FadeInBottom>
                     <div className={classes}>
-                        {block.content.map((c: any) => getRichTextBlocks(c))}
+                        {block.content.map((c: any, i: number) => getRichTextBlocks(c, {}, i))}
                     </div>
                 </FadeInBottom>
             </SectionContainer>
         }
 
         if (block.__component === "page.page-heading") {
-            return <SectionContainer bottomSpacing={false}>
+            return <SectionContainer bottomSpacing={false} key={i}>
                 <FadeInBottom>
                     <Heading topTitle={block.topTitle} leftTitle={block.leftTitle} rightTitle={block.rightTitle} colorReverse={block.colorReverse} />
                 </FadeInBottom>
@@ -44,7 +44,7 @@ function getContents(data: any) {
 
         if (block.__component === "page.button") {
             if (block.external) {
-                return <SectionContainer topSpacing={false} bottomSpacing={false}>
+                return <SectionContainer topSpacing={false} bottomSpacing={false} key={i}>
                     <FadeInBottom>
                         <Link href={block.url} className="btn btn-neutral">
                             {block.name}
@@ -53,7 +53,7 @@ function getContents(data: any) {
                     </FadeInBottom>
                 </SectionContainer>
             } else {
-                return <SectionContainer>
+                return <SectionContainer key={i}>
                     <FadeInBottom>
                         <ActiveLink href={block.url} className="btn btn-neutral">
                             {block.name}
@@ -65,11 +65,11 @@ function getContents(data: any) {
         }
 
         if (block.__component === "page.project-grid") {
-            return <ProjectGrid />
+            return <ProjectGrid key={i} />
         }
 
         if (block.__component === "page.contact-form") {
-            return <SectionContainer>
+            return <SectionContainer key={i}>
                 <FadeInBottom>
                     <p className="font-bold text-xl md:text-3xl mt-8 md:mt-16 mb-4 md:mb-8">{block.title}</p>
                     <div className="card w-full bg-base-300 shadow-xl">
@@ -83,14 +83,14 @@ function getContents(data: any) {
 
         if (block.__component === "page.3-d-letter") {
             if (block.enable) {
-                return <Letter3D />
+                return <Letter3D key={i} />
             } else {
                 return <></>
             }
         }
 
         if (block.__component === "page.hero-section") {
-            return <HeroSection title={block.title} desc={block.desc} arrowText={block.arrowText} arrowLink={block.arrowLink} />
+            return <HeroSection title={block.title} desc={block.desc} arrowText={block.arrowText} arrowLink={block.arrowLink} key={i}/>
         }
 
         if (block.__component === "page.about-me-section") {
@@ -98,10 +98,11 @@ function getContents(data: any) {
                 topTitle={block.topTitle}
                 leftTitle={block.leftTitle}
                 rightTitle={block.rightTitle}
-                contents={block.contents.map((c: any) => getRichTextBlocks(c))}
+                contents={block.contents.map((c: any, i: number) => getRichTextBlocks(c, {}, i))}
                 techs={block.techs}
                 btnLinks={block.btnLinks}
                 btnText={block.btnText}
+                key={i}
             />
         }
 

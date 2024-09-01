@@ -14,7 +14,7 @@ export default function Footer({ siteSetting }: { siteSetting: any }) {
                 </ul>
             </div>
             <div>
-                { siteSetting.attributes.footerText.map((t: any) => getRichTextBlocks(t)) }
+                { siteSetting.attributes.footerText.map((t: any, i: number) => getRichTextBlocks(t, {}, i)) }
             </div>
         </footer>
     );
