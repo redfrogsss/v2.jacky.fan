@@ -19,11 +19,25 @@ export async function generateMetadata({ params, searchParams }: Props, parent: 
     if (!data || !data[0] || !data[0].attributes?.pageTitle || !data[0].attributes?.metaDesc) return {
         title: "Jacky FAN",
         description: "I build websites and eat computer bugs 😉",
+        openGraph: {
+            title: "Jacky FAN",
+            description: "I build websites and eat computer bugs 😉",
+            siteName: 'Jacky FAN',
+            locale: 'en_US',
+            type: 'website',
+        },
     };
 
     return {
         title: `${data[0].attributes.pageTitle} - Jacky FAN`,
         description: data[0].attributes.metaDesc,
+        openGraph: {
+            title: `${data[0].attributes.pageTitle} - Jacky FAN`,
+            description: data[0].attributes.metaDesc,
+            siteName: 'Jacky FAN',
+            locale: 'en_US',
+            type: 'website',
+        },
     }
 }
 

@@ -11,8 +11,15 @@ import { LocomotiveScrollProvider } from '@/contexts/LocomotiveScrollContext'
 import { PageExitContextProvider } from '@/contexts/PageExitContext'
 
 export const metadata: Metadata = {
-  title: "Jacky FAN",
+  title: "Jacky FAN - Frontend Developer",
   description: 'Hello I am Jacky FAN, a front end developer in Hong Kong who focus on building high-quality websites.',
+  openGraph: {
+    title: 'Jacky FAN - Frontend Developer',
+    description: 'Hello I am Jacky FAN, a front end developer in Hong Kong who focus on building high-quality websites.',
+    siteName: 'Jacky FAN',
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({

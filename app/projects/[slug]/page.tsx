@@ -22,11 +22,26 @@ export async function generateMetadata( { params, searchParams }: Props, parent:
 
   if (!data || !data[0] || !data[0].attributes?.title) return {
     title: "Jacky FAN",
+    description: "I build websites and eat computer bugs 😉",
+    openGraph: {
+        title: "Jacky FAN",
+        description: "I build websites and eat computer bugs 😉",
+        siteName: 'Jacky FAN',
+        locale: 'en_US',
+        type: 'website',
+    },
   };
 
   return {
     title: `${data[0].attributes.title} - Jacky FAN`,
     description: data[0].attributes.desc ?? "",
+    openGraph: {
+        title: `${data[0].attributes.title} - Jacky FAN`,
+        description: data[0].attributes.desc ?? "",
+        siteName: 'Jacky FAN',
+        locale: 'en_US',
+        type: 'website',
+    },
   }
 }
 
